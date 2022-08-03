@@ -39,8 +39,8 @@ var getScriptPromisify = (src) => {
     // ------------------
     async render (resultSet) {
       await getScriptPromisify('https://cdn.bootcdn.net/ajax/libs/echarts/5.0.0/echarts.min.js')
-      console.log('Resulset:')
-      console.log(resulset)
+      console.log('resulSet:')
+      console.log(resulSet)
 
       this._placeholder = this._root.querySelector('#placeholder')
       if (this._placeholder) {
