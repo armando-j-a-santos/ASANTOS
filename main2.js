@@ -39,6 +39,8 @@ var getScriptPromisify = (src) => {
     // ------------------
     async render (resultSet) {
       await getScriptPromisify('https://cdn.bootcdn.net/ajax/libs/echarts/5.0.0/echarts.min.js')
+      console.log('Resulset:')
+      console.log(resulset)
 
       this._placeholder = this._root.querySelector('#placeholder')
       if (this._placeholder) {
@@ -54,7 +56,9 @@ var getScriptPromisify = (src) => {
       const countries = []
       const timeline = []
       const series = []
+      console.log('----------------')
       resultSet.forEach(dp => {
+        console.log(dp)
         const { rawValue, description } = dp[MEASURE_DIMENSION]
         const country = dp.Country.description
         const year = Number(dp.timeline.description)
