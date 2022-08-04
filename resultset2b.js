@@ -23,7 +23,7 @@ var getScriptPromisify = (src) => {
         <div id="resultset_data"</div>
       </div>
     `
-  class myResultSet2A extends HTMLElement {
+  class myResultSet2b extends HTMLElement {
     constructor () {
       super()
 
@@ -97,5 +97,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset2a', myResultSet2A)
+  customElements.define('com-sap-sample-resultset2b', myResultSet2b)
 })()
