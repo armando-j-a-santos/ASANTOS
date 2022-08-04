@@ -23,7 +23,7 @@ var getScriptPromisify = (src) => {
         <div id="resultset_data"</div>
       </div>
     `
-  class myResultSet2b extends HTMLElement {
+  class myResultSet2c extends HTMLElement {
     constructor () {
       super()
 
@@ -39,7 +39,6 @@ var getScriptPromisify = (src) => {
     // Scripting methods
     // ------------------
     async render (resultSet) {
-      // await getScriptPromisify('https://cdn.bootcdn.net/ajax/libs/echarts/5.0.0/echarts.min.js')
       //console.log('resultSet:')
       //console.log(resultSet)
 
@@ -52,8 +51,8 @@ var getScriptPromisify = (src) => {
       const countries = []
       const timeline = []
       const series = []
-      const unique_country = ''
-      const table_output = '<table class="table table-striped table-bordered">'
+      var unique_country = ''
+      var table_output = '<table class="table table-striped table-bordered">'
       
       console.log('----------------')
       resultSet.forEach(dp => {
@@ -64,8 +63,9 @@ var getScriptPromisify = (src) => {
 
         if (country !== unique_country)
         {
+          console.log('before1')
           unique_country = country
-          console.log('before')
+          console.log('before2')
           table_output += '<td>'+ country +'</td>'
           console.log(table_output)
         }
@@ -97,5 +97,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset2b', myResultSet2b)
+  customElements.define('com-sap-sample-resultset2c', myResultSet2c)
 })()
