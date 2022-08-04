@@ -23,7 +23,7 @@ var getScriptPromisify = (src) => {
         <div id="resultset_data"</div>
       </div>
     `
-  class myResultSet2c extends HTMLElement {
+  class myResultSet2d extends HTMLElement {
     constructor () {
       super()
 
@@ -56,18 +56,17 @@ var getScriptPromisify = (src) => {
       
       console.log('----------------')
       resultSet.forEach(dp => {
-        console.log(dp)
+        // console.log(dp)
         const { rawValue, description } = dp[MEASURE_DIMENSION]
         const country = dp.Country.description
         const year = Number(dp.timeline.description)
 
         if (country !== unique_country)
         {
-          console.log('before1')
+          // console.log('before1')
           unique_country = country
-          console.log('before2')
+          // console.log('before2')
           table_output += '<td>'+ country +'</td>'
-          console.log(table_output)
         }
         
         if (countries.indexOf(country) === -1) {
@@ -91,11 +90,15 @@ var getScriptPromisify = (src) => {
       })
     
       table_output += '</tr>'
-      table_output += '</table>'
+      table_output += '</table
       
-      document.getElementById('resultset_data').innerHTML = table_output
+      console.log(table_output)
+      
+      // document.getElementById('resultset_data').innerHTML = table_output
+      
+      template.innerHTML = "Armando <i>SANTOS</i>"; 
     }
   }
 
-  customElements.define('com-sap-sample-resultset2c', myResultSet2c)
+  customElements.define('com-sap-sample-resultset2d', myResultSet2d)
 })()
