@@ -53,7 +53,7 @@ var getScriptPromisify = (src) => {
       const timeline = []
       const series = []
       const unique_country = ''
-      const table_output = '<table class="table table-striped table-bordered">';
+      const table_output = '<table class="table table-striped table-bordered">'
       
       console.log('----------------')
       resultSet.forEach(dp => {
@@ -65,7 +65,9 @@ var getScriptPromisify = (src) => {
         if (country !== unique_country)
         {
           unique_country = country
+          console.log('before')
           table_output += '<td>'+ country +'</td>'
+          console.log(table_output)
         }
         
         if (countries.indexOf(country) === -1) {
