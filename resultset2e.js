@@ -23,7 +23,7 @@ var getScriptPromisify = (src) => {
         <div id="resultset_data"</div>
       </div>
     `
-  class myResultSet2d extends HTMLElement {
+  class myResultSet2e extends HTMLElement {
     constructor () {
       super()
 
@@ -96,9 +96,9 @@ var getScriptPromisify = (src) => {
       
       // document.getElementById('resultset_data').innerHTML = table_output
       
-      template.innerHTML = "Armando <i>SANTOS</i>"; 
+      template.innerHTML = 'Armando <i>SANTOS</i>'
     }
   }
 
-  customElements.define('com-sap-sample-resultset2d', myResultSet2d)
+  customElements.define('com-sap-sample-resultset2e', myResultSet2e)
 })()
