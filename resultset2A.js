@@ -97,5 +97,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset2A', myResultSet2A)
+  customElements.define('com-sap-sample-resultset2a', myResultSet2A)
 })()
