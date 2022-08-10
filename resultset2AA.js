@@ -23,7 +23,7 @@ var getScriptPromisify = (src) => {
         <div id="resultset_data"</div>
       </div>
     `
-  class myResultSet2 extends HTMLElement {
+  class myResultSet2AA extends HTMLElement {
     constructor () {
       super()
 
@@ -53,7 +53,7 @@ var getScriptPromisify = (src) => {
       const timeline = []
       const series = []
       const unique_country = ''
-      const table_output = '<table class="table table-striped table-bordered">'
+      var table_output = '<table class="table table-striped table-bordered">'
       
       console.log('----------------')
       resultSet.forEach(dp => {
@@ -67,7 +67,6 @@ var getScriptPromisify = (src) => {
           unique_country = country
           console.log('before')
           table_output += '<td>'+ country +'</td>'
-          console.log(table_output)
         }
         
         if (countries.indexOf(country) === -1) {
@@ -93,9 +92,11 @@ var getScriptPromisify = (src) => {
       table_output += '</tr>'
       table_output += '</table>'
       
+      console.log(table_output)
+      
       document.getElementById('resultset_data').innerHTML = table_output
     }
   }
 
-  customElements.define('com-sap-sample-resultset2', myResultSet2)
+  customElements.define('com-sap-sample-resultset2AA', myResultSet2AA)
 })()
