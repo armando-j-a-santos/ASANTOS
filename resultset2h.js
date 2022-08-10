@@ -22,7 +22,7 @@ var getScriptPromisify = (src) => {
         <div id="placeholder">myresultset data</div>
       </div>
     `
-  class myResultSet2g extends HTMLElement {
+  class myResultSet2h extends HTMLElement {
     constructor () {
       super()
 
@@ -94,10 +94,10 @@ var getScriptPromisify = (src) => {
       console.log(table_output)
       
       // document.getElementById('resultset_data').innerHTML = table_output    WE NEED TO ADD ABOVE: <div id="resultset_data"</div>
-      // document.getElementById('placeholder').innerHTML = table_output    WE NEED TO ADD ABOVE: <div id="resultset_data"</div>
-      template.innerHTML = 'Armando <i>SANTOS</i>'
+      document.getElementById('placeholder').innerHTML = table_output    WE NEED TO ADD ABOVE: <div id="resultset_data"</div>
+      // template.innerHTML = 'Armando <i>SANTOS</i>'
     }
   }
 
-  customElements.define('com-sap-sample-resultset2g', myResultSet2g)
+  customElements.define('com-sap-sample-resultset2h', myResultSet2h)
 })()
