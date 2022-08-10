@@ -23,7 +23,7 @@ var getScriptPromisify = (src) => {
         <div id="resultset_data"</div>
       </div>
     `
-  class myResultSet2aa extends HTMLElement {
+  class myResultSet2ab extends HTMLElement {
     constructor () {
       super()
 
@@ -48,11 +48,11 @@ var getScriptPromisify = (src) => {
         this._root.removeChild(this._placeholder)
         this._placeholder = null
       }
-      const MEASURE_DIMENSION = '@MeasureDimension'
-      const countries = []
-      const timeline = []
-      const series = []
-      const unique_country = ''
+      var MEASURE_DIMENSION = '@MeasureDimension'
+      var countries = []
+      var timeline = []
+      var series = []
+      var unique_country = ''
       var table_output = '<table class="table table-striped table-bordered">'
       
       console.log('----------------')
@@ -98,5 +98,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset2aa', myResultSet2aa)
+  customElements.define('com-sap-sample-resultset2ab', myResultSet2ab)
 })()
