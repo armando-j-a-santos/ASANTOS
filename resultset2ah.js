@@ -23,7 +23,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myResultSet2ag extends HTMLElement {
+  class myResultSet2ah extends HTMLElement {
     constructor () {
       super()
 
@@ -46,7 +46,8 @@ var getScriptPromisify = (src) => {
       console.log(resultSet)
       
       console.log('now:')
-      document.getElementById("my_data").innerHTML = "Armando"
+      var demo = document.getElementById("my_data");
+      demo.innerHtml='<h1>Hello member</h1>';
 
       this._placeholder = this._root.querySelector('#placeholder')
       if (this._placeholder) {
@@ -103,5 +104,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset2ag', myResultSet2ag)
+  customElements.define('com-sap-sample-resultset2ah', myResultSet2ah)
 })()
