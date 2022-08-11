@@ -23,7 +23,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myResultSet2ad extends HTMLElement {
+  class myResultSet2ae extends HTMLElement {
     constructor () {
       super()
 
@@ -42,6 +42,9 @@ var getScriptPromisify = (src) => {
       // await getScriptPromisify('https://cdn.bootcdn.net/ajax/libs/echarts/5.0.0/echarts.min.js')
       console.log('resultSet:')
       console.log(resultSet)
+      
+      console.log('now:')
+      document.getElementById("my_data").innerHTML = "Armando"
 
       this._placeholder = this._root.querySelector('#placeholder')
       if (this._placeholder) {
@@ -98,5 +101,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset2ad', myResultSet2ad)
+  customElements.define('com-sap-sample-resultset2ae', myResultSet2ae)
 })()
