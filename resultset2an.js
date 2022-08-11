@@ -23,7 +23,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myResultSet2am extends HTMLElement {
+  class myResultSet2an extends HTMLElement {
     constructor () {
       super()
 
@@ -74,7 +74,7 @@ var getScriptPromisify = (src) => {
         {
           unique_country = country
           console.log('before')
-          table_output += '<td>'+ country +'</td>'
+          table_output += '<br>'+ country +'</br>'
         }
         
         if (countries.indexOf(country) === -1) {
@@ -97,7 +97,7 @@ var getScriptPromisify = (src) => {
         series[iT][iC][4] = year
       })
     
-      table_output += '</tr>'
+      //table_output += '</tr>'
       table_output += '</table>'
       
       console.log(table_output)
@@ -112,5 +112,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset2am', myResultSet2am)
+  customElements.define('com-sap-sample-resultset2an', myResultSet2an)
 })()
