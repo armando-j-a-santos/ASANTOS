@@ -23,7 +23,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myResultSet2ai extends HTMLElement {
+  class myResultSet2aj extends HTMLElement {
     constructor () {
       super()
 
@@ -31,6 +31,8 @@ var getScriptPromisify = (src) => {
       this._shadowRoot.appendChild(template.content.cloneNode(true))
 
       this._root = this._shadowRoot.getElementById('root')
+      
+      this._armando1 = this._shadowRoot.getElementById('my_data').innerHTML = "ola"
 
       this._props = {}
     }
@@ -44,8 +46,12 @@ var getScriptPromisify = (src) => {
       console.log(resultSet)
       
       console.log('now:')
-      var my_data = document.getElementById("my_data");
-      my_data.innerHtml='<h1>Hello member</h1>';
+      // var my_data = document.getElementById("my_data")
+      // my_data.innerHtml='<h1>Hello member</h1>'
+      // document.getElementById("my_data").innerHTML = table_output
+      
+      this._armando2 = this._shadowRoot.getElementById('my_data').innerHTML = "ole"
+      
 
       this._placeholder = this._root.querySelector('#placeholder')
       if (this._placeholder) {
@@ -102,5 +108,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset2ai', myResultSet2ai)
+  customElements.define('com-sap-sample-resultset2aj', myResultSet2aj)
 })()
