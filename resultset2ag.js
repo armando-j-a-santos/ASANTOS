@@ -23,7 +23,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myResultSet2af extends HTMLElement {
+  class myResultSet2ag extends HTMLElement {
     constructor () {
       super()
 
@@ -33,10 +33,10 @@ var getScriptPromisify = (src) => {
       this._root = this._shadowRoot.getElementById('root')
 
       this._props = {}
-      
-      document.getElementById("my_data").innerHTML = "Hello World"
     }
 
+    document.getElementById("my_data").innerHTML = "Hello World"
+  
     // ------------------
     // Scripting methods
     // ------------------
@@ -103,5 +103,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset2af', myResultSet2af)
+  customElements.define('com-sap-sample-resultset2ag', myResultSet2ag)
 })()
