@@ -9,13 +9,13 @@ var getScriptPromisify = (src) => {
   template.innerHTML = `
       <style>
       #root {
-        background-color: #100c2a;
+        background-color: white;
       }
       #placeholder {
         padding-top: 1em;
         text-align: center;
         font-size: 1.5em;
-        color: white;
+        color: black;
       }
       </style>
       <div id="root" style="width: 100%; height: 100%;">
@@ -23,7 +23,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myResultSet2al extends HTMLElement {
+  class myResultSet2am extends HTMLElement {
     constructor () {
       super()
 
@@ -31,9 +31,7 @@ var getScriptPromisify = (src) => {
       this._shadowRoot.appendChild(template.content.cloneNode(true))
 
       this._root = this._shadowRoot.getElementById('root')
-      
-      //this._armando1 = this._shadowRoot.getElementById('my_data').innerHTML = "ola"
-
+     
       this._props = {}
     }
   
@@ -50,7 +48,7 @@ var getScriptPromisify = (src) => {
       // my_data.innerHtml='<h1>Hello member</h1>'
       // document.getElementById("my_data").innerHTML = table_output
       
-      this._armando2 = this._shadowRoot.getElementById('my_data').innerHTML = "ole"
+      // this._armando2 = this._shadowRoot.getElementById('my_data').innerHTML = "ole"
       
 
       this._placeholder = this._root.querySelector('#placeholder')
@@ -104,11 +102,15 @@ var getScriptPromisify = (src) => {
       
       console.log(table_output)
       
+      // Giving error: Cannot set properties of null (setting 'innerHTML')
+      // below line
       //document.getElementById("my_data").innerHTML = table_output
       
-      this._armando2 = this._shadowRoot.getElementById('my_data').innerHTML = table_output
+      // Works well below line
+      //this._armando2 = this._shadowRoot.getElementById('my_data').innerHTML = table_output
+      this._shadowRoot.getElementById('my_data').innerHTML = table_output
     }
   }
 
-  customElements.define('com-sap-sample-resultset2al', myResultSet2al)
+  customElements.define('com-sap-sample-resultset2am', myResultSet2am)
 })()
