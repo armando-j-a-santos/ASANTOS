@@ -164,7 +164,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myResultSet5a extends HTMLElement {
+  class myResultSet5b extends HTMLElement {
     constructor () {
       super()
 
@@ -188,7 +188,7 @@ var getScriptPromisify = (src) => {
       }
       
       // Table Headers definition
-      var table_output = '<table><tr><th>Country</th><th>Year</th><th>Population</th><th>LifeExpect</th><th>Income</th></tr>'
+      var table_output = '<table><thead><tr><th>Country</th><th>Year</th><th>Population</th><th>LifeExpect</th><th>Income</th></tr></thead><tbody>'
           //<!--ALWAYS ADD THIS EXTRA CELL AT END OF HEADER ROW-->
           table_output += '<th class="scrollbarhead"/>'
       
@@ -229,7 +229,7 @@ var getScriptPromisify = (src) => {
       })
     
       //Close the table tag
-      table_output += '</table>'
+      table_output += '</tbody></table>'
       
       console.log(table_output)
       
@@ -238,5 +238,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset5a', myResultSet5a)
+  customElements.define('com-sap-sample-resultset5b', myResultSet5b)
 })()
