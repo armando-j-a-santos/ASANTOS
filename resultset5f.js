@@ -64,14 +64,10 @@ var getScriptPromisify = (src) => {
       </style>
       <div id="root" style="width: 100%; height: 100%;">
         <div id="placeholder">myresultset data</div>
-        <div class="table-wrapper>
-          <div id="table-scroll">
-            <div id="my_data">data...</div>
-          </div>
-        </div>
+        <div id="my_data">data...</div>
       </div>
     `
-  class myResultSet5e extends HTMLElement {
+  class myResultSet5f extends HTMLElement {
     constructor () {
       super()
 
@@ -94,10 +90,11 @@ var getScriptPromisify = (src) => {
         this._placeholder = null
       }
       
-      // Table Headers definition
-      var table_output = '<table><thead><tr><th>Country</th><th>Year</th><th>Population</th><th>LifeExpect</th><th>Income</th></tr></thead><tbody>'
-          //<!--ALWAYS ADD THIS EXTRA CELL AT END OF HEADER ROW-->
-          table_output += '<th class="scrollbarhead"/>'
+      // Table Wrapper & Scrollbar definition
+      var table_output = '<div id="table-wrapper"><div id="table-scroll">'
+      
+      // Table Headers & Body
+      table_output += '<table><thead><tr><th>Country</th><th>Year</th><th>Population</th><th>LifeExpect</th><th>Income</th></tr></thead><tbody>'
       
       // initialize counter of rows
       var counterRows = 1
@@ -135,8 +132,8 @@ var getScriptPromisify = (src) => {
         
       })
     
-      //Close the table tag
-      table_output += '</tbody></table>'
+      //Close all used tags
+      table_output += '</tbody></table></div></div>'
       
       console.log(table_output)
       
@@ -145,5 +142,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset5e', myResultSet5e)
+  customElements.define('com-sap-sample-resultset5f', myResultSet5f)
 })()
