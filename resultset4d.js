@@ -39,7 +39,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myResultSet4c extends HTMLElement {
+  class myResultSet4d extends HTMLElement {
     constructor () {
       super()
 
@@ -74,7 +74,7 @@ var getScriptPromisify = (src) => {
          console.log(dp)
          var cCountry = dp.Country.description
          var ctimeline = dp.timeline.description
-         var { formattedValue, description } = dp[@MeasureDimension]
+         var { formattedValue, description } = dp['@MeasureDimension']
          
         if (counterRows === 1)
         {
@@ -105,14 +105,10 @@ var getScriptPromisify = (src) => {
       
       console.log(table_output)
       
-      // Works well below line
-      //this._armando2 = this._shadowRoot.getElementById('my_data').innerHTML = table_output
-      // this._shadowRoot.getElementById('my_data').innerHTML = table_output
-      
       this._shadowRoot.getElementById('my_data').innerHTML = table_output
       
     }
   }
 
-  customElements.define('com-sap-sample-resultset4c', myResultSet4c)
+  customElements.define('com-sap-sample-resultset4d', myResultSet4d)
 })()
