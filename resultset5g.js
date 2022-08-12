@@ -48,15 +48,15 @@ var getScriptPromisify = (src) => {
 
       }
       #table-wrapper table * {
-        background:yellow;
+        /* background:yellow; */
         color:black;
       }
       #table-wrapper table thead th .text {
         position:absolute;   
         top:-20px;
         z-index:2;
-        height:20px;
-        width:35%;
+        height:100%;
+        width:100%;
         border:1px solid red;
       }
       ///////////////////////////////////////////////////////////////
@@ -67,7 +67,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myResultSet5f extends HTMLElement {
+  class myResultSet5g extends HTMLElement {
     constructor () {
       super()
 
@@ -142,5 +142,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset5f', myResultSet5f)
+  customElements.define('com-sap-sample-resultset5g', myResultSet5g)
 })()
