@@ -39,7 +39,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myResultSet4e extends HTMLElement {
+  class myResultSet4f extends HTMLElement {
     constructor () {
       super()
 
@@ -78,19 +78,20 @@ var getScriptPromisify = (src) => {
          
         if (counterRows === 1)
         {
+          // Dimensions
           table_output += '<tr><td>'+ cCountry +'</td>'
           table_output += '<td>'+ ctimeline +'</td>'
+          // First Measures
           table_output += '<td>'+ formattedValue +'</td>'
         } else {
-           table_output += '<td>'+ cCountry +'</td>'
-           table_output += '<td>'+ ctimeline +'</td>'
+            // Only the measures values to display
            table_output += '<td>'+ formattedValue +'</td>'
         }
         
         counterRows = counterRows + 1
         
         // Reset the counter for each row
-        if (counterRows>4) 
+        if (counterRows>5) 
         {
           // Close the row
           table_output += '</tr>'
@@ -110,5 +111,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset4e', myResultSet4e)
+  customElements.define('com-sap-sample-resultset4f', myResultSet4f)
 })()
