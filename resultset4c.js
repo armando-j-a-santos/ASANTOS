@@ -39,7 +39,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myResultSet4b extends HTMLElement {
+  class myResultSet4c extends HTMLElement {
     constructor () {
       super()
 
@@ -55,7 +55,6 @@ var getScriptPromisify = (src) => {
     // Scripting methods
     // ------------------
     async render (resultSet) {
-      // await getScriptPromisify('https://cdn.bootcdn.net/ajax/libs/echarts/5.0.0/echarts.min.js')
       // console.log('resultSet:')
       // console.log(resultSet)
       
@@ -75,7 +74,7 @@ var getScriptPromisify = (src) => {
          console.log(dp)
          var cCountry = dp.Country.description
          var ctimeline = dp.timeline.description
-         var { formattedValue, description } = dp[MeasureDimension]
+         var { formattedValue, description } = dp[@MeasureDimension]
          
         if (counterRows === 1)
         {
@@ -115,5 +114,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset4b', myResultSet4b)
+  customElements.define('com-sap-sample-resultset4c', myResultSet4c)
 })()
