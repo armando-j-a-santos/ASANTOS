@@ -39,7 +39,7 @@ var getScriptPromisify = (src) => {
         position:relative;
       }
       #table-scroll {
-        height:150px;
+        height:100%;
         overflow:auto;  
         margin-top:20px;
       }
@@ -57,7 +57,7 @@ var getScriptPromisify = (src) => {
         z-index:2;
         height:100%;
         width:100%;
-        border:1px solid red;
+        border:1px solid black;
       }
       ///////////////////////////////////////////////////////////////
       
@@ -67,7 +67,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myResultSet5g extends HTMLElement {
+  class myResultSet5h extends HTMLElement {
     constructor () {
       super()
 
@@ -142,5 +142,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset5g', myResultSet5g)
+  customElements.define('com-sap-sample-resultset5h', myResultSet5h)
 })()
