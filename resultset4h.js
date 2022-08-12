@@ -39,7 +39,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myResultSet4g extends HTMLElement {
+  class myResultSet4h extends HTMLElement {
     constructor () {
       super()
 
@@ -96,7 +96,7 @@ var getScriptPromisify = (src) => {
         
         
         // Reset the counter for each row
-        if (counterRows>5) 
+        if (counterRows>3) 
         {
           // Close the row
           table_output += '</tr>'
@@ -116,5 +116,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset4g', myResultSet4g)
+  customElements.define('com-sap-sample-resultset4h', myResultSet4h)
 })()
