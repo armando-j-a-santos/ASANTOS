@@ -35,6 +35,15 @@ var getScriptPromisify = (src) => {
       ///////////////////////////////////////////////////////////////
       // Scrollbar necessary CSS classes
       ///////////////////////////////////////////////////////////////
+      body {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0 20px 0 20px;
+        text-align: center;
+        background: white;
+      }
       
       .scrollingtable {
         box-sizing: border-box;
@@ -165,7 +174,7 @@ var getScriptPromisify = (src) => {
         </div>
       </div>
     `
-  class myResultSet5c extends HTMLElement {
+  class myResultSet5d extends HTMLElement {
     constructor () {
       super()
 
@@ -239,5 +248,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset5c', myResultSet5c)
+  customElements.define('com-sap-sample-resultset5d', myResultSet5d)
 })()
