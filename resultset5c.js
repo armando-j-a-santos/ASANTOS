@@ -161,10 +161,11 @@ var getScriptPromisify = (src) => {
       <div id="root" style="width: 100%; height: 100%;">
         <div id="placeholder">myresultset data</div>
         <div class="scrollingtable">
-        <div id="my_data">data...</div>
+          <div id="my_data">data...</div>
+        </div>
       </div>
     `
-  class myResultSet5b extends HTMLElement {
+  class myResultSet5c extends HTMLElement {
     constructor () {
       super()
 
@@ -238,5 +239,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset5b', myResultSet5b)
+  customElements.define('com-sap-sample-resultset5c', myResultSet5c)
 })()
