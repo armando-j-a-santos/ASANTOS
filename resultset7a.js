@@ -7,6 +7,12 @@ var getScriptPromisify = (src) => {
 (function () {
   const template = document.createElement('template')
   template.innerHTML = `
+      <script>
+          function myFunction() {
+              alert('Armando Jorge Araujo dos Santos - Prodigygnition')
+          }
+      </script>
+  
       <style>
       #root {
         background-color: white;
@@ -68,7 +74,7 @@ var getScriptPromisify = (src) => {
       #table-wrapper table thead th .text {
         position:absolute;   
         top:-20px;
-        z-index:2;
+        /* z-index:2; */
         height:100%;
         width:100%;
         border:1px solid black;
@@ -76,13 +82,16 @@ var getScriptPromisify = (src) => {
       ///////////////////////////////////////////////////////////////
       
       </style>
+      
       <div id="root" style="width: 100%; height: 100%;">
+        <input type="button" onclick="myFunction()" value="Hello World">
+        
         <div id="placeholder">myresultset data</div>
         <div id="my_data">data...</div>
       </div>
     ` // Ending HTML code tag
   
-  class myResultSet6n extends HTMLElement {
+  class myResultSet7a extends HTMLElement {
     constructor () {
       super()
 
@@ -157,5 +166,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset6n', myResultSet6n)
+  customElements.define('com-sap-sample-resultset7a', myResultSet7a)
 })()
