@@ -24,10 +24,7 @@ var getScriptPromisify = (src) => {
         width: 100%;
       }
       th{
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-        position: fixed;
+        position: sticky;
       }
       td{
         border: 1px solid #dddddd;
@@ -73,7 +70,7 @@ var getScriptPromisify = (src) => {
       </div>
     ` // Ending HTML code tag
   
-  class myResultSet6a extends HTMLElement {
+  class myResultSet6b extends HTMLElement {
     constructor () {
       super()
 
@@ -148,5 +145,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset5j', myResultSet6a)
+  customElements.define('com-sap-sample-resultset6b', myResultSet6b)
 })()
