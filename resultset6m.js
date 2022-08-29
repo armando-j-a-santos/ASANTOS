@@ -32,8 +32,8 @@ var getScriptPromisify = (src) => {
         color: black; /* Header text color */
       
         /* Header box */
-        /* box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);  */
-        box-shadow: inset 0 2px 0 #000000, inset 0 -2px 0 #000000;
+        /* box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4); 
+        box-shadow: inset 0 2px 0 #000000, inset 0 -2px 0 #000000; */
         padding: 8px 0;
       }
       td{
@@ -80,7 +80,7 @@ var getScriptPromisify = (src) => {
       </div>
     ` // Ending HTML code tag
   
-  class myResultSet6l extends HTMLElement {
+  class myResultSet6m extends HTMLElement {
     constructor () {
       super()
 
@@ -155,5 +155,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset6l', myResultSet6l)
+  customElements.define('com-sap-sample-resultset6m', myResultSet6m)
 })()
