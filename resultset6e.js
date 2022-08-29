@@ -22,6 +22,9 @@ var getScriptPromisify = (src) => {
         font-family: arial, sans-serif;
         border-collapse: collapse;
         width: 100%;
+        
+        /* Margin for Header */
+        margin-top:30px;
       }
       th{
         position: sticky;   /* Freeze Header */
@@ -30,7 +33,7 @@ var getScriptPromisify = (src) => {
         text-align: left;
         padding: 8px;
         /* Header box */
-        box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+        /* box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);  */
       }
       td{
         border: 1px solid #dddddd;
@@ -76,7 +79,7 @@ var getScriptPromisify = (src) => {
       </div>
     ` // Ending HTML code tag
   
-  class myResultSet6d extends HTMLElement {
+  class myResultSet6e extends HTMLElement {
     constructor () {
       super()
 
@@ -151,5 +154,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset6d', myResultSet6d)
+  customElements.define('com-sap-sample-resultset6e', myResultSet6e)
 })()
