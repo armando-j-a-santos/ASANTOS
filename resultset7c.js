@@ -77,13 +77,14 @@ var getScriptPromisify = (src) => {
       
       </style>
       
-      <div id="root" style="width: 100%; height: 100%;">
-        <script>
+      <script language="javascript" type="text/javascript">
           function myFunction() {
               alert('Armando Jorge Araujo dos Santos - Prodigygnition')
           }
-        </script>
-      
+      </script>
+        
+      <div id="root" style="width: 100%; height: 100%;">
+
         <input type="button" onclick="myFunction()" value="Hello World">
         
         <div id="placeholder">myresultset data</div>
@@ -91,7 +92,7 @@ var getScriptPromisify = (src) => {
       </div>
     ` // Ending HTML code tag
   
-  class myResultSet7b extends HTMLElement {
+  class myResultSet7c extends HTMLElement {
     constructor () {
       super()
 
@@ -166,5 +167,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset7b', myResultSet7b)
+  customElements.define('com-sap-sample-resultset7c', myResultSet7c)
 })()
