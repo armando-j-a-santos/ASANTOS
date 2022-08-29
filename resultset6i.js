@@ -31,6 +31,8 @@ var getScriptPromisify = (src) => {
         top: 0px;          /* Don't forget this, required for the stickiness */
         border: 1px solid #dddddd;
         text-align: left;
+        background: white;
+        color: black;
       
         /* Header box */
         /* box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);  */
@@ -81,7 +83,7 @@ var getScriptPromisify = (src) => {
       </div>
     ` // Ending HTML code tag
   
-  class myResultSet6h extends HTMLElement {
+  class myResultSet6i extends HTMLElement {
     constructor () {
       super()
 
@@ -156,5 +158,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset6h', myResultSet6h)
+  customElements.define('com-sap-sample-resultset6i', myResultSet6i)
 })()
