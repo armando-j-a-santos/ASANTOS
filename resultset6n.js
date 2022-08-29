@@ -23,24 +23,26 @@ var getScriptPromisify = (src) => {
         border-collapse: collapse;
         width: 100%;
       }
-      th{
+      
+      /* HEADER DEFINITION */
+      th{ 
         position: sticky;   /* Freeze Header */
         top: 0px;          /* Don't forget this, required for the stickiness */
         border: 1px solid #dddddd;
         text-align: left;
+        padding: 8px;
+        
         background: white; /* Header background color */
-        color: black; /* Header text color */
-      
-        /* Header box */
-        /* box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4); 
-        box-shadow: inset 0 2px 0 #000000, inset 0 -2px 0 #000000; */
-        padding: 8px 0;
+        color: black;      /* Header text color */
       }
+      
+      /* CELL DEFINITION */
       td{
         border: 1px solid #dddddd;
         text-align: left;
         padding: 8px;
       }
+      
       tr:nth-child(even) {
         background-color: #dddddd;
       }
@@ -80,7 +82,7 @@ var getScriptPromisify = (src) => {
       </div>
     ` // Ending HTML code tag
   
-  class myResultSet6m extends HTMLElement {
+  class myResultSet6n extends HTMLElement {
     constructor () {
       super()
 
@@ -155,5 +157,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset6m', myResultSet6m)
+  customElements.define('com-sap-sample-resultset6n', myResultSet6n)
 })()
