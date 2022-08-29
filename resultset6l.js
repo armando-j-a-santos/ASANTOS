@@ -22,9 +22,6 @@ var getScriptPromisify = (src) => {
         font-family: arial, sans-serif;
         border-collapse: collapse;
         width: 100%;
-        
-        /* Margin for Header */
-        margin-top:30px;
       }
       th{
         position: sticky;   /* Freeze Header */
@@ -32,7 +29,7 @@ var getScriptPromisify = (src) => {
         border: 1px solid #dddddd;
         text-align: left;
         background: white; /* Header background color */
-        color: black;
+        color: black; /* Header text color */
       
         /* Header box */
         /* box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);  */
@@ -83,7 +80,7 @@ var getScriptPromisify = (src) => {
       </div>
     ` // Ending HTML code tag
   
-  class myResultSet6j extends HTMLElement {
+  class myResultSet6l extends HTMLElement {
     constructor () {
       super()
 
@@ -158,5 +155,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset6j', myResultSet6j)
+  customElements.define('com-sap-sample-resultset6l', myResultSet6l)
 })()
