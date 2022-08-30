@@ -94,7 +94,7 @@ var getScriptPromisify = (src) => {
       
       </body>
     `
-  class myResultSet7a7 extends HTMLElement {
+  class myResultSet7a8 extends HTMLElement {
     constructor () {
       super()
 
@@ -167,11 +167,11 @@ var getScriptPromisify = (src) => {
       this._shadowRoot.getElementById('my_data').innerHTML = table_output
       
       
-      this._shadowRoot..getElementById("my_script").innerHTML= "function run(){alert('Wow! Script executed :)');}";
+      this._shadowRoot.getElementById("my_script").innerHTML= "function run(){alert('Wow! Script executed :)');}";
      
       
     }
   }
 
-  customElements.define('com-sap-sample-resultset7a7', myResultSet7a7)
+  customElements.define('com-sap-sample-resultset7a8', myResultSet7a8)
 })()
