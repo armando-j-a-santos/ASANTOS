@@ -4,16 +4,20 @@ var getScriptPromisify = (src) => {
   })
 }
 
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <script language="javascript" type="text/javascript">
+           function myFunction() {
+               alert('Armando Jorge Araujo dos Santos - Prodigygnition')
+           }
+      </script>
+   </head>
+</html>
+
 (function () {
   const template = document.createElement('template')
   template.innerHTML = `
-      <head>
-        <script language="javascript" type="text/javascript">
-            function myFunction() {
-                alert('Armando Jorge Araujo dos Santos - Prodigygnition')
-            }
-        </script>
-      </head>
       
       <style>
       #root {
@@ -94,7 +98,7 @@ var getScriptPromisify = (src) => {
       </div>
     ` // Ending HTML code tag
   
-  class myResultSet7d extends HTMLElement {
+  class myResultSet7e extends HTMLElement {
     constructor () {
       super()
 
@@ -169,5 +173,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset7d', myResultSet7d)
+  customElements.define('com-sap-sample-resultset7e', myResultSet7e)
 })()
