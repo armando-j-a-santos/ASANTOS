@@ -86,7 +86,7 @@ var getScriptPromisify = (src) => {
       <div id="root" style="width: 100%; height: 100%;">
         
         <button type="button" onclick="my_script()">Run</button>
-        <div id="my_script"></div>
+        <script id="my_script"></script>
          
         <div id="placeholder">myresultset data</div>
         <div id="my_data">data...</div>
@@ -95,7 +95,7 @@ var getScriptPromisify = (src) => {
       </body>
     `
     
-  class myResultSetExport7a13 extends HTMLElement {
+  class myResultSetExport7a14 extends HTMLElement {
     constructor () {
       super()
 
@@ -166,10 +166,10 @@ var getScriptPromisify = (src) => {
       console.log(table_output)
       
       this._shadowRoot.getElementById('my_data').innerHTML = table_output
-      
+      this._shadowRoot.getElementById('my_script').innerHTML = "function run(){alert('Wow! Script executed :)');}"
       
     }
   }
 
-  customElements.define('com-sap-sample-result7a13', myResultSetExport7a13)
+  customElements.define('com-sap-sample-result7a14', myResultSetExport7a14)
 })()
