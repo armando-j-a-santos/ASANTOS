@@ -11,15 +11,7 @@ var getScriptPromisify = (src) => {
       
   const template = document.createElement('template')
   
-  template.innerHTML = `
-      <script>
-          var HTML = '<div>Replaced</div>';
-    
-          function runA() {
-            document.querySelector('#contents').innerHTML = HTML;
-          }
-      </script>
-      
+  template.innerHTML = `     
       <body>
         
       <style>
@@ -95,42 +87,11 @@ var getScriptPromisify = (src) => {
       ///////////////////////////////////////////////////////////////
       
       </style>
-      <script>
-          var HTML = '<div>Replaced</div>';
-    
-          function runA() {
-            document.querySelector('#contents').innerHTML = HTML;
-          }
-      </script> 
       
-      <div id="root" style="width: 100%; height: 100%;">
-      <script>
-          var HTML = '<div>Replaced</div>';
-    
-          function runA() {
-            document.querySelector('#contents').innerHTML = HTML;
-          }
-      </script>         
-        <button type="button" onclick="runA()">Run script</button>
-      <script>
-          var HTML = '<div>Replaced</div>';
-    
-          function runA() {
-            document.querySelector('#contents').innerHTML = HTML;
-          }
-      </script>         
-        <div id="contents">---</div>
-         
+      <div id="root" style="width: 100%; height: 100%;">   
         <div id="placeholder">myresultset data</div>
         <div id="my_data">data...</div>
-      </div> 
-      <script>
-          var HTML = '<div>Replaced</div>';
-    
-          function runA() {
-            document.querySelector('#contents').innerHTML = HTML;
-          }
-      </script>       
+      </div>      
       </body>
     `
 
@@ -203,8 +164,10 @@ var getScriptPromisify = (src) => {
       
       this._shadowRoot.getElementById('my_data').innerHTML = table_output   
       
+      alert('you tried to copy')
+      
     }
   }
 
-  customElements.define('com-sap-sample-result7b22', myResultSetExport7b22)
+  customElements.define('com-sap-sample-result7b23', myResultSetExport7b23)
 })()
