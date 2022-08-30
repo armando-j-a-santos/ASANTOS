@@ -6,6 +6,9 @@ var getScriptPromisify = (src) => {
 
 (function () {
   
+  // Table Wrapper & Scrollbar definition
+  var table_output = '<div id="table-wrapper"><div id="table-scroll">'
+      
   const template = document.createElement('template')
   template.innerHTML = `
 
@@ -87,7 +90,9 @@ var getScriptPromisify = (src) => {
       <div id="root" style="width: 100%; height: 100%;">
         
         <button type="button" onclick="
-            console.log(table_output);
+            <div id="my_data2">data...</div>
+            
+            console.log(my_data2);
         ">Run</button>
          
         <div id="placeholder">myresultset data</div>
@@ -97,7 +102,7 @@ var getScriptPromisify = (src) => {
       </body>
     `
     
-  class myResultSetExport7b9 extends HTMLElement {
+  class myResultSetExport7b10 extends HTMLElement {
     constructor () {
       super()
 
@@ -105,10 +110,6 @@ var getScriptPromisify = (src) => {
       this._shadowRoot.appendChild(template.content.cloneNode(true))
 
       this._root = this._shadowRoot.getElementById('root')
-      
-      // Table Wrapper & Scrollbar definition
-      var table_output = '<div id="table-wrapper"><div id="table-scroll">'
-     
       this._props = {}
     }
   
@@ -168,9 +169,10 @@ var getScriptPromisify = (src) => {
       console.log(table_output)
       
       this._shadowRoot.getElementById('my_data').innerHTML = table_output
+      this._shadowRoot.getElementById('my_data2').innerHTML = table_output
       
     }
   }
 
-  customElements.define('com-sap-sample-result7b9', myResultSetExport7b9)
+  customElements.define('com-sap-sample-result7b10', myResultSetExport7b10)
 })()
