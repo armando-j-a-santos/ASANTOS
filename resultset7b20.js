@@ -10,17 +10,8 @@ var getScriptPromisify = (src) => {
   var table_output = '<div id="table-wrapper"><div id="table-scroll">'
       
   const template = document.createElement('template')
-  template.innerHTML = `
-        <script>
-          var HTML = '<div>Replaced</div>';
-    
-          function runA() {
-            document.querySelector('#contents').innerHTML = HTML;
-          }
-      </script>  
-  `
   
-  template.innerHTML += `
+  template.innerHTML = `
 
       <body>
         
@@ -107,8 +98,18 @@ var getScriptPromisify = (src) => {
       </div> 
       </body>
     `
+  
+    template.innerHTML += `
+        <script>
+          var HTML = '<div>Replaced</div>';
     
-  class myResultSetExport7b19 extends HTMLElement {
+          function runA() {
+            document.querySelector('#contents').innerHTML = HTML;
+          }
+      </script>  
+  `
+    
+  class myResultSetExport7b20 extends HTMLElement {
     constructor () {
       super()
 
@@ -179,5 +180,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-result7b19', myResultSetExport7b19)
+  customElements.define('com-sap-sample-result7b20', myResultSetExport7b20)
 })()
