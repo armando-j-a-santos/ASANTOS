@@ -7,16 +7,22 @@ var getScriptPromisify = (src) => {
 
 (function () {
   
-  <script language="javascript" type="text/javascript">
-           function myFunction() {
-               alert('Armando Jorge Araujo dos Santos - Prodigygnition')
-           }
-  </script>
-  
-  
   const template = document.createElement('template')
   template.innerHTML = `
-      
+  
+      <script language="javascript" type="text/javascript">
+          function doOnLoad() {
+              addScript('inject',"function foo(){ alert('injected'); }");
+          }
+
+          function addScript(inject,code) {
+              var _in = document.getElementById('inject');
+              var scriptNode = document.createElement('script');
+              scriptNode.innerHTML = code;
+              _in.appendChild(scriptNode);
+          }
+      </script>
+
       <style>
       #root {
         background-color: white;
@@ -87,16 +93,18 @@ var getScriptPromisify = (src) => {
       
       </style>
       
-      <div id="root" style="width: 100%; height: 100%;">
+      <body onload="doOnLoad();">
+        <div id="root" style="width: 100%; height: 100%;">
 
-        <input type="button" onclick="myFunction()" value="Hello World">
-        
-        <div id="placeholder">myresultset data</div>
-        <div id="my_data">data...</div>
-      </div>
+          <input type="button" onclick="foo(); return false;" value="Test Injected" />
+
+          <div id="placeholder">myresultset data</div>
+          <div id="my_data">data...</div>
+        </div>
+      </body>
     ` // Ending HTML code tag
   
-  class myResultSet7g extends HTMLElement {
+  class myResultSet7h extends HTMLElement {
     constructor () {
       super()
 
@@ -171,5 +179,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset7g', myResultSet7g)
+  customElements.define('com-sap-sample-resultset7h', myResultSet7h)
 })()
