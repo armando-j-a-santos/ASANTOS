@@ -1,0 +1,42 @@
+{
+  "eula": "",
+  "vendor": "Prodigygntion",
+  "license": "1.0",
+  "id": "com.sap.sac.sample.resultset7g",
+  "version": "1.0.0",
+  "name": "ResultSet7g",
+  "newInstancePrefix": "myResultSetExport7g",
+  "description": "Custom widget to handle a SAC resulset within a JS file - Version 7g (button to EXPORT a table into a XLS file).",
+  "webcomponents": [
+	  {
+		"kind": "main",
+		"tag": "com-sap-sample-resultset7g",
+		"url": "https://armando-j-a-santos.github.io/ASANTOS/resultset7g.js",
+		"integrity": "",
+		"ignoreIntegrity": true
+	  }
+   ],
+   "properties": {
+		"width": {
+			"type": "integer",
+			"default": 600
+		},
+		"height": {
+			"type": "integer",
+			"default": 420
+		}
+   },
+   "methods": {
+ 		  "render": {
+			  "description": "Render",
+			  "parameters": [
+				  {
+					  "name": "resultSet",
+					  "type": "any",
+					  "description": "The json"
+				  }
+			  ]
+		  }
+   },
+   "events": {}
+  }
