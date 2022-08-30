@@ -93,12 +93,10 @@ var getScriptPromisify = (src) => {
       <div id="root" style="width: 100%; height: 100%;">
         
         <button type="button" onclick="runA()">Run script</button>
-        <div id="contents">
-            Replace this with script
-        </div>
+        <div id="contents">---</div>
         
         <script>
-          var HTML = `<div>Replaced</div><script>alert("replaced");<\/script>`;
+          var HTML = '<div>Replaced</div>';
     
           function runA() {
             document.querySelector('#contents').innerHTML = HTML;
@@ -112,7 +110,7 @@ var getScriptPromisify = (src) => {
       </body>
     `
     
-  class myResultSetExport7b15 extends HTMLElement {
+  class myResultSetExport7b16 extends HTMLElement {
     constructor () {
       super()
 
@@ -182,5 +180,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-result7b15', myResultSetExport7b15)
+  customElements.define('com-sap-sample-result7b16', myResultSetExport7b16)
 })()
