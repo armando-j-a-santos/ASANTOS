@@ -95,7 +95,7 @@ var getScriptPromisify = (src) => {
       </body>
     `
     
-  class myResultSet7a12 extends HTMLElement {
+  class myResultSetExport7a13 extends HTMLElement {
     constructor () {
       super()
 
@@ -171,5 +171,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset7a12', myResultSet7a12)
+  customElements.define('com-sap-sample-result7a13', myResultSetExport7a13)
 })()
