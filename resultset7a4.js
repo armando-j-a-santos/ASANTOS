@@ -7,6 +7,16 @@ var getScriptPromisify = (src) => {
 (function () {
   const template = document.createElement('template')
   template.innerHTML = `
+  
+  
+    <script language="javascript" type="text/javascript">
+        function Armando() {
+            alert('injected')
+        }
+    </script>
+  
+  
+  
       <body onload="doOnLoad();">
         
       <style>
@@ -90,7 +100,7 @@ var getScriptPromisify = (src) => {
       
       </body>
     `
-  class myResultSet7a3 extends HTMLElement {
+  class myResultSet7a4 extends HTMLElement {
     constructor () {
       super()
 
@@ -165,5 +175,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset7a3', myResultSet7a3)
+  customElements.define('com-sap-sample-resultset7a4', myResultSet7a4)
 })()
