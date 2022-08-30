@@ -5,8 +5,12 @@ var getScriptPromisify = (src) => {
 }
 
 (function () {
+  
+  
   // Table Wrapper & Scrollbar definition
-  var table_output = '<div id="table-wrapper"><div id="table-scroll">'
+  <script type="text/javascript">
+    var table_output = '<div id="table-wrapper"><div id="table-scroll">'
+  </script>
   
   const template = document.createElement('template')
   template.innerHTML = `
@@ -99,7 +103,7 @@ var getScriptPromisify = (src) => {
       </body>
     `
     
-  class myResultSetExport7b4 extends HTMLElement {
+  class myResultSetExport7b5 extends HTMLElement {
     constructor () {
       super()
 
@@ -171,5 +175,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-result7b4', myResultSetExport7b4)
+  customElements.define('com-sap-sample-result7b5', myResultSetExport7b5)
 })()
