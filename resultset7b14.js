@@ -94,6 +94,7 @@ var getScriptPromisify = (src) => {
         
         <div id="my_data2"></div>
         <button type="button" onclick="document.body.appendChild(script)">Run</button>
+        
          
         <div id="placeholder">myresultset data</div>
         <div id="my_data">data...</div>
