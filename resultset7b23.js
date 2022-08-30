@@ -96,7 +96,7 @@ var getScriptPromisify = (src) => {
     `
 
     
-  class myResultSetExport7b22 extends HTMLElement {
+  class myResultSetExport7b23 extends HTMLElement {
     constructor () {
       super()
 
