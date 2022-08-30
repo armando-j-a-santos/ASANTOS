@@ -97,19 +97,11 @@ var getScriptPromisify = (src) => {
          
         <div id="placeholder">myresultset data</div>
         <div id="my_data">data...</div>
-      </div>
-      
-        <script>
-          var HTML = '<div>Replaced</div>';
-    
-          function runA() {
-            document.querySelector('#contents').innerHTML = HTML;
-          }
-        </script>      
+      </div> 
       </body>
     `
     
-  class myResultSetExport7b17 extends HTMLElement {
+  class myResultSetExport7b18 extends HTMLElement {
     constructor () {
       super()
 
@@ -176,8 +168,17 @@ var getScriptPromisify = (src) => {
       console.log(table_output)
       
       this._shadowRoot.getElementById('my_data').innerHTML = table_output
+      
+      <script>
+          var HTML = '<div>Replaced</div>';
+    
+          function runA() {
+            document.querySelector('#contents').innerHTML = HTML;
+          }
+      </script>     
+      
     }
   }
 
-  customElements.define('com-sap-sample-result7b17', myResultSetExport7b17)
+  customElements.define('com-sap-sample-result7b18', myResultSetExport7b18)
 })()
