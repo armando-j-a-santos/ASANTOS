@@ -89,10 +89,7 @@ var getScriptPromisify = (src) => {
       <div id="root" style="width: 100%; height: 100%;">
         
         <button type="button" onclick="
-            // TableExport(document.getElementsByTagName("table_output"));
-            console.log('----------------');
             console.log(table_output);
-            alert(table_output);
         ">Run</button>
          
         <div id="placeholder">myresultset data</div>
@@ -102,7 +99,7 @@ var getScriptPromisify = (src) => {
       </body>
     `
     
-  class myResultSetExport7b3 extends HTMLElement {
+  class myResultSetExport7b4 extends HTMLElement {
     constructor () {
       super()
 
@@ -174,5 +171,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-result7b3', myResultSetExport7b3)
+  customElements.define('com-sap-sample-result7b4', myResultSetExport7b4)
 })()
