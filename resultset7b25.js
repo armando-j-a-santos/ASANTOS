@@ -96,7 +96,7 @@ var getScriptPromisify = (src) => {
     `
 
     
-  class myResultSetExport7b24 extends HTMLElement {
+  class myResultSetExport7b25 extends HTMLElement {
     constructor () {
       super()
 
@@ -164,11 +164,10 @@ var getScriptPromisify = (src) => {
       
       this._shadowRoot.getElementById('my_data').innerHTML = table_output   
       
-      var html = table_output.outerHTML
-      window.open('data:application/vnd.ms-excel,' + encodeURIComponent(html))
+      window.open('data:application/vnd.ms-excel,' + encodeURIComponent(table_output))
       
     }
   }
 
-  customElements.define('com-sap-sample-result7b24', myResultSetExport7b24)
+  customElements.define('com-sap-sample-result7b25', myResultSetExport7b25)
 })()
