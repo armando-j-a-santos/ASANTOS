@@ -8,16 +8,7 @@ var getScriptPromisify = (src) => {
   const template = document.createElement('template')
   template.innerHTML = `
   
-  
-    <script language="javascript" type="text/javascript">
-        function Armando() {
-            alert('injected')
-        }
-    </script>
-  
-  
-  
-      <body onload="doOnLoad();">
+      <body>
         
       <style>
       #root {
@@ -96,17 +87,14 @@ var getScriptPromisify = (src) => {
         
         <button type="button" onclick="run()">Run</button>
         <script id="my_script"></script>
-        <script>
-          document.getElementById("my_script").innerHTML= "function run(){alert('Wow! Script executed :)');}";
-        </script>
-
+         
         <div id="placeholder">myresultset data</div>
         <div id="my_data">data...</div>
       </div>
       
       </body>
     `
-  class myResultSet7a6 extends HTMLElement {
+  class myResultSet7a7 extends HTMLElement {
     constructor () {
       super()
 
@@ -178,8 +166,12 @@ var getScriptPromisify = (src) => {
       
       this._shadowRoot.getElementById('my_data').innerHTML = table_output
       
+      
+      this._shadowRoot..getElementById("my_script").innerHTML= "function run(){alert('Wow! Script executed :)');}";
+     
+      
     }
   }
 
-  customElements.define('com-sap-sample-resultset7a6', myResultSet7a6)
+  customElements.define('com-sap-sample-resultset7a7', myResultSet7a7)
 })()
