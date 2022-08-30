@@ -10,7 +10,6 @@ var getScriptPromisify = (src) => {
   const template = document.createElement('template')
   template.innerHTML = `
   
-      <head>
         <script language="javascript" type="text/javascript">
             function doOnLoad() {
                 addScript('inject',"function foo(){ alert('injected'); }");
@@ -22,8 +21,11 @@ var getScriptPromisify = (src) => {
                 scriptNode.innerHTML = code;
                 _in.appendChild(scriptNode);
             }
+            
+            function Armando() {
+               alert('Hello world');
+            }            
         </script>
-      </head>
 
       <style>
       #root {
@@ -98,7 +100,7 @@ var getScriptPromisify = (src) => {
       <body onload="doOnLoad();">
         <div id="root" style="width: 100%; height: 100%;">
 
-          <input type="button" onclick="foo(); return false;" value="Test Injected" />
+          <input type="button" onclick="Armando()" value="Export XLS" />
 
           <div id="placeholder">myresultset data</div>
           <div id="my_data">data...</div>
@@ -106,7 +108,7 @@ var getScriptPromisify = (src) => {
       </body>
     ` // Ending HTML code tag
   
-  class myResultSet7i extends HTMLElement {
+  class myResultSet7j extends HTMLElement {
     constructor () {
       super()
 
@@ -181,5 +183,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset7i, myResultSet7i)
+  customElements.define('com-sap-sample-resultset7j, myResultSet7j)
 })()
