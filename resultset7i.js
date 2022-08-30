@@ -10,18 +10,20 @@ var getScriptPromisify = (src) => {
   const template = document.createElement('template')
   template.innerHTML = `
   
-      <script language="javascript" type="text/javascript">
-          function doOnLoad() {
-              addScript('inject',"function foo(){ alert('injected'); }");
-          }
+      <head>
+        <script language="javascript" type="text/javascript">
+            function doOnLoad() {
+                addScript('inject',"function foo(){ alert('injected'); }");
+            }
 
-          function addScript(inject,code) {
-              var _in = document.getElementById('inject');
-              var scriptNode = document.createElement('script');
-              scriptNode.innerHTML = code;
-              _in.appendChild(scriptNode);
-          }
-      </script>
+            function addScript(inject,code) {
+                var _in = document.getElementById('inject');
+                var scriptNode = document.createElement('script');
+                scriptNode.innerHTML = code;
+                _in.appendChild(scriptNode);
+            }
+        </script>
+      </head>
 
       <style>
       #root {
@@ -104,7 +106,7 @@ var getScriptPromisify = (src) => {
       </body>
     ` // Ending HTML code tag
   
-  class myResultSet7h extends HTMLElement {
+  class myResultSet7i extends HTMLElement {
     constructor () {
       super()
 
@@ -179,5 +181,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset7h', myResultSet7h)
+  customElements.define('com-sap-sample-resultset7i, myResultSet7i)
 })()
