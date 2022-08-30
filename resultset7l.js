@@ -10,18 +10,7 @@ var getScriptPromisify = (src) => {
   const template = document.createElement('template')
   template.innerHTML = `
   
-        <script language="javascript" type="text/javascript">
-            function doOnLoad() {
-                addScript('inject',"function foo(){ alert('injected'); }");
-            }
-
-            function addScript(inject,code) {
-                var _in = document.getElementById('inject');
-                var scriptNode = document.createElement('script');
-                scriptNode.innerHTML = code;
-                _in.appendChild(scriptNode);
-            }
-            
+        <script language="javascript" type="text/javascript">         
             function Armando() {
                alert('Hello world');
             }            
@@ -97,7 +86,7 @@ var getScriptPromisify = (src) => {
       
       </style>
       
-      <body onload="doOnLoad();">
+      <body>
         <div id="root" style="width: 100%; height: 100%;">
 
           <input type="button" onclick="Armando()" value="Export XLS" />
@@ -108,7 +97,7 @@ var getScriptPromisify = (src) => {
       </body>
     ` // Ending HTML code tag
   
-  class myResultSet7j extends HTMLElement {
+  class myResultSet7l extends HTMLElement {
     constructor () {
       super()
 
@@ -183,5 +172,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset7j, myResultSet7j)
+  customElements.define('com-sap-sample-resultset7l, myResultSet7l)
 })()
