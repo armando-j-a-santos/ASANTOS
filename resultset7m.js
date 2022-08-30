@@ -12,8 +12,8 @@ var getScriptPromisify = (src) => {
   
         <script language="javascript" type="text/javascript">         
             function Armando() {
-               alert('Hello world');
-            }            
+               alert('Hello world')
+            }
         </script>
 
       <style>
@@ -97,7 +97,7 @@ var getScriptPromisify = (src) => {
       </body>
     ` // Ending HTML code tag
   
-  class myResultSet7l extends HTMLElement {
+  class myResultSet7m extends HTMLElement {
     constructor () {
       super()
 
@@ -172,5 +172,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-resultset7l, myResultSet7l)
+  customElements.define('com-sap-sample-resultset7m, myResultSet7m)
 })()
