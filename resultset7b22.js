@@ -12,7 +12,14 @@ var getScriptPromisify = (src) => {
   const template = document.createElement('template')
   
   template.innerHTML = `
-
+      <script>
+          var HTML = '<div>Replaced</div>';
+    
+          function runA() {
+            document.querySelector('#contents').innerHTML = HTML;
+          }
+      </script>
+      
       <body>
         
       <style>
@@ -128,7 +135,7 @@ var getScriptPromisify = (src) => {
     `
 
     
-  class myResultSetExport7b21 extends HTMLElement {
+  class myResultSetExport7b22 extends HTMLElement {
     constructor () {
       super()
 
@@ -199,5 +206,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-result7b21', myResultSetExport7b21)
+  customElements.define('com-sap-sample-result7b22', myResultSetExport7b22)
 })()
