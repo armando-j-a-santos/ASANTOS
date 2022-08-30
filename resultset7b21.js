@@ -88,28 +88,47 @@ var getScriptPromisify = (src) => {
       ///////////////////////////////////////////////////////////////
       
       </style>
-      <div id="root" style="width: 100%; height: 100%;">
-        
-        <button type="button" onclick="runA()">Run script</button>
-        <div id="contents">---</div>
-         
-        <div id="placeholder">myresultset data</div>
-        <div id="my_data">data...</div>
-      </div> 
-      </body>
-    `
-  
-    template.innerHTML += `
-        <script>
+      <script>
           var HTML = '<div>Replaced</div>';
     
           function runA() {
             document.querySelector('#contents').innerHTML = HTML;
           }
-      </script>  
-  `
+      </script> 
+      
+      <div id="root" style="width: 100%; height: 100%;">
+      <script>
+          var HTML = '<div>Replaced</div>';
     
-  class myResultSetExport7b20 extends HTMLElement {
+          function runA() {
+            document.querySelector('#contents').innerHTML = HTML;
+          }
+      </script>         
+        <button type="button" onclick="runA()">Run script</button>
+      <script>
+          var HTML = '<div>Replaced</div>';
+    
+          function runA() {
+            document.querySelector('#contents').innerHTML = HTML;
+          }
+      </script>         
+        <div id="contents">---</div>
+         
+        <div id="placeholder">myresultset data</div>
+        <div id="my_data">data...</div>
+      </div> 
+      <script>
+          var HTML = '<div>Replaced</div>';
+    
+          function runA() {
+            document.querySelector('#contents').innerHTML = HTML;
+          }
+      </script>       
+      </body>
+    `
+
+    
+  class myResultSetExport7b21 extends HTMLElement {
     constructor () {
       super()
 
@@ -180,5 +199,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-result7b20', myResultSetExport7b20)
+  customElements.define('com-sap-sample-result7b21', myResultSetExport7b21)
 })()
