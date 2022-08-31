@@ -90,7 +90,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableA5 extends HTMLElement {
+  class myNewTableA6 extends HTMLElement {
     constructor () {
       super()
 
@@ -177,7 +177,7 @@ var getScriptPromisify = (src) => {
                              table_output += '<tr><td>'+ cCountry +'</td>'
                            }
                            else {
-                              table_output += '<tr><td><b><th class="myGrey">'+ cCountry +'</th></b></td>'
+                              table_output += '<tr><td><b class="myGrey">'+ cCountry +'</b></td>'
                            }
                     }
                  // Update previous country duplicate control variable
@@ -189,7 +189,7 @@ var getScriptPromisify = (src) => {
               table_output += '<td>'+ ctimeline +'</td>'
             }
             else {
-              table_output += '<td><b><th class="myGrey">'+ ctimeline +'</th></b></td>'
+              table_output += '<td><b class="myGrey">'+ ctimeline +'</b></td>'
             }
             
             // First Measures
@@ -198,7 +198,7 @@ var getScriptPromisify = (src) => {
               table_output += '<td>'+ formattedValue +'</td>'
             }
             else {
-              table_output += '<td><b><th class="myGrey">'+ formattedValue +'</th></b></td>'
+              table_output += '<th class="myGrey"><td><b>'+ formattedValue +'</b></td></th>'
             }            
             
           
@@ -210,7 +210,7 @@ var getScriptPromisify = (src) => {
               table_output += '<td>'+ formattedValue +'</td>'
             }
             else {
-              table_output += '<td><b><th class="myGrey">'+ formattedValue +'</th></b></td>'
+              table_output += '<th class="myGrey"><td><b>'+ formattedValue +'</b></td></th>'
             } 
         }
 
@@ -248,5 +248,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-newtablea5', myNewTableA5)
+  customElements.define('com-sap-sample-newtablea6', myNewTableA6)
 })()
