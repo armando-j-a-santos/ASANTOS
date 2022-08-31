@@ -90,7 +90,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableA6 extends HTMLElement {
+  class myNewTableA7 extends HTMLElement {
     constructor () {
       super()
 
@@ -177,7 +177,7 @@ var getScriptPromisify = (src) => {
                              table_output += '<tr><td>'+ cCountry +'</td>'
                            }
                            else {
-                              table_output += '<tr><td><b class="myGrey">'+ cCountry +'</b></td>'
+                              table_output += '<tr><td><b>'+ cCountry +'</b></td>'
                            }
                     }
                  // Update previous country duplicate control variable
@@ -189,7 +189,7 @@ var getScriptPromisify = (src) => {
               table_output += '<td>'+ ctimeline +'</td>'
             }
             else {
-              table_output += '<td><b class="myGrey">'+ ctimeline +'</b></td>'
+              table_output += '<td><b>'+ ctimeline +'</b></td>'
             }
             
             // First Measures
@@ -198,7 +198,7 @@ var getScriptPromisify = (src) => {
               table_output += '<td>'+ formattedValue +'</td>'
             }
             else {
-              table_output += '<th class="myGrey"><td><b>'+ formattedValue +'</b></td></th>'
+              table_output += '<td class="myGrey"><b>'+ formattedValue +'</b></td>'
             }            
             
           
@@ -210,7 +210,7 @@ var getScriptPromisify = (src) => {
               table_output += '<td>'+ formattedValue +'</td>'
             }
             else {
-              table_output += '<th class="myGrey"><td><b>'+ formattedValue +'</b></td></th>'
+              table_output += '<td class="myGrey"><b>'+ formattedValue +'</b></td>'
             } 
         }
 
@@ -248,5 +248,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-newtablea6', myNewTableA6)
+  customElements.define('com-sap-sample-newtablea7', myNewTableA7)
 })()
