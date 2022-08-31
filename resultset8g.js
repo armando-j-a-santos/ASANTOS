@@ -86,7 +86,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myResultSetExport8f extends HTMLElement {
+  class myResultSetExport8g extends HTMLElement {
     constructor () {
       super()
 
@@ -101,7 +101,7 @@ var getScriptPromisify = (src) => {
     // ------------------
     // Scripting methods
     // ------------------
-    async render (resultSet, exportXLS) {
+    async render (resultSet, exportXLS, showDuplicates) {
       
       this._placeholder = this._root.querySelector('#placeholder')
       if (this._placeholder) {
@@ -118,6 +118,9 @@ var getScriptPromisify = (src) => {
       // initialize counter of rows
       var counterRows = 1
       
+      // initialize country duplicate control
+      var previousCountry = ''
+      
       console.log('----------------')
       // Loop through the resultset
       resultSet.forEach(dp => {
@@ -127,13 +130,31 @@ var getScriptPromisify = (src) => {
          var ctimeline = dp.timeline.description
          var { formattedValue, description } = dp['@MeasureDimension']
          
-        if (counterRows === 1)
-        {
-          // Dimensions
-          table_output += '<tr><td>'+ cCountry +'</td>'
-          table_output += '<td>'+ ctimeline +'</td>'
-          // First Measures
-          table_output += '<td>'+ formattedValue +'</td>'
+         // Another country
+          if (counterRows === 1)
+          {
+            // Dimensions
+            if (showDuplicates === "Yes")
+                {
+                   table_output += '<tr><td>'+ cCountry +'</td>'
+                }
+            else {
+                    if (cCountry === previousCountry)
+                    {
+                        // Show a space char instead of the country to avoid duplicates
+                        table_output += '<tr><td> </td>'
+                    }
+                    else {
+                        table_output += '<tr><td>'+ cCountry +'</td>'
+                    }
+                 // Update previous country duplicate control variable
+                 previousCountry = cCountry
+            }
+          
+            table_output += '<td>'+ ctimeline +'</td>'
+            // First Measures
+            table_output += '<td>'+ formattedValue +'</td>'
+          
         } else {
             // Only the measures values to display
            table_output += '<td>'+ formattedValue +'</td>'
@@ -146,6 +167,7 @@ var getScriptPromisify = (src) => {
         {
           // Close the row
           table_output += '</tr>'
+          // Moved into a different country
           // Reset the counter, to start a new row
           counterRows = 1
         }
@@ -160,11 +182,11 @@ var getScriptPromisify = (src) => {
       
       console.log('exportXLS:')
       console.log(exportXLS)
-      
+    
 
       this._shadowRoot.getElementById('my_data').innerHTML = table_output
       
-      //Export HTML table into XLS file (locally)
+      //Export HTML table into XLS file (locally) if parameter (exportXLS) is Yes
       if (exportXLS === 'Yes')
       {
         window.open('data:application/vnd.ms-excel,' + encodeURIComponent(table_output))
@@ -172,5 +194,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-result8f', myResultSetExport8f)
+  customElements.define('com-sap-sample-result8g', myResultSetExport8g)
 })()
