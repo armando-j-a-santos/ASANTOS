@@ -86,7 +86,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myResultSetExport8b extends HTMLElement {
+  class myResultSetExport8c extends HTMLElement {
     constructor () {
       super()
 
@@ -101,7 +101,7 @@ var getScriptPromisify = (src) => {
     // ------------------
     // Scripting methods
     // ------------------
-    async render (resultSet) {
+    async render (resultSet, exportXLS) {
       
       this._placeholder = this._root.querySelector('#placeholder')
       if (this._placeholder) {
@@ -157,6 +157,9 @@ var getScriptPromisify = (src) => {
       
       console.log('table_output:')
       console.log(table_output)
+      
+      console.log('exportXLS:')
+      console.log(exportXLS)      
 
       this._shadowRoot.getElementById('my_data').innerHTML = table_output
       
@@ -165,5 +168,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-result8b', myResultSetExport8b)
+  customElements.define('com-sap-sample-result8c', myResultSetExport8c)
 })()
