@@ -86,7 +86,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myResultSetExport8d extends HTMLElement {
+  class myResultSetExport8e extends HTMLElement {
     constructor () {
       super()
 
@@ -159,7 +159,8 @@ var getScriptPromisify = (src) => {
       console.log(table_output)
       
       console.log('exportXLS:')
-      console.log(exportXLS)      
+      console.log(exportXLS)
+      
 
       this._shadowRoot.getElementById('my_data').innerHTML = table_output
       
@@ -168,5 +169,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-result8d', myResultSetExport8d)
+  customElements.define('com-sap-sample-result8e', myResultSetExport8e)
 })()
