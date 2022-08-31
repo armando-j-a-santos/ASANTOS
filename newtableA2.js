@@ -86,7 +86,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableA1 extends HTMLElement {
+  class myNewTableA2 extends HTMLElement {
     constructor () {
       super()
 
@@ -132,6 +132,11 @@ var getScriptPromisify = (src) => {
          
           var cCountry = dp.Country.description
           var ctimeline = dp.timeline.description
+          
+          // Check if the year needs Totals
+          if (ctimeline.length === 0) {ctimeline = "Totals"}
+          
+          
           var { formattedValue, description } = dp['@MeasureDimension']
          
           // Another country
@@ -198,5 +203,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-newtablea1', myNewTableA1)
+  customElements.define('com-sap-sample-newtablea2', myNewTableA2)
 })()
