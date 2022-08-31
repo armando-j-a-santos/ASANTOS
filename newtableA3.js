@@ -86,7 +86,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableA2 extends HTMLElement {
+  class myNewTableA3 extends HTMLElement {
     constructor () {
       super()
 
@@ -121,9 +121,9 @@ var getScriptPromisify = (src) => {
       // initialize country duplicate control
       var previousCountry = ''
       
-      console.log('----------------')
-      console.log('resultSet:')
-      console.log(resultSet)
+      //console.log('----------------')
+      //console.log('resultSet:')
+      //console.log(resultSet)
       
       console.log('----------------')
       // Loop through the resultset
@@ -133,8 +133,16 @@ var getScriptPromisify = (src) => {
           var cCountry = dp.Country.description
           var ctimeline = dp.timeline.description
           
+          //Reset control bold for each row
+          var cControlBold = false
+          
           // Check if the year needs Totals
-          if (ctimeline.length === 0) {ctimeline = "Totals"}
+          if (ctimeline.length === 0) {
+            ctimeline = "Totals"
+            
+            // A total row
+            cControlBold = true
+          }
           
           
           var { formattedValue, description } = dp['@MeasureDimension']
@@ -145,7 +153,13 @@ var getScriptPromisify = (src) => {
             // Dimensions
             if (showDuplicates === "Yes")
                 {
-                   table_output += '<tr><td>'+ cCountry +'</td>'
+                   if (cControlBold === false)
+                   {
+                     table_output += '<tr><td>'+ cCountry +'</td>'
+                   }
+                   else {
+                      table_output += '<tr><td><b>'+ cCountry +'</b></td>'
+                   }
                 }
             else {
                     if (cCountry === previousCountry)
@@ -154,19 +168,46 @@ var getScriptPromisify = (src) => {
                         table_output += '<tr><td> </td>'
                     }
                     else {
-                        table_output += '<tr><td>'+ cCountry +'</td>'
+                           if (cControlBold === false)
+                           {
+                             table_output += '<tr><td>'+ cCountry +'</td>'
+                           }
+                           else {
+                              table_output += '<tr><td><b>'+ cCountry +'</b></td>'
+                           }
                     }
                  // Update previous country duplicate control variable
                  previousCountry = cCountry
             }
           
-            table_output += '<td>'+ ctimeline +'</td>'
+            if (cControlBold === false)
+            {
+              table_output += '<td>'+ ctimeline +'</td>'
+            }
+            else {
+              table_output += '<td><b>'+ ctimeline +'</b></td>'
+            }
+            
             // First Measures
-            table_output += '<td>'+ formattedValue +'</td>'
+            if (cControlBold === false)
+            {
+              table_output += '<td>'+ formattedValue +'</td>'
+            }
+            else {
+              table_output += '<td><b>'+ formattedValue +'</b></td>'
+            }            
+            
           
         } else {
+          
             // Only the measures values to display
-           table_output += '<td>'+ formattedValue +'</td>'
+            if (cControlBold === false)
+            {
+              table_output += '<td>'+ formattedValue +'</td>'
+            }
+            else {
+              table_output += '<td><b>'+ formattedValue +'</b></td>'
+            } 
         }
 
         counterRows = counterRows + 1
@@ -203,5 +244,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-newtablea2', myNewTableA2)
+  customElements.define('com-sap-sample-newtablea3', myNewTableA3)
 })()
