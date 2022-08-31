@@ -32,7 +32,7 @@ var getScriptPromisify = (src) => {
       th{ 
         position: sticky;   /* Freeze Header */
         top: 0px;           /* Don't forget this, required for the stickiness */
-        border: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
         text-align: left;
         padding: 8px;
         
@@ -42,7 +42,7 @@ var getScriptPromisify = (src) => {
       
       /* CELL DEFINITION */
       td{
-        border: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
         text-align: left;
         padding: 8px;
       }
@@ -86,7 +86,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myResultSetExport7b26 extends HTMLElement {
+  class myResultSetExport7b27 extends HTMLElement {
     constructor () {
       super()
 
@@ -163,5 +163,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-result7b26', myResultSetExport7b26)
+  customElements.define('com-sap-sample-result7b27', myResultSetExport7b27)
 })()
