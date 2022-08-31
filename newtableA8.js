@@ -90,7 +90,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableA7 extends HTMLElement {
+  class myNewTableA8 extends HTMLElement {
     constructor () {
       super()
 
@@ -162,7 +162,7 @@ var getScriptPromisify = (src) => {
                      table_output += '<tr><td>'+ cCountry +'</td>'
                    }
                    else {
-                      table_output += '<tr><td><b>'+ cCountry +'</b></td>'
+                      table_output += '<tr><td class="myGrey"><b>'+ cCountry +'</b></td>'
                    }
                 }
             else {
@@ -177,7 +177,7 @@ var getScriptPromisify = (src) => {
                              table_output += '<tr><td>'+ cCountry +'</td>'
                            }
                            else {
-                              table_output += '<tr><td><b>'+ cCountry +'</b></td>'
+                              table_output += '<tr><td class="myGrey"><b>'+ cCountry +'</b></td>'
                            }
                     }
                  // Update previous country duplicate control variable
@@ -189,7 +189,7 @@ var getScriptPromisify = (src) => {
               table_output += '<td>'+ ctimeline +'</td>'
             }
             else {
-              table_output += '<td><b>'+ ctimeline +'</b></td>'
+              table_output += '<td class="myGrey"><b>'+ ctimeline +'</b></td>'
             }
             
             // First Measures
@@ -248,5 +248,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-newtablea7', myNewTableA7)
+  customElements.define('com-sap-sample-newtablea8', myNewTableA8)
 })()
