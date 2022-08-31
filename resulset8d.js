@@ -86,7 +86,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myResultSetExport8c extends HTMLElement {
+  class myResultSetExport8d extends HTMLElement {
     constructor () {
       super()
 
@@ -168,5 +168,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-result8c', myResultSetExport8c)
+  customElements.define('com-sap-sample-result8d', myResultSetExport8d)
 })()
