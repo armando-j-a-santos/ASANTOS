@@ -21,6 +21,11 @@ var getScriptPromisify = (src) => {
       .myGrey {
           background-color: #f2f2f2;
       }
+      
+      .myLightBlue {
+          background-color: #c1dff7;
+      }
+
 
       ///////////////////////////////////////////////////////////////
       // Table CSS classes
@@ -90,7 +95,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableA8 extends HTMLElement {
+  class myNewTableA9 extends HTMLElement {
     constructor () {
       super()
 
@@ -124,6 +129,9 @@ var getScriptPromisify = (src) => {
       
       // initialize country duplicate control
       var previousCountry = ''
+      
+      // Control first row only
+      var firstRow = true
       
       //console.log('----------------')
       //console.log('resultSet:')
@@ -162,7 +170,12 @@ var getScriptPromisify = (src) => {
                      table_output += '<tr><td>'+ cCountry +'</td>'
                    }
                    else {
-                      table_output += '<tr><td class="myGrey"><b>'+ cCountry +'</b></td>'
+                     if (firstRow)
+                     {
+                        table_output += '<tr><td class="myLightBlue"><b>'+ cCountry +'</b></td>'
+                     } else {
+                        table_output += '<tr><td class="myGrey"><b>'+ cCountry +'</b></td>'
+                     }
                    }
                 }
             else {
@@ -177,11 +190,18 @@ var getScriptPromisify = (src) => {
                              table_output += '<tr><td>'+ cCountry +'</td>'
                            }
                            else {
-                              table_output += '<tr><td class="myGrey"><b>'+ cCountry +'</b></td>'
+                              if (firstRow)
+                                {
+                                  table_output += '<tr><td class="myLightBlue"><b>'+ cCountry +'</b></td>'
+                                }
+                              else {
+                                  table_output += '<tr><td class="myGrey"><b>'+ cCountry +'</b></td>'
+                              }
                            }
                     }
-                 // Update previous country duplicate control variable
-                 previousCountry = cCountry
+                  // Update previous country duplicate control variable
+                  previousCountry = cCountry
+                 
             }
           
             if (cControlBold === false)
@@ -189,7 +209,12 @@ var getScriptPromisify = (src) => {
               table_output += '<td>'+ ctimeline +'</td>'
             }
             else {
-              table_output += '<td class="myGrey"><b>'+ ctimeline +'</b></td>'
+                if (firstRow)
+                {              
+                  table_output += '<td class="myLightBlue"><b>'+ ctimeline +'</b></td>'
+                } else {
+                  table_output += '<td class="myGrey"><b>'+ ctimeline +'</b></td>'
+                }
             }
             
             // First Measures
@@ -198,7 +223,13 @@ var getScriptPromisify = (src) => {
               table_output += '<td>'+ formattedValue +'</td>'
             }
             else {
-              table_output += '<td class="myGrey"><b>'+ formattedValue +'</b></td>'
+                if (firstRow)
+                {              
+                  table_output += '<td class="myLightBlue"><b>'+ formattedValue +'</b></td>'
+                }
+                else {
+                  table_output += '<td class="myGrey"><b>'+ formattedValue +'</b></td>'
+                }
             }            
             
           
@@ -210,11 +241,19 @@ var getScriptPromisify = (src) => {
               table_output += '<td>'+ formattedValue +'</td>'
             }
             else {
-              table_output += '<td class="myGrey"><b>'+ formattedValue +'</b></td>'
+                if (firstRow)
+                {              
+                  table_output += '<td class="myLightBlue"><b>'+ formattedValue +'</b></td>'
+                } esle {
+                  table_output += '<td class="myGrey"><b>'+ formattedValue +'</b></td>'
+                }
             } 
         }
 
         counterRows = counterRows + 1
+        
+        // Update first row handler
+        firstRow = false
         
         // Reset the counter for each row
         if (counterRows>3) 
@@ -248,5 +287,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-newtablea8', myNewTableA8)
+  customElements.define('com-sap-sample-newtablea9', myNewTableA9)
 })()
