@@ -19,7 +19,7 @@ var getScriptPromisify = (src) => {
       }
       
       .myGrey {
-          background-color: grey;
+          background-color: #f2f2f2;
       }
 
       ///////////////////////////////////////////////////////////////
@@ -90,7 +90,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableA4 extends HTMLElement {
+  class myNewTableA5 extends HTMLElement {
     constructor () {
       super()
 
@@ -177,7 +177,7 @@ var getScriptPromisify = (src) => {
                              table_output += '<tr><td>'+ cCountry +'</td>'
                            }
                            else {
-                              table_output += '<th class="myGrey"><tr><td><b>'+ cCountry +'</b></td></th>'
+                              table_output += '<tr><td><b><th class="myGrey">'+ cCountry +'</th></b></td>'
                            }
                     }
                  // Update previous country duplicate control variable
@@ -189,7 +189,7 @@ var getScriptPromisify = (src) => {
               table_output += '<td>'+ ctimeline +'</td>'
             }
             else {
-              table_output += '<td><b>'+ ctimeline +'</b></td>'
+              table_output += '<td><b><th class="myGrey">'+ ctimeline +'</th></b></td>'
             }
             
             // First Measures
@@ -198,7 +198,7 @@ var getScriptPromisify = (src) => {
               table_output += '<td>'+ formattedValue +'</td>'
             }
             else {
-              table_output += '<td><b>'+ formattedValue +'</b></td>'
+              table_output += '<td><b><th class="myGrey">'+ formattedValue +'</th></b></td>'
             }            
             
           
@@ -210,7 +210,7 @@ var getScriptPromisify = (src) => {
               table_output += '<td>'+ formattedValue +'</td>'
             }
             else {
-              table_output += '<td><b>'+ formattedValue +'</b></td>'
+              table_output += '<td><b><th class="myGrey">'+ formattedValue +'</th></b></td>'
             } 
         }
 
@@ -248,5 +248,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-newtablea4', myNewTableA4)
+  customElements.define('com-sap-sample-newtablea5', myNewTableA5)
 })()
