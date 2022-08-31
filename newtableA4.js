@@ -18,6 +18,10 @@ var getScriptPromisify = (src) => {
         color: black;
       }
       
+      .myGrey {
+          background-color: grey;
+      }
+
       ///////////////////////////////////////////////////////////////
       // Table CSS classes
       ///////////////////////////////////////////////////////////////
@@ -86,7 +90,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableA3 extends HTMLElement {
+  class myNewTableA4 extends HTMLElement {
     constructor () {
       super()
 
@@ -173,7 +177,7 @@ var getScriptPromisify = (src) => {
                              table_output += '<tr><td>'+ cCountry +'</td>'
                            }
                            else {
-                              table_output += '<tr><td><b>'+ cCountry +'</b></td>'
+                              table_output += '<th class="myGrey"><tr><td><b>'+ cCountry +'</b></td></th>'
                            }
                     }
                  // Update previous country duplicate control variable
@@ -244,5 +248,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-newtablea3', myNewTableA3)
+  customElements.define('com-sap-sample-newtablea4', myNewTableA4)
 })()
