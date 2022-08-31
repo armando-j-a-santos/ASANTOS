@@ -95,7 +95,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableA9 extends HTMLElement {
+  class myNewTableA10 extends HTMLElement {
     constructor () {
       super()
 
@@ -176,39 +176,33 @@ var getScriptPromisify = (src) => {
                      } else {
                         table_output += '<tr><td class="myGrey"><b>'+ cCountry +'</b></td>'
                      }
-                   }
-                }
-            else {
+                  }
+                } else {
                     if (cCountry === previousCountry)
                     {
                         // Show a space char instead of the country to avoid duplicates
                         table_output += '<tr><td> </td>'
-                    }
-                    else {
+                    } else {
                            if (cControlBold === false)
                            {
                              table_output += '<tr><td>'+ cCountry +'</td>'
-                           }
-                           else {
+                           } else {
                               if (firstRow)
                                 {
                                   table_output += '<tr><td class="myLightBlue"><b>'+ cCountry +'</b></td>'
-                                }
-                              else {
+                                } else {
                                   table_output += '<tr><td class="myGrey"><b>'+ cCountry +'</b></td>'
                               }
                            }
-                    }
+                      }
                   // Update previous country duplicate control variable
                   previousCountry = cCountry
-                 
-            }
+              }
           
             if (cControlBold === false)
             {
               table_output += '<td>'+ ctimeline +'</td>'
-            }
-            else {
+            } else {
                 if (firstRow)
                 {              
                   table_output += '<td class="myLightBlue"><b>'+ ctimeline +'</b></td>'
@@ -221,30 +215,25 @@ var getScriptPromisify = (src) => {
             if (cControlBold === false)
             {
               table_output += '<td>'+ formattedValue +'</td>'
-            }
-            else {
+            } else {
                 if (firstRow)
                 {              
                   table_output += '<td class="myLightBlue"><b>'+ formattedValue +'</b></td>'
-                }
-                else {
+                } else {
                   table_output += '<td class="myGrey"><b>'+ formattedValue +'</b></td>'
                 }
-            }            
-            
-          
+            } 
         } else {
           
             // Only the measures values to display
             if (cControlBold === false)
             {
               table_output += '<td>'+ formattedValue +'</td>'
-            }
-            else {
+            } else {
                 if (firstRow)
                 {              
                   table_output += '<td class="myLightBlue"><b>'+ formattedValue +'</b></td>'
-                } esle {
+                } else {
                   table_output += '<td class="myGrey"><b>'+ formattedValue +'</b></td>'
                 }
             } 
@@ -287,5 +276,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-newtablea9', myNewTableA9)
+  customElements.define('com-sap-sample-newtablea10', myNewTableA10)
 })()
