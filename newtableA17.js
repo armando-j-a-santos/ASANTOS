@@ -167,7 +167,7 @@ var getScriptPromisify = (src) => {
                 {
                    if (cControlBold === false)
                    {
-                     table_output += '<tr><td><font style="font-size:8px;">'+ cCountry +'</font></td>'
+                     table_output += '<tr><td><font style="font-size:10px;">'+ cCountry +'</font></td>'
                    }
                    else {
                      if (firstRow)
@@ -185,7 +185,7 @@ var getScriptPromisify = (src) => {
                     } else {
                            if (cControlBold === false)
                            {
-                             table_output += '<tr><td><font style="font-size:8px;">'+ cCountry +'</font></td>'
+                             table_output += '<tr><td><font style="font-size:10px;">'+ cCountry +'</font></td>'
                            } else {
                               if (firstRow)
                                 {
@@ -201,7 +201,7 @@ var getScriptPromisify = (src) => {
           
             if (cControlBold === false)
             {
-              table_output += '<td><font style="font-size:8px;">'+ ctimeline +'</font></td>'
+              table_output += '<td><font style="font-size:10px;">'+ ctimeline +'</font></td>'
             } else {
                 if (firstRow)
                 {              
@@ -214,7 +214,7 @@ var getScriptPromisify = (src) => {
             // First Measures
             if (cControlBold === false)
             {
-              table_output += '<td><font style="font-size:8px;">'+ formattedValue +'</font></td>'
+              table_output += '<td><font style="font-size:10px;">'+ formattedValue +'</font></td>'
             } else {
                 if (firstRow)
                 {              
@@ -228,7 +228,7 @@ var getScriptPromisify = (src) => {
             // Only the measures values to display
             if (cControlBold === false)
             {
-              table_output += '<td><font style="font-size:8px;">'+ formattedValue +'</font></td>'
+              table_output += '<td><font style="font-size:10px;">'+ formattedValue +'</font></td>'
             } else {
                 if (firstRow)
                 {              
