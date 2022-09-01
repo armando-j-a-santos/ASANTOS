@@ -36,7 +36,7 @@ var getScriptPromisify = (src) => {
       
       table {
         font-family: arial, sans-serif;
-        /* font-size: 10px; */
+        font-size: 15px;
         border-collapse: collapse;
         width: 100%;
       }
