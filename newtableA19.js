@@ -95,7 +95,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableA18 extends HTMLElement {
+  class myNewTableA19 extends HTMLElement {
     constructor () {
       super()
 
@@ -167,7 +167,7 @@ var getScriptPromisify = (src) => {
                 {
                    if (cControlBold === false)
                    {
-                     table_output += '<tr><td><font style="font-size:10px;">'+ cCountry +'</font></td>'
+                     table_output += '<tr><td><font style="font-size:12px;">'+ cCountry +'</font></td>'
                    }
                    else {
                      if (firstRow)
@@ -185,7 +185,7 @@ var getScriptPromisify = (src) => {
                     } else {
                            if (cControlBold === false)
                            {
-                             table_output += '<tr><td><font style="font-size:10px;">'+ cCountry +'</font></td>'
+                             table_output += '<tr><td><font style="font-size:12px;">'+ cCountry +'</font></td>'
                            } else {
                               if (firstRow)
                                 {
@@ -201,7 +201,7 @@ var getScriptPromisify = (src) => {
           
             if (cControlBold === false)
             {
-              table_output += '<td><font style="font-size:10px;">'+ ctimeline +'</font></td>'
+              table_output += '<td><font style="font-size:12px;">'+ ctimeline +'</font></td>'
             } else {
                 if (firstRow)
                 {              
@@ -214,7 +214,7 @@ var getScriptPromisify = (src) => {
             // First Measures
             if (cControlBold === false)
             {
-              table_output += '<td><font style="font-size:10px;">'+ formattedValue +'</font></td>'
+              table_output += '<td><font style="font-size:12px;">'+ formattedValue +'</font></td>'
             } else {
                 if (firstRow)
                 {              
@@ -228,7 +228,7 @@ var getScriptPromisify = (src) => {
             // Only the measures values to display
             if (cControlBold === false)
             {
-              table_output += '<td><font style="font-size:10px;">'+ formattedValue +'</font></td>'
+              table_output += '<td><font style="font-size:12px;">'+ formattedValue +'</font></td>'
             } else {
                 if (firstRow)
                 {              
@@ -277,5 +277,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-newtablea18', myNewTableA18)
+  customElements.define('com-sap-sample-newtablea19', myNewTableA19)
 })()
