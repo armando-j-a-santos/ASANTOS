@@ -25,6 +25,15 @@ var getScriptPromisify = (src) => {
       .myLightBlue {
           background-color: #c1dff7;
       }
+      
+      .myLightGreen {
+          background-color: #e1f5e1;
+      }
+      
+      .myLightRed {
+          background-color: #fcd9e1;
+      }
+      
       ///////////////////////////////////////////////////////////////
       // Table CSS classes
       ///////////////////////////////////////////////////////////////
@@ -94,7 +103,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableB3 extends HTMLElement {
+  class myNewTableB4 extends HTMLElement {
     constructor () {
       super()
 
@@ -240,9 +249,36 @@ var getScriptPromisify = (src) => {
               console.log(counterRows)
               console.log(OKValueLE)
               console.log(OKValueINC)
-                  
               
-              table_output += '<td><font style="font-size:12px;">'+ formattedValue +'</font></td>'
+              if (counterRows === 2) // means LifeExpect measure
+              {
+                if (OKValueLE !== 0)
+                {
+                    if (intValue >= OKValueLE)
+                    {
+                      table_output += '<td class="myLightGreen"><font style="font-size:12px;">'+ formattedValue +'</font></td>'
+                    } else {
+                      table_output += '<td class="myLightRed"><font style="font-size:12px;">'+ formattedValue +'</font></td>'
+                    }
+                } else {
+                    table_output += '<td><font style="font-size:12px;">'+ formattedValue +'</font></td>' 
+                }
+                
+              } else if (counterRows === 3) // means Income measure
+              {
+                if (OKValueINC !== 0)
+                {
+                    if (intValue >= OKValueINC)
+                    {
+                      table_output += '<td class="myLightGreen"><font style="font-size:12px;">'+ formattedValue +'</font></td>'
+                    } else {
+                      table_output += '<td class="myLightRed"><font style="font-size:12px;">'+ formattedValue +'</font></td>'
+                    }
+                } else {
+                    table_output += '<td><font style="font-size:12px;">'+ formattedValue +'</font></td>' 
+                }                
+              }
+              
             } else {
                 if (firstRow)
                 {              
@@ -294,6 +330,6 @@ var getScriptPromisify = (src) => {
   
 
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application
-  customElements.define('com-sap-sample-newtableb3', myNewTableB3)
+  customElements.define('com-sap-sample-newtableb4', myNewTableB4)
   
 })() // END of function --> (function () {
