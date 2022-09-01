@@ -95,7 +95,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableA17 extends HTMLElement {
+  class myNewTableA18 extends HTMLElement {
     constructor () {
       super()
 
@@ -277,5 +277,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-newtablea17', myNewTableA17)
+  customElements.define('com-sap-sample-newtablea18', myNewTableA18)
 })()
