@@ -26,6 +26,9 @@ var getScriptPromisify = (src) => {
           background-color: #c1dff7;
       }
 
+      .myFontSize10 {
+          font-size: 10px;
+      }
 
       ///////////////////////////////////////////////////////////////
       // Table CSS classes
@@ -168,7 +171,7 @@ var getScriptPromisify = (src) => {
                 {
                    if (cControlBold === false)
                    {
-                     table_output += '<tr><td>'+ cCountry +'</td>'
+                     table_output += '<tr><td class="myFontSize10">'+ cCountry +'</td>'
                    }
                    else {
                      if (firstRow)
@@ -186,7 +189,7 @@ var getScriptPromisify = (src) => {
                     } else {
                            if (cControlBold === false)
                            {
-                             table_output += '<tr><td>'+ cCountry +'</td>'
+                             table_output += '<tr><td class="myFontSize10">'+ cCountry +'</td>'
                            } else {
                               if (firstRow)
                                 {
@@ -202,7 +205,7 @@ var getScriptPromisify = (src) => {
           
             if (cControlBold === false)
             {
-              table_output += '<td>'+ ctimeline +'</td>'
+              table_output += '<td class="myFontSize10">'+ ctimeline +'</td>'
             } else {
                 if (firstRow)
                 {              
@@ -215,7 +218,7 @@ var getScriptPromisify = (src) => {
             // First Measures
             if (cControlBold === false)
             {
-              table_output += '<td>'+ formattedValue +'</td>'
+              table_output += '<td class="myFontSize10">'+ formattedValue +'</td>'
             } else {
                 if (firstRow)
                 {              
@@ -229,7 +232,7 @@ var getScriptPromisify = (src) => {
             // Only the measures values to display
             if (cControlBold === false)
             {
-              table_output += '<td>'+ formattedValue +'</td>'
+              table_output += '<td class="myFontSize10">'+ formattedValue +'</td>'
             } else {
                 if (firstRow)
                 {              
