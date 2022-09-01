@@ -26,8 +26,8 @@ var getScriptPromisify = (src) => {
           background-color: #c1dff7;
       }
 
-      .myFontSize10 {
-          font-size: 10px;
+      .myFontSize8 {
+          font-size: 8px;
       }
 
       ///////////////////////////////////////////////////////////////
@@ -99,7 +99,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableA15 extends HTMLElement {
+  class myNewTableA16 extends HTMLElement {
     constructor () {
       super()
 
@@ -281,5 +281,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-newtablea15', myNewTableA15)
+  customElements.define('com-sap-sample-newtablea16', myNewTableA16)
 })()
