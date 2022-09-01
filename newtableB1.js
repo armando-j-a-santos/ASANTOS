@@ -109,7 +109,7 @@ var getScriptPromisify = (src) => {
     // ------------------
     // Scripting methods
     // ------------------
-    async render (resultSet, exportXLS, showDuplicates) {
+    async render (resultSet, exportXLS, showDuplicates, OKValueLE, CriticalValueLE, OKValueINC, CriticalValueINC) {
       
       this._placeholder = this._root.querySelector('#placeholder')
       if (this._placeholder) {
@@ -218,6 +218,20 @@ var getScriptPromisify = (src) => {
                 if (firstRow)
                 {              
                   table_output += '<td class="myLightBlue"><b>'+ formattedValue +'</b></td>'
+                  
+                  // Remove all comas (,) from the formattedValue
+                  while(formattedValue.includes(",")){
+                      formattedValue = formattedValue.replace(",", "")
+                  }
+                  
+                  // Convert formattedValue into a number
+                  var intValue = Number(formattedValue)
+                  var x = intValue + 150
+                  
+                  console.log(formattedValue)
+                  console.log(intValue)
+                  console.log(x)
+                  
                 } else {
                   table_output += '<td class="myGrey"><b>'+ formattedValue +'</b></td>'
                 }
@@ -275,7 +289,6 @@ var getScriptPromisify = (src) => {
       }
     }
   } // END of method --> render
-  
   
   
 
