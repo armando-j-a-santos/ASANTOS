@@ -95,7 +95,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableA10 extends HTMLElement {
+  class myNewTableA11 extends HTMLElement {
     constructor () {
       super()
 
@@ -241,9 +241,6 @@ var getScriptPromisify = (src) => {
 
         counterRows = counterRows + 1
         
-        // Update first row handler
-        firstRow = false
-        
         // Reset the counter for each row
         if (counterRows>3) 
         {
@@ -252,8 +249,10 @@ var getScriptPromisify = (src) => {
           // Moved into a different country
           // Reset the counter, to start a new row
           counterRows = 1
-        }
-        
+          
+          // Update first row handler
+          if (firtRow) {firstRow = false}
+        }      
       })
     
       //Close all used tags
@@ -276,5 +275,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-newtablea10', myNewTableA10)
+  customElements.define('com-sap-sample-newtablea11', myNewTableA11)
 })()
