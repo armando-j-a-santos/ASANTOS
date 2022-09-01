@@ -33,6 +33,7 @@ var getScriptPromisify = (src) => {
       
       table {
         font-family: arial, sans-serif;
+        font-size: 1em;
         border-collapse: collapse;
         width: 100%;
       }
@@ -95,7 +96,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableA13 extends HTMLElement {
+  class myNewTableA14 extends HTMLElement {
     constructor () {
       super()
 
@@ -277,5 +278,5 @@ var getScriptPromisify = (src) => {
     }
   }
 
-  customElements.define('com-sap-sample-newtablea13', myNewTableA13)
+  customElements.define('com-sap-sample-newtablea14', myNewTableA14)
 })()
