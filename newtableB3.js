@@ -94,7 +94,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableB2 extends HTMLElement {
+  class myNewTableB3 extends HTMLElement {
     constructor () {
       super()
 
@@ -218,20 +218,6 @@ var getScriptPromisify = (src) => {
                 if (firstRow)
                 {              
                   table_output += '<td class="myLightBlue"><b>'+ formattedValue +'</b></td>'
-                  
-                  // Remove all comas (,) from the formattedValue
-                  while(formattedValue.includes(",")){
-                      formattedValue = formattedValue.replace(",", "")
-                  }
-                  
-                  // Convert formattedValue into a number
-                  var intValue = Number(formattedValue)
-                  var x = intValue + 150
-                  
-                  console.log(formattedValue)
-                  console.log(intValue)
-                  console.log(x)
-                  
                 } else {
                   table_output += '<td class="myGrey"><b>'+ formattedValue +'</b></td>'
                 }
@@ -241,6 +227,21 @@ var getScriptPromisify = (src) => {
             // Only the measures values to display
             if (cControlBold === false)
             {
+
+              // Remove all comas (,) from the formattedValue
+              while(formattedValue.includes(",")){
+                      formattedValue = formattedValue.replace(",", "")
+              }
+                  
+              // Convert formattedValue into a number
+              var intValue = Number(formattedValue)
+               
+              console.log(intValue)
+              console.log(counterRows)
+              console.log(OKValueLE)
+              console.log(OKValueINC)
+                  
+              
               table_output += '<td><font style="font-size:12px;">'+ formattedValue +'</font></td>'
             } else {
                 if (firstRow)
@@ -293,6 +294,6 @@ var getScriptPromisify = (src) => {
   
 
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application
-  customElements.define('com-sap-sample-newtableb2', myNewTableB2)
+  customElements.define('com-sap-sample-newtableb3', myNewTableB3)
   
 })() // END of function --> (function () {
