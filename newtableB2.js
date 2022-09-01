@@ -94,7 +94,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableB1 extends HTMLElement {
+  class myNewTableB2 extends HTMLElement {
     constructor () {
       super()
 
@@ -109,7 +109,7 @@ var getScriptPromisify = (src) => {
     // ------------------
     // Scripting methods
     // ------------------
-    async render (resultSet, exportXLS, showDuplicates, OKValueLE, CriticalValueLE, OKValueINC, CriticalValueINC) {
+    async render (resultSet, exportXLS, showDuplicates, OKValueLE, OKValueINC) {
       
       this._placeholder = this._root.querySelector('#placeholder')
       if (this._placeholder) {
@@ -293,6 +293,6 @@ var getScriptPromisify = (src) => {
   
 
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application
-  customElements.define('com-sap-sample-newtableb1', myNewTableB1)
+  customElements.define('com-sap-sample-newtableb2', myNewTableB2)
   
 })() // END of function --> (function () {
