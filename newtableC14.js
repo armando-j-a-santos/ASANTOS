@@ -106,7 +106,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewTableC12 extends HTMLElement {
+  class myNewTableC14 extends HTMLElement {
     constructor () {
       super()
 
@@ -242,7 +242,7 @@ var getScriptPromisify = (src) => {
               if (description !== "Population")
               {
                 // Show - sign as NULL value comeing from backend
-                table_output += '<td><font style="font-size:12px;"> - </font></td>'
+                table_output += '<td><font style="font-size:14px;"> - </font></td>'
                 console.log("missing Population") 
                 counterCells = counterCells + 1
               }
@@ -275,7 +275,7 @@ var getScriptPromisify = (src) => {
               if (description !== "LifeExpect")
               {
                 // Show - sign as NULL value comeing from backend
-                table_output += '<td><font style="font-size:12px;"> - </font></td>'
+                table_output += '<td><font style="font-size:14px;"> - </font></td>'
                 console.log("missing LifeExpect") 
                 counterCells = counterCells + 1                
               }
@@ -284,7 +284,7 @@ var getScriptPromisify = (src) => {
               if (description !== "Income")
               {
                 // Show - sign as NULL value comeing from backend
-                table_output += '<td><font style="font-size:12px;"> - </font></td>'
+                table_output += '<td><font style="font-size:14px;"> - </font></td>'
                 console.log("missing Income") 
                 counterCells = counterCells + 1
               }
@@ -378,6 +378,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtablec12', myNewTableC12)
+  customElements.define('com-sap-sample-newtablec14', myNewTableC14)
   
 })() // END of function --> (function () {
