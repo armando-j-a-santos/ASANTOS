@@ -106,7 +106,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewTableC11 extends HTMLElement {
+  class myNewTableC12 extends HTMLElement {
     constructor () {
       super()
 
@@ -248,28 +248,6 @@ var getScriptPromisify = (src) => {
               }
             } 
             
-            if (counterCells === 2)
-            {
-              if (description !== "LifeExpect")
-              {
-                // Show - sign as NULL value comeing from backend
-                table_output += '<td><font style="font-size:12px;"> - </font></td>'
-                console.log("missing LifeExpect") 
-                counterCells = counterCells + 1                
-              }
-            } 
-            
-            if (counterCells === 3)
-            {
-              if (description !== "Income")
-              {
-                // Show - sign as NULL value comeing from backend
-                table_output += '<td><font style="font-size:12px;"> - </font></td>'
-                console.log("missing Income") 
-                counterCells = counterCells + 1
-              }
-            }
-
             
         // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
         // MEASURES BELOW vvvvvvvvvvvv
@@ -285,9 +263,33 @@ var getScriptPromisify = (src) => {
                 } else {
                   table_output += '<td class="myGrey"><b>'+ formattedValue +'</b></td>'
                 }
-            } 
-        } else {
-          
+        } 
+      
+      } else { //////// >>>>>>>>>>> else of if (counterCells === 1)
+        
+            // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+            // Control NULL values coming from backend within any measures vvvvvvvvvvvv
+            // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv                     
+            if (counterCells === 2)
+            {
+              if (description !== "LifeExpect")
+              {
+                // Show - sign as NULL value comeing from backend
+                table_output += '<td><font style="font-size:12px;"> - </font></td>'
+                console.log("missing LifeExpect") 
+                counterCells = counterCells + 1                
+              }
+            } else if (counterCells === 3)
+            {
+              if (description !== "Income")
+              {
+                // Show - sign as NULL value comeing from backend
+                table_output += '<td><font style="font-size:12px;"> - </font></td>'
+                console.log("missing Income") 
+                counterCells = counterCells + 1
+              }
+            }
+        
             // Only the measures values to display
             if (cControlBold === false)
             {
@@ -376,6 +378,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtablec11', myNewTableC11)
+  customElements.define('com-sap-sample-newtablec12', myNewTableC12)
   
 })() // END of function --> (function () {
