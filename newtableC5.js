@@ -103,7 +103,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableC4 extends HTMLElement {
+  class myNewTableC5 extends HTMLElement {
     constructor () {
       super()
 
@@ -167,6 +167,8 @@ var getScriptPromisify = (src) => {
           
         
           var { formattedValue, description } = dp['@MeasureDimension']
+          
+          console.log("(description)-->" + description)
          
           // Another country
           if (counterRows === 1)
@@ -320,6 +322,6 @@ var getScriptPromisify = (src) => {
   
 
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application
-  customElements.define('com-sap-sample-newtablec4', myNewTableC4)
+  customElements.define('com-sap-sample-newtablec5', myNewTableC5)
   
 })() // END of function --> (function () {
