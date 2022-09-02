@@ -106,7 +106,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewTableC10 extends HTMLElement {
+  class myNewTableC11 extends HTMLElement {
     constructor () {
       super()
 
@@ -154,8 +154,8 @@ var getScriptPromisify = (src) => {
       // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv      
 
       resultSet.forEach(dp => {
-          //console.log(dp)
-          //console.log("(counterCells)-->" + counterCells)
+          console.log(dp)
+          console.log("(counterCells)-->" + counterCells)
          
           var cCountry = dp.Country.description
           var ctimeline = dp.timeline.description
@@ -174,7 +174,7 @@ var getScriptPromisify = (src) => {
           // Get the description & formattedValue from the measures (@MeasureDimension)
           var { formattedValue, description } = dp['@MeasureDimension']
           
-          //console.log("(description)-->" + description)     
+          console.log("(description)-->" + description)     
 
           // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
           // DIMENSIONS BELOW vvvvvvvvvvvv
@@ -243,6 +243,7 @@ var getScriptPromisify = (src) => {
               {
                 // Show - sign as NULL value comeing from backend
                 table_output += '<td><font style="font-size:12px;"> - </font></td>'
+                console.log("missing Population") 
                 counterCells = counterCells + 1
               }
             } 
@@ -253,6 +254,7 @@ var getScriptPromisify = (src) => {
               {
                 // Show - sign as NULL value comeing from backend
                 table_output += '<td><font style="font-size:12px;"> - </font></td>'
+                console.log("missing LifeExpect") 
                 counterCells = counterCells + 1                
               }
             } 
@@ -263,6 +265,7 @@ var getScriptPromisify = (src) => {
               {
                 // Show - sign as NULL value comeing from backend
                 table_output += '<td><font style="font-size:12px;"> - </font></td>'
+                console.log("missing Income") 
                 counterCells = counterCells + 1
               }
             }
@@ -373,6 +376,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtablec10', myNewTableC10)
+  customElements.define('com-sap-sample-newtablec11', myNewTableC11)
   
 })() // END of function --> (function () {
