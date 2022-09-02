@@ -103,7 +103,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableC3 extends HTMLElement {
+  class myNewTableC4 extends HTMLElement {
     constructor () {
       super()
 
@@ -149,6 +149,7 @@ var getScriptPromisify = (src) => {
       // Loop through the resultset
       resultSet.forEach(dp => {
           console.log(dp)
+          console.log("(counterRows)-->" + counterRows)
          
           var cCountry = dp.Country.description
           var ctimeline = dp.timeline.description
@@ -164,7 +165,7 @@ var getScriptPromisify = (src) => {
             cControlBold = true
           }
           
-          
+        
           var { formattedValue, description } = dp['@MeasureDimension']
          
           // Another country
@@ -218,8 +219,6 @@ var getScriptPromisify = (src) => {
                   table_output += '<td class="myGrey"><b>'+ ctimeline +'</b></td>'
                 }
             }
-            
-            console.log("(counterRows)-->" + counterRows)
             
             // First Measures
             if (cControlBold === false)
@@ -321,6 +320,6 @@ var getScriptPromisify = (src) => {
   
 
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application
-  customElements.define('com-sap-sample-newtablec3', myNewTableC3)
+  customElements.define('com-sap-sample-newtablec4', myNewTableC4)
   
 })() // END of function --> (function () {
