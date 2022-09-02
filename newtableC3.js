@@ -103,7 +103,7 @@ var getScriptPromisify = (src) => {
         <div id="my_data">data...</div>
       </div>
     `
-  class myNewTableC2 extends HTMLElement {
+  class myNewTableC3 extends HTMLElement {
     constructor () {
       super()
 
@@ -219,6 +219,8 @@ var getScriptPromisify = (src) => {
                 }
             }
             
+            console.log("(counterRows)-->" + counterRows)
+            
             // First Measures
             if (cControlBold === false)
             {
@@ -319,6 +321,6 @@ var getScriptPromisify = (src) => {
   
 
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application
-  customElements.define('com-sap-sample-newtablec2', myNewTableC2)
+  customElements.define('com-sap-sample-newtablec3', myNewTableC3)
   
 })() // END of function --> (function () {
