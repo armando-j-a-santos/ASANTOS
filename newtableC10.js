@@ -106,7 +106,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewTableC9 extends HTMLElement {
+  class myNewTableC10 extends HTMLElement {
     constructor () {
       super()
 
@@ -154,8 +154,8 @@ var getScriptPromisify = (src) => {
       // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv      
 
       resultSet.forEach(dp => {
-          console.log(dp)
-          console.log("(counterCells)-->" + counterCells)
+          //console.log(dp)
+          //console.log("(counterCells)-->" + counterCells)
          
           var cCountry = dp.Country.description
           var ctimeline = dp.timeline.description
@@ -174,7 +174,7 @@ var getScriptPromisify = (src) => {
           // Get the description & formattedValue from the measures (@MeasureDimension)
           var { formattedValue, description } = dp['@MeasureDimension']
           
-          console.log("(description)-->" + description)     
+          //console.log("(description)-->" + description)     
 
           // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
           // DIMENSIONS BELOW vvvvvvvvvvvv
@@ -231,6 +231,7 @@ var getScriptPromisify = (src) => {
                   table_output += '<td class="myGrey"><b>'+ ctimeline +'</b></td>'
                 }
             }
+
             
             // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
             // Control NULL values coming from backend within any measures vvvvvvvvvvvv
@@ -244,7 +245,9 @@ var getScriptPromisify = (src) => {
                 table_output += '<td><font style="font-size:12px;"> - </font></td>'
                 counterCells = counterCells + 1
               }
-            } else if (counterCells === 2)
+            } 
+            
+            if (counterCells === 2)
             {
               if (description !== "LifeExpect")
               {
@@ -252,7 +255,9 @@ var getScriptPromisify = (src) => {
                 table_output += '<td><font style="font-size:12px;"> - </font></td>'
                 counterCells = counterCells + 1                
               }
-            } else if (counterCells === 3)
+            } 
+            
+            if (counterCells === 3)
             {
               if (description !== "Income")
               {
@@ -262,6 +267,7 @@ var getScriptPromisify = (src) => {
               }
             }
 
+            
         // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
         // MEASURES BELOW vvvvvvvvvvvv
         // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
@@ -367,6 +373,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtablec9', myNewTableC9)
+  customElements.define('com-sap-sample-newtablec10', myNewTableC10)
   
 })() // END of function --> (function () {
