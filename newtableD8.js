@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD7 extends HTMLElement {
+  class myNewBlendTableD8 extends HTMLElement {
     constructor () {
       super()
 
@@ -175,7 +175,12 @@ var getScriptPromisify = (src) => {
         // Country
         if (counterCells===1)
         {
-                table_output += '<tr><td class="myLightBlue"><b>'+ cCountry +'</b></td>'
+               if (firstRow)
+               {  
+                  table_output += '<tr><td class="myLightBlue"><b>'+ cCountry +'</b></td>'
+               } else {
+                  table_output += '<tr><td><b>'+ cCountry +'</b></td>'
+               }
         }
 
         // Update previous country duplicate control variable
@@ -184,14 +189,45 @@ var getScriptPromisify = (src) => {
         
         // Year
         if (counterCells===1)
-        {              
-            table_output += '<td class="myLightBlue"><b>'+ ctimeline +'</b></td>'
+        {
+               if (firstRow)
+               {          
+                  table_output += '<td class="myLightBlue"><b>'+ ctimeline +'</b></td>'
+               } else {
+                 table_output += '<td><b>'+ ctimeline +'</b></td>'
+               }
         }
         
         // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
         // Control NULL values coming from backend within any measures vvvvvvvvvvvv
-        // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv            
-
+        // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+        
+        if (counterCells === 1)
+        {
+              if (description !== "Population")
+              {
+                // Show - sign as NULL value comeing from backend
+                table_output += '<td><font style="font-size:14px;"> - </font></td>'
+                console.log("missing Population") 
+                counterCells = counterCells + 1
+              }
+        } else if (counterCells === 2) {
+              if (description !== "LifeExpect")
+              {
+                // Show - sign as NULL value comeing from backend
+                table_output += '<td><font style="font-size:14px;"> - </font></td>'
+                console.log("missing LifeExpect") 
+                counterCells = counterCells + 1                
+              }
+        } else if (counterCells === 3) {
+              if (description !== "Income")
+              {
+                // Show - sign as NULL value comeing from backend
+                table_output += '<td><font style="font-size:14px;"> - </font></td>'
+                console.log("missing Income") 
+                counterCells = counterCells + 1
+              }
+         }
                 
         // Write measure value
         table_output += '<td><font style="font-size:12px;">'+ formattedValue +'</font></td>' 
@@ -218,8 +254,8 @@ var getScriptPromisify = (src) => {
       //Close all used tags
       table_output += '</tbody></table></div></div>'
     
-      console.log('----------------')
-      console.log(table_output)
+      //console.log('----------------')
+      //console.log(table_output)
       
       this._shadowRoot.getElementById('my_data').innerHTML = table_output
       
@@ -235,6 +271,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled7', myNewBlendTableD7)
+  customElements.define('com-sap-sample-newtabled8', myNewBlendTableD8)
   
 })() // END of function --> (function () {
