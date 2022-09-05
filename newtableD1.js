@@ -24,15 +24,7 @@ var getScriptPromisify = (src) => {
       
       .myLightBlue {
           background-color: #c1dff7;
-      }
-      
-      .myLightGreen {
-          background-color: #e1f5e1;
-      }
-      
-      .myLightRed {
-          background-color: #fcd9e1;
-      }
+      }      
       
       ///////////////////////////////////////////////////////////////
       // Table CSS classes
@@ -137,6 +129,12 @@ var getScriptPromisify = (src) => {
       // initialize counter of cells
       var counterCells = 1
       
+      // initialize country duplicate control
+      var previousCountry = ''
+      
+      // Control first row only
+      var firstRow = true      
+      
       //console.log('----------------')
       //console.log('resultSet:')
       //console.log(resultSet)
@@ -174,7 +172,46 @@ var getScriptPromisify = (src) => {
         // DIMENSIONS BELOW vvvvvvvvvvvv
         // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
         
+        // Country
+        if (firstRow)
+        {
+                table_output += '<tr><td class="myLightBlue"><b>'+ cCountry +'</b></td>'
+        } else {
+                if (cCountry === previousCountry)
+                {
+                        // Show a space char instead of the country to avoid duplicates
+                        table_output += '<tr><td> </td>'
+                } else {
+                        table_output += '<tr><td class="myGrey"><b>'+ cCountry +'</b></td>'
+                }
+        }
 
+        // Update previous country duplicate control variable
+        previousCountry = cCountry
+        
+        
+        // Year
+        if (firstRow)
+        {              
+            table_output += '<td class="myLightBlue"><b>'+ ctimeline +'</b></td>'
+        } else {
+            table_output += '<td class="myGrey"><b>'+ ctimeline +'</b></td>'
+        }
+        
+        // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+        // Control NULL values coming from backend within any measures vvvvvvvvvvvv
+        // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv            
+
+        if (counterCells === 1)
+        {
+              if (description !== "Population")
+              {
+                // Show - sign as NULL value comeing from backend
+                table_output += '<td><font style="font-size:14px;"> - </font></td>'
+                console.log("missing Population") 
+                counterCells = counterCells + 1
+              }
+        } 
         
         // Increment the cells counter
         counterCells = counterCells + 1
