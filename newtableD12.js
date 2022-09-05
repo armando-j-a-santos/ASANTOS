@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD11 extends HTMLElement {
+  class myNewBlendTableD12 extends HTMLElement {
     constructor () {
       super()
 
@@ -264,7 +264,7 @@ var getScriptPromisify = (src) => {
     
       
       // Other table source
-      resultSetA.forEach(dpB => {
+      resultSetB.forEach(dpB => {
         console.log(dpB)
         
         // Get the description & formattedValue from the measures (@MeasureDimension)
@@ -294,6 +294,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled11', myNewBlendTableD11)
+  customElements.define('com-sap-sample-newtabled12', myNewBlendTableD12)
   
 })() // END of function --> (function () {
