@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD5 extends HTMLElement {
+  class myNewBlendTableD6 extends HTMLElement {
     constructor () {
       super()
 
@@ -189,7 +189,7 @@ var getScriptPromisify = (src) => {
         
         
         // Year
-        if counterCells===1)
+        if (counterCells===1)
         {              
             table_output += '<td class="myLightBlue"><b>'+ ctimeline +'</b></td>'
         }
@@ -241,6 +241,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled5', myNewBlendTableD5)
+  customElements.define('com-sap-sample-newtabled6', myNewBlendTableD6)
   
 })() // END of function --> (function () {
