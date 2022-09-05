@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD6 extends HTMLElement {
+  class myNewBlendTableD7 extends HTMLElement {
     constructor () {
       super()
 
@@ -176,12 +176,6 @@ var getScriptPromisify = (src) => {
         if (counterCells===1)
         {
                 table_output += '<tr><td class="myLightBlue"><b>'+ cCountry +'</b></td>'
-        } else {
-                if (cCountry === previousCountry)
-                {
-                        // Show a space char instead of the country to avoid duplicates
-                        table_output += '<tr><td> </td>'
-                }
         }
 
         // Update previous country duplicate control variable
@@ -241,6 +235,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled6', myNewBlendTableD6)
+  customElements.define('com-sap-sample-newtabled7', myNewBlendTableD7)
   
 })() // END of function --> (function () {
