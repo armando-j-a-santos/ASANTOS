@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD4 extends HTMLElement {
+  class myNewBlendTableD5 extends HTMLElement {
     constructor () {
       super()
 
@@ -173,7 +173,7 @@ var getScriptPromisify = (src) => {
         // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
         
         // Country
-        if (firstRow)
+        if (counterCells===1)
         {
                 table_output += '<tr><td class="myLightBlue"><b>'+ cCountry +'</b></td>'
         } else {
@@ -181,8 +181,6 @@ var getScriptPromisify = (src) => {
                 {
                         // Show a space char instead of the country to avoid duplicates
                         table_output += '<tr><td> </td>'
-                } else {
-                        table_output += '<tr><td class="myGrey"><b>'+ cCountry +'</b></td>'
                 }
         }
 
@@ -191,11 +189,9 @@ var getScriptPromisify = (src) => {
         
         
         // Year
-        if (firstRow)
+        if counterCells===1)
         {              
             table_output += '<td class="myLightBlue"><b>'+ ctimeline +'</b></td>'
-        } else {
-            table_output += '<td class="myGrey"><b>'+ ctimeline +'</b></td>'
         }
         
         // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
@@ -245,6 +241,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled4', myNewBlendTableD4)
+  customElements.define('com-sap-sample-newtabled5', myNewBlendTableD5)
   
 })() // END of function --> (function () {
