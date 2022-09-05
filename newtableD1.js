@@ -208,10 +208,27 @@ var getScriptPromisify = (src) => {
               {
                 // Show - sign as NULL value comeing from backend
                 table_output += '<td><font style="font-size:14px;"> - </font></td>'
-                console.log("missing Population") 
                 counterCells = counterCells + 1
               }
-        } 
+        } else if (counterCells === 2)
+        {
+              if (description !== "LifeExpect")
+              {
+                // Show - sign as NULL value comeing from backend
+                table_output += '<td><font style="font-size:14px;"> - </font></td>'
+                counterCells = counterCells + 1                
+              }
+        } else if (counterCells === 3)
+        {
+              if (description !== "Income")
+              {
+                // Show - sign as NULL value comeing from backend
+                table_output += '<td><font style="font-size:14px;"> - </font></td>'
+                counterCells = counterCells + 1
+              }
+        }
+        
+ 
         
         // Increment the cells counter
         counterCells = counterCells + 1
