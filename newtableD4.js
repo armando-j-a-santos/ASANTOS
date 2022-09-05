@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD3 extends HTMLElement {
+  class myNewBlendTableD4 extends HTMLElement {
     constructor () {
       super()
 
@@ -202,32 +202,7 @@ var getScriptPromisify = (src) => {
         // Control NULL values coming from backend within any measures vvvvvvvvvvvv
         // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv            
 
-        if (counterCells === 1)
-        {
-              if (description !== "Population")
-              {
-                // Show - sign as NULL value comeing from backend
-                table_output += '<td><font style="font-size:14px;"> - </font></td>'
-                ////////////////counterCells = counterCells + 1
-              }
-        } else if (counterCells === 2)
-        {
-              if (description !== "LifeExpect")
-              {
-                // Show - sign as NULL value comeing from backend
-                table_output += '<td><font style="font-size:14px;"> - </font></td>'
-                ////////////////counterCells = counterCells + 1                
-              }
-        } else if (counterCells === 3)
-        {
-              if (description !== "Income")
-              {
-                // Show - sign as NULL value comeing from backend
-                table_output += '<td><font style="font-size:14px;"> - </font></td>'
-                ////////////////counterCells = counterCells + 1
-              }
-        }
-        
+                
         // Write measure value
         table_output += '<td><font style="font-size:12px;">'+ formattedValue +'</font></td>' 
         
@@ -253,7 +228,9 @@ var getScriptPromisify = (src) => {
       //Close all used tags
       table_output += '</tbody></table></div></div>'
     
-
+      console.log('----------------')
+      console.log(table_output)
+      
       this._shadowRoot.getElementById('my_data').innerHTML = table_output
       
       //Export HTML table into XLS file (locally) if parameter (exportXLS) is Yes
@@ -268,6 +245,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled3', myNewBlendTableD3)
+  customElements.define('com-sap-sample-newtabled4', myNewBlendTableD4)
   
 })() // END of function --> (function () {
