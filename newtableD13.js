@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD12 extends HTMLElement {
+  class myNewBlendTableD13 extends HTMLElement {
     constructor () {
       super()
 
@@ -268,9 +268,9 @@ var getScriptPromisify = (src) => {
         console.log(dpB)
         
         // Get the description & formattedValue from the measures (@MeasureDimension)
-        var { formattedValueB, descriptionB } = dpB['@MeasureDimension']
-        console.log(formattedValueB)
-        console.log(descriptionB)
+        var { formattedValue, description } = dpB['@MeasureDimension']
+        console.log(formattedValue)
+        console.log(description)
         
       }) // END of loop --> resultSet.forEach(dpB => {
       
@@ -283,10 +283,8 @@ var getScriptPromisify = (src) => {
       this._shadowRoot.getElementById('my_data').innerHTML = table_output
       
       //Export HTML table into XLS file (locally) if parameter (exportXLS) is Yes
-      if (exportXLS === 'Yes')
-      {
-        window.open('data:application/vnd.ms-excel,' + encodeURIComponent(table_output))
-      }
+      //window.open('data:application/vnd.ms-excel,' + encodeURIComponent(table_output))
+
     }
   } // END of method --> render
   
@@ -294,6 +292,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled12', myNewBlendTableD12)
+  customElements.define('com-sap-sample-newtabled13', myNewBlendTableD13)
   
 })() // END of function --> (function () {
