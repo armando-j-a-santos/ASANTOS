@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD15 extends HTMLElement {
+  class myNewBlendTableD16 extends HTMLElement {
     constructor () {
       super()
 
@@ -259,34 +259,33 @@ var getScriptPromisify = (src) => {
           if (firstRow) {
             firstRow = false
           }
-        }     
+          
+          // Other table source
+          resultSetB.forEach(dpB => {
+            //console.log(dpB)
 
-      
-        // Other table source
-        resultSetB.forEach(dpB => {
-          //console.log(dpB)
+            var cCountry2 = dpB.Country.description
 
-          var cCountry2 = dpB.Country.description
+            if (cCountry2 === cCountry)
+            {
+                // Get the description & formattedValue from the measures (@MeasureDimension)
+                var { formattedValue, description } = dpB['@MeasureDimension']
+                console.log ('EQUAL -->' + cCountry2)
+                console.log(formattedValue)
+                console.log(description)
+                console.log("out the forEach loop.")
 
-          if (cCountry2 === cCountry)
-          {
-              // Get the description & formattedValue from the measures (@MeasureDimension)
-              var { formattedValue, description } = dpB['@MeasureDimension']
-              console.log ('EQUAL -->' + cCountry2)
-              console.log(formattedValue)
-              console.log(description)
-              console.log("out the forEach loop.")
+                return // Break the resultSetB.forEach loop
+            }
 
-              return // Break the resultSetB.forEach loop
-          }
+            console.log ('NOT EQUAL -->' + cCountry2)
+            console.log(formattedValue)
+            console.log(description)
 
-          console.log ('NOT EQUAL -->' + cCountry2)
-          console.log(formattedValue)
-          console.log(description)
-
-        }) // END of loop --> resultSet.forEach(dpB => {      
-      
-      
+          }) // END of loop --> resultSet.forEach(dpB => {               
+          
+        } // END of if (counterCells>3)
+ 
       }) // END of loop --> resultSet.forEach(dp => {
       
       //Close all used tags
@@ -308,6 +307,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled15', myNewBlendTableD15)
+  customElements.define('com-sap-sample-newtabled16', myNewBlendTableD16)
   
 })() // END of function --> (function () {
