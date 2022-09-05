@@ -260,19 +260,35 @@ var getScriptPromisify = (src) => {
             firstRow = false
           }
         }     
-      }) // END of loop --> resultSet.forEach(dp => {
-    
+
       
-      // Other table source
-      resultSetB.forEach(dpB => {
-        console.log(dpB)
-        
-        // Get the description & formattedValue from the measures (@MeasureDimension)
-        var { formattedValue, description } = dpB['@MeasureDimension']
-        console.log(formattedValue)
-        console.log(description)
-        
-      }) // END of loop --> resultSet.forEach(dpB => {
+        // Other table source
+        resultSetB.forEach(dpB => {
+          //console.log(dpB)
+
+          var cCountry2 = dpB.Country.description
+
+          if (cCountry2 === cCountry)
+          {
+              // Get the description & formattedValue from the measures (@MeasureDimension)
+              var { formattedValue, description } = dpB['@MeasureDimension']
+              console.log ('EQUAL -->' + cCountry2)
+              console.log(formattedValue)
+              console.log(description)
+              consolelog("out the forEach loop.")
+
+              return // Break the resultSetB.forEach loop
+          }
+
+          console.log ('NOT EQUAL -->' + cCountry2)
+          console.log(formattedValue)
+          console.log(description)
+
+
+        }) // END of loop --> resultSet.forEach(dpB => {      
+      
+      
+      }) // END of loop --> resultSet.forEach(dp => {
       
       //Close all used tags
       table_output += '</tbody></table></div></div>'
@@ -287,6 +303,7 @@ var getScriptPromisify = (src) => {
 
     }
   } // END of method --> render
+  
   
   
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
