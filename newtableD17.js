@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD16 extends HTMLElement {
+  class myNewBlendTableD17 extends HTMLElement {
     constructor () {
       super()
 
@@ -260,9 +260,11 @@ var getScriptPromisify = (src) => {
             firstRow = false
           }
           
+          var done = false;
+          
           // Other table source
           resultSetB.forEach(dpB => {
-            //console.log(dpB)
+            if(done) { return }
 
             var cCountry2 = dpB.Country.description
 
@@ -276,6 +278,7 @@ var getScriptPromisify = (src) => {
                 console.log("out the forEach loop.")
 
                 return // Break the resultSetB.forEach loop
+                done = true;
             }
 
             console.log ('NOT EQUAL -->' + cCountry2)
@@ -307,6 +310,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled16', myNewBlendTableD16)
+  customElements.define('com-sap-sample-newtabled17', myNewBlendTableD17)
   
 })() // END of function --> (function () {
