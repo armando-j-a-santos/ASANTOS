@@ -284,7 +284,6 @@ var getScriptPromisify = (src) => {
           console.log(formattedValue)
           console.log(description)
 
-
         }) // END of loop --> resultSet.forEach(dpB => {      
       
       
