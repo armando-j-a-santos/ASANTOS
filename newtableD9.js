@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD8 extends HTMLElement {
+  class myNewBlendTableD9 extends HTMLElement {
     constructor () {
       super()
 
@@ -228,9 +228,14 @@ var getScriptPromisify = (src) => {
                 counterCells = counterCells + 1
               }
          }
-                
+          
         // Write measure value
-        table_output += '<td><font style="font-size:12px;">'+ formattedValue +'</font></td>' 
+        if (firstRow)
+        {
+            table_output += '<td class="myLightBlue"><b>'+ formattedValue +'</b></td>'
+        } else {
+            table_output += '<td><font style="font-size:12px;">'+ formattedValue +'</font></td>' 
+        }
         
         // Increment the cells counter
         counterCells = counterCells + 1
@@ -271,6 +276,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled8', myNewBlendTableD8)
+  customElements.define('com-sap-sample-newtabled9', myNewBlendTableD9)
   
 })() // END of function --> (function () {
