@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD27 extends HTMLElement {
+  class myNewBlendTableD28 extends HTMLElement {
     constructor () {
       super()
 
@@ -125,7 +125,7 @@ var getScriptPromisify = (src) => {
       
       // Table Headers & Body
       table_output += '<table><thead><tr><th>Country</th><th>Year</th><th>Population</th><th>LifeExpect</th><th>Income</th>'
-      table_output += '<th>LifeExpect Variation %</th><th>LifeExpect Variation %</th>'
+      table_output += '<th>LifeExpect Variation %</th><th>Income Variation %</th>'
       table_output += '</tr></thead><tbody>'
       
       // initialize counter of cells
@@ -198,8 +198,7 @@ var getScriptPromisify = (src) => {
         }
 
         // Update previous country duplicate control variable
-        previousCountry = cCountry
-        
+        previousCountry = cCountry        
         
         // Year
         if (counterCells===1)
@@ -268,16 +267,13 @@ var getScriptPromisify = (src) => {
           
           // Exclude first row of totals
           if (cCountry !== "Totals")
-          {
-             // Number of Measures that we need within ResultSetB
-             var number_of_measures = 0
-                
+          {     
             // To avoid un-necessary loops through a country that we have already the information needed
             if (cCountry !== previousCountryResultSetB)
             {
                 // Control the 2nd foreach loop
                 var out = false;
-                number_of_measures = 0
+                var number_of_measures = 0
               
                 // Other table source
                 resultSetB.forEach(dpB => {
@@ -291,9 +287,9 @@ var getScriptPromisify = (src) => {
                   {
                       // Get the description & formattedValue from the measures (@MeasureDimension)
                       var { formattedValue, description } = dpB['@MeasureDimension']
-                      console.log ('EQUAL -->' + cCountry2)
-                      console.log(formattedValue)
-                      console.log(description)
+                      //console.log ('EQUAL -->' + cCountry2)
+                      //console.log(formattedValue)
+                      //console.log(description)
                     
                       // Add into the table layout the % variation values (LifeExpect & Income)
                       table_output += '<td><font style="font-size:12px;">'+ formattedValue +'</font></td>' 
@@ -313,9 +309,8 @@ var getScriptPromisify = (src) => {
                   {
                     // Update previous country variable
                     previousCountryResultSetB = cCountry
-
-                    out = true; // To break the resultSetB.forEach loop
-                    /* return      // To break the resultSetB.forEach loop (WE NEED THIS LINE HERE) */
+                    number_of_measures = 0        // Reset this measure to be used afterwards in logic --> if (cCountry !== previousCountryResultSetB)
+                    out = true;                   // To break the resultSetB.forEach loop
                   }
 
                 }) // END of loop --> resultSet.forEach(dpB => { 
@@ -361,6 +356,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled27', myNewBlendTableD27)
+  customElements.define('com-sap-sample-newtabled28', myNewBlendTableD28)
   
 })() // END of function --> (function () {
