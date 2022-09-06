@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD17 extends HTMLElement {
+  class myNewBlendTableD18 extends HTMLElement {
     constructor () {
       super()
 
@@ -260,13 +260,16 @@ var getScriptPromisify = (src) => {
             firstRow = false
           }
           
+          // Control the 2nd foreach loop
           var done = false;
           
           // Other table source
           resultSetB.forEach(dpB => {
-            if(done) { return }
-
+            if(done) { return } // Break the resultSetB.forEach loop
+            
             var cCountry2 = dpB.Country.description
+            
+            console.log(cCountry2 + " / " + cCountry)
 
             if (cCountry2 === cCountry)
             {
@@ -275,15 +278,9 @@ var getScriptPromisify = (src) => {
                 console.log ('EQUAL -->' + cCountry2)
                 console.log(formattedValue)
                 console.log(description)
-                console.log("out the forEach loop.")
 
-                return // Break the resultSetB.forEach loop
-                done = true;
+                done = true; // To break the resultSetB.forEach loop
             }
-
-            console.log ('NOT EQUAL -->' + cCountry2)
-            console.log(formattedValue)
-            console.log(description)
 
           }) // END of loop --> resultSet.forEach(dpB => {               
           
@@ -310,6 +307,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled17', myNewBlendTableD17)
+  customElements.define('com-sap-sample-newtabled18', myNewBlendTableD18)
   
 })() // END of function --> (function () {
