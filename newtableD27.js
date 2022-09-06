@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD26 extends HTMLElement {
+  class myNewBlendTableD27 extends HTMLElement {
     constructor () {
       super()
 
@@ -140,11 +140,14 @@ var getScriptPromisify = (src) => {
       // Control first row only
       var firstRow = true      
       
+      // To save variation percentages coming from ResultSetB
+      var LifeExpectPercentage = ""
+      var IncomePercentage = ""
+      
       //console.log('----------------')
       //console.log('resultSet:')
       //console.log(resultSet)
-      
-      console.log('----------------')
+      //console.log('----------------')
 
       // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
       // Loop through the resultset delivered from the backend vvvvvvvvvvvv
@@ -266,14 +269,16 @@ var getScriptPromisify = (src) => {
           // Exclude first row of totals
           if (cCountry !== "Totals")
           {
+             // Number of Measures that we need within ResultSetB
+             var number_of_measures = 0
+                
             // To avoid un-necessary loops through a country that we have already the information needed
             if (cCountry !== previousCountryResultSetB)
             {
                 // Control the 2nd foreach loop
                 var out = false;
-                // Number of Measures that we need within ResultSetB
-                var number_of_measures = 0
-
+                number_of_measures = 0
+              
                 // Other table source
                 resultSetB.forEach(dpB => {
                   if(out) { return } // Break the resultSetB.forEach loop
@@ -290,8 +295,16 @@ var getScriptPromisify = (src) => {
                       console.log(formattedValue)
                       console.log(description)
                     
-                      // Add into the table layour the % variation values (LifeExpect & Income)
+                      // Add into the table layout the % variation values (LifeExpect & Income)
                       table_output += '<td><font style="font-size:12px;">'+ formattedValue +'</font></td>' 
+                    
+                      if (number_of_measures === 1) // LifeExpect Variation %
+                      {
+                        LifeExpectPercentage = formattedValue
+                      } else if (number_of_measures === 2) // Income Variation %
+                      {
+                        IncomePercentage = formattedValue
+                      }
 
                       number_of_measures = number_of_measures + 1
                   }
@@ -307,7 +320,19 @@ var getScriptPromisify = (src) => {
 
                 }) // END of loop --> resultSet.forEach(dpB => { 
               
-            } // if (cCountry !== previousCountryResultSetB)
+            } else { // if (cCountry !== previousCountryResultSetB)
+                number_of_measures = number_of_measures + 1
+              
+                if (number_of_measures === 1) // LifeExpect Variation %
+                {
+                      // Add into the table layout the saved % LifeExpect variation value
+                      table_output += '<td><font style="font-size:12px;">'+ LifeExpectPercentage +'</font></td>' 
+                } else if (number_of_measures === 2) // Income Variation %
+                {
+                      // Add into the table layout the saved % Income variation value
+                      table_output += '<td><font style="font-size:12px;">'+ IncomePercentage +'</font></td>' 
+                }
+            }
           } // if (cCountry !== "Totals")
           
           // Close the row with /tr
@@ -336,6 +361,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled26', myNewBlendTableD26)
+  customElements.define('com-sap-sample-newtabled27', myNewBlendTableD27)
   
 })() // END of function --> (function () {
