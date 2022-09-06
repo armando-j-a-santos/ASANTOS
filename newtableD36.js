@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD35 extends HTMLElement {
+  class myNewBlendTableD36 extends HTMLElement {
     constructor () {
       super()
 
@@ -141,8 +141,8 @@ var getScriptPromisify = (src) => {
       var firstRow = true      
       
       // To save variation percentages coming from ResultSetB
-      var LifeExpectPercentage = ""
-      var IncomePercentage = ""
+      var LifeExpectPercentage = "-"
+      var IncomePercentage = "-"
       
       // To be used to add new measures into the handmade table coming from ResultSetB
       var number_of_measures = 0
@@ -330,26 +330,22 @@ var getScriptPromisify = (src) => {
                 //console.log("INC=" + IncomePercentage)
                 console.log("number_of_measures=" + number_of_measures)  
               
-                if (number_of_measures === 0) // LifeExpect Variation %
+                if (number_of_measures === 0) // Adding both variation %'s in one go
                 {
                       // Add into the table layout the saved % LifeExpect variation value
                       table_output += '<td><font style="font-size:12px;">'+ LifeExpectPercentage +'</font></td>' 
-                } 
-                
-                if (number_of_measures === 1) // Income Variation %
-                {
+                  
                       // Add into the table layout the saved % Income variation value
                       table_output += '<td><font style="font-size:12px;">'+ IncomePercentage +'</font></td>' 
-                }
-              
+                  
+                      // Close the row with /tr HTML statment
+                      table_output += '</tr>'
+                } 
+                
                 number_of_measures = number_of_measures + 1
               
                 if (number_of_measures>1) {
                   number_of_measures=0 // to be able to write the next row, still for the same country
-                  
-                  console.log("adding TR HTML statment")
-                  // Close the row with /tr HTML statment
-                  table_output += '</tr>'
                 } 
             }
           } // if (cCountry !== "Totals")
@@ -377,6 +373,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled35', myNewBlendTableD35)
+  customElements.define('com-sap-sample-newtabled36', myNewBlendTableD36)
   
 })() // END of function --> (function () {
