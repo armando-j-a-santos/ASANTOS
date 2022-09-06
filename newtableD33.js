@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD32 extends HTMLElement {
+  class myNewBlendTableD33 extends HTMLElement {
     constructor () {
       super()
 
@@ -297,12 +297,12 @@ var getScriptPromisify = (src) => {
                       // Add into the table layout the % variation values (LifeExpect & Income)
                       table_output += '<td><font style="font-size:12px;">'+ formattedValue +'</font></td>' 
                     
-                      if (number_of_measures === 1) // LifeExpect Variation %
+                      if (number_of_measures === 0) // LifeExpect Variation %
                       {
                         LifeExpectPercentage = formattedValue
                       } 
                       
-                      if (number_of_measures === 2) // Income Variation %
+                      if (number_of_measures === 1) // Income Variation %
                       {
                         IncomePercentage = formattedValue
                       }
@@ -329,19 +329,19 @@ var getScriptPromisify = (src) => {
                 console.log("LE=" + LifeExpectPercentage)
                 console.log("INC=" + IncomePercentage)
               
-                number_of_measures = number_of_measures + 1
-              
-                if (number_of_measures === 1) // LifeExpect Variation %
+                if (number_of_measures === 0) // LifeExpect Variation %
                 {
                       // Add into the table layout the saved % LifeExpect variation value
                       table_output += '<td><font style="font-size:12px;">'+ LifeExpectPercentage +'</font></td>' 
                 } 
                 
-                if (number_of_measures === 2) // Income Variation %
+                if (number_of_measures === 1) // Income Variation %
                 {
                       // Add into the table layout the saved % Income variation value
                       table_output += '<td><font style="font-size:12px;">'+ IncomePercentage +'</font></td>' 
                 }
+              
+                number_of_measures = number_of_measures + 1
             }
           } // if (cCountry !== "Totals")
           
@@ -371,6 +371,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled32', myNewBlendTableD32)
+  customElements.define('com-sap-sample-newtabled33', myNewBlendTableD33)
   
 })() // END of function --> (function () {
