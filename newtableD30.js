@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD29 extends HTMLElement {
+  class myNewBlendTableD30 extends HTMLElement {
     constructor () {
       super()
 
@@ -143,6 +143,9 @@ var getScriptPromisify = (src) => {
       // To save variation percentages coming from ResultSetB
       var LifeExpectPercentage = ""
       var IncomePercentage = ""
+      
+      // To be used to add new measures into the handmade table coming from ResultSetB
+      var number_of_measures = 0
       
       //console.log('----------------')
       //console.log('resultSet:')
@@ -273,7 +276,7 @@ var getScriptPromisify = (src) => {
             {
                 // Control the 2nd foreach loop
                 var out = false;
-                var number_of_measures = 0
+                number_of_measures = 0
               
                 // Other table source
                 resultSetB.forEach(dpB => {
@@ -360,6 +363,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled29', myNewBlendTableD29)
+  customElements.define('com-sap-sample-newtabled30', myNewBlendTableD30)
   
 })() // END of function --> (function () {
