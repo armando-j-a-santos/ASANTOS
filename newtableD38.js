@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD37 extends HTMLElement {
+  class myNewBlendTableD38 extends HTMLElement {
     constructor () {
       super()
 
@@ -330,7 +330,7 @@ var getScriptPromisify = (src) => {
                 //console.log("INC=" + IncomePercentage)
                 console.log("number_of_measures=" + number_of_measures)  
                 console.log("cCountry=" + cCountry)
-                console.log("ctimeline="+ctimeline)  
+                console.log("ctimeline=" + ctimeline)  
               
                 if (number_of_measures === 0) // Adding both variation %'s in one go
                 {
@@ -375,6 +375,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled37', myNewBlendTableD37)
+  customElements.define('com-sap-sample-newtabled38', myNewBlendTableD38)
   
 })() // END of function --> (function () {
