@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD23 extends HTMLElement {
+  class myNewBlendTableD24 extends HTMLElement {
     constructor () {
       super()
 
@@ -124,7 +124,9 @@ var getScriptPromisify = (src) => {
       var table_output = '<div id="table-wrapper"><div id="table-scroll">'
       
       // Table Headers & Body
-      table_output += '<table><thead><tr><th>Country</th><th>Year</th><th>Population</th><th>LifeExpect</th><th>Income</th></tr></thead><tbody>'
+      table_output += '<table><thead><tr><th>Country</th><th>Year</th><th>Population</th><th>LifeExpect</th><th>Income</th>'
+      table_output += '<th>LifeExpect Variation %</th><th>LifeExpect Variation %</th>'
+      table_output += '</tr></thead><tbody>'
       
       // initialize counter of cells
       var counterCells = 1
@@ -331,6 +333,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled23', myNewBlendTableD23)
+  customElements.define('com-sap-sample-newtabled24', myNewBlendTableD24)
   
 })() // END of function --> (function () {
