@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD21 extends HTMLElement {
+  class myNewBlendTableD22 extends HTMLElement {
     constructor () {
       super()
 
@@ -267,38 +267,46 @@ var getScriptPromisify = (src) => {
           // Exclude first row of totals
           if (cCountry !== "Totals")
           {
-            // Control the 2nd foreach loop
-            var out = false;
-            // Number of Measures that we need within ResultSetB
-            var number_of_measures = 0
+            // To avoid un-necessary loops through a country that we have already the information needed
+            if (cCountry !== previousCountryResultSetB)
+            {
+                // Control the 2nd foreach loop
+                var out = false;
+                // Number of Measures that we need within ResultSetB
+                var number_of_measures = 0
 
-            // Other table source
-            resultSetB.forEach(dpB => {
-              if(out) { return } // Break the resultSetB.forEach loop
+                // Other table source
+                resultSetB.forEach(dpB => {
+                  if(out) { return } // Break the resultSetB.forEach loop
 
-              var cCountry2 = dpB.Country.description
+                  var cCountry2 = dpB.Country.description
 
-              console.log(cCountry2 + " / " + cCountry)
+                  console.log(cCountry2 + " / " + cCountry)
 
-              if (cCountry2 === cCountry)
-              {
-                  // Get the description & formattedValue from the measures (@MeasureDimension)
-                  var { formattedValue, description } = dpB['@MeasureDimension']
-                  console.log ('EQUAL -->' + cCountry2)
-                  console.log(formattedValue)
-                  console.log(description)
+                  if (cCountry2 === cCountry)
+                  {
+                      // Get the description & formattedValue from the measures (@MeasureDimension)
+                      var { formattedValue, description } = dpB['@MeasureDimension']
+                      console.log ('EQUAL -->' + cCountry2)
+                      console.log(formattedValue)
+                      console.log(description)
 
-                  number_of_measures = number_of_measures + 1
-              }
+                      number_of_measures = number_of_measures + 1
+                  }
 
-              if (number_of_measures>=2) // LifeExpect Variation %   and   Income Variation %
-              {
-                out = true; // To break the resultSetB.forEach loop
-                return      // To break the resultSetB.forEach loop (WE NEED THIS LINE HERE)
-              }
+                  if (number_of_measures>=2) // LifeExpect Variation %   and   Income Variation %
+                  {
+                    // Update previous country variable
+                    previousCountryResultSetB = cCountry
 
-            }) // END of loop --> resultSet.forEach(dpB => { 
-          }
+                    out = true; // To break the resultSetB.forEach loop
+                    /* return      // To break the resultSetB.forEach loop (WE NEED THIS LINE HERE) */
+                  }
+
+                }) // END of loop --> resultSet.forEach(dpB => { 
+              
+            } // if (cCountry !== previousCountryResultSetB)
+          } // if (cCountry !== "Totals")
           
         } // END of if (counterCells>3)
  
@@ -323,6 +331,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled21', myNewBlendTableD21)
+  customElements.define('com-sap-sample-newtabled22', myNewBlendTableD22)
   
 })() // END of function --> (function () {
