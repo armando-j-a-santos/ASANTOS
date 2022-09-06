@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD24 extends HTMLElement {
+  class myNewBlendTableD25 extends HTMLElement {
     constructor () {
       super()
 
@@ -292,6 +292,9 @@ var getScriptPromisify = (src) => {
                       console.log ('EQUAL -->' + cCountry2)
                       console.log(formattedValue)
                       console.log(description)
+                    
+                      // Add into the table layour the % variation values (LifeExpect & Income)
+                      table_output += '<td><font style="font-size:12px;">'+ formattedValue +'</font></td>' 
 
                       number_of_measures = number_of_measures + 1
                   }
@@ -333,6 +336,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled24', myNewBlendTableD24)
+  customElements.define('com-sap-sample-newtabled25', myNewBlendTableD25)
   
 })() // END of function --> (function () {
