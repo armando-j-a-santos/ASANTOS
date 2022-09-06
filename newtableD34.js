@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD33 extends HTMLElement {
+  class myNewBlendTableD34 extends HTMLElement {
     constructor () {
       super()
 
@@ -307,9 +307,9 @@ var getScriptPromisify = (src) => {
                         IncomePercentage = formattedValue
                       }
                     
-                      console.log("number_of_measures=" + number_of_measures)  
-                      console.log("LifeExpectPercentage=" + LifeExpectPercentage)
-                      console.log("IncomePercentage=" + IncomePercentage)
+                      //console.log("number_of_measures=" + number_of_measures)  
+                      //console.log("LifeExpectPercentage=" + LifeExpectPercentage)
+                      //console.log("IncomePercentage=" + IncomePercentage)
                       
                       number_of_measures = number_of_measures + 1
                   }
@@ -326,8 +326,8 @@ var getScriptPromisify = (src) => {
               
             } else { // if (cCountry !== previousCountryResultSetB)
                 
-                console.log("LE=" + LifeExpectPercentage)
-                console.log("INC=" + IncomePercentage)
+                //console.log("LE=" + LifeExpectPercentage)
+                //console.log("INC=" + IncomePercentage)
               
                 if (number_of_measures === 0) // LifeExpect Variation %
                 {
@@ -342,11 +342,15 @@ var getScriptPromisify = (src) => {
                 }
               
                 number_of_measures = number_of_measures + 1
+              
+                if (number_of_measures>1) {
+                  number_of_measures=0 // to be able to write the next row, still for the same country
+                  
+                  // Close the row with /tr HTML statment
+                  table_output += '</tr>'
+                } 
             }
           } // if (cCountry !== "Totals")
-          
-          // Close the row with /tr
-          table_output += '</tr>'
           
         } // END of if (counterCells>3)
  
@@ -371,6 +375,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled33', myNewBlendTableD33)
+  customElements.define('com-sap-sample-newtabled34', myNewBlendTableD34)
   
 })() // END of function --> (function () {
