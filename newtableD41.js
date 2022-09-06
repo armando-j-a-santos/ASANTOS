@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD40 extends HTMLElement {
+  class myNewBlendTableD41 extends HTMLElement {
     constructor () {
       super()
 
@@ -126,6 +126,7 @@ var getScriptPromisify = (src) => {
       // Table Headers & Body
       table_output += '<table><thead><tr><th>Country</th><th>Year</th><th>Population</th><th>LifeExpect</th><th>Income</th>'
       table_output += '<th>LifeExpect Variation %</th><th>Income Variation %</th>'
+      table_output += '<th>LifeExpect (Total)</th><th>Income (Total)</th>'
       table_output += '</tr></thead><tbody>'
       
       // initialize counter of cells
@@ -139,6 +140,10 @@ var getScriptPromisify = (src) => {
       
       // Control first row only
       var firstRow = true      
+      
+      // To save LifeExpect & Income values coming from ResultSetA
+      var LifeExpectRealValue = "-"
+      var IncomeRealValue = "-"
       
       // To save variation percentages coming from ResultSetB
       var LifeExpectPercentage = "-"
@@ -245,13 +250,25 @@ var getScriptPromisify = (src) => {
               }
          }
           
-        // Write measure value
+        // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+        // MEASURES VALUES BELOW vvvvvvvvvvvv
+        // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
         if (firstRow)
         {
             table_output += '<td class="myLightBlue"><b>'+ formattedValue +'</b></td>'
         } else {
             table_output += '<td><font style="font-size:12px;">'+ formattedValue +'</font></td>' 
         }
+        
+        // Save actual values for LifeExpect and Income to be used later in the sequence (below) logic
+        if (counterCells === 0) // LifeExpect value
+        {
+           LifeExpectRealValue = formattedValue
+        } else if (counterCells === 1) // Income value
+        {
+           IncomeRealValue = formattedValue
+        }
+        
         
         // Increment the cells counter
         counterCells = counterCells + 1
@@ -300,9 +317,7 @@ var getScriptPromisify = (src) => {
                       if (number_of_measures === 0) // LifeExpect Variation %
                       {
                         LifeExpectPercentage = formattedValue
-                      } 
-                      
-                      if (number_of_measures === 1) // Income Variation %
+                      } else if (number_of_measures === 1) // Income Variation %
                       {
                         IncomePercentage = formattedValue
                       }
@@ -326,29 +341,22 @@ var getScriptPromisify = (src) => {
               
             } else { // if (cCountry !== previousCountryResultSetB)
                 
-                //console.log("LE=" + LifeExpectPercentage)
-                //console.log("INC=" + IncomePercentage)
-                console.log("number_of_measures=" + number_of_measures)  
+                console.log("LE=" + LifeExpectPercentage)
+                console.log("INC=" + IncomePercentage)
+                //console.log("number_of_measures=" + number_of_measures)  
                 console.log("cCountry=" + cCountry)
-                console.log("ctimeline=" + ctimeline)  
-              
-                ////////if (number_of_measures === 0) // Adding both variation %'s in one go
-                ////////{
-                      // Add into the table layout the saved % LifeExpect variation value
-                      table_output += '<td><font style="font-size:12px;">'+ LifeExpectPercentage +'</font></td>' 
+                console.log("ctimeline=" + ctimeline)
+                console.log("LifeExpectRealValue=" + LifeExpectRealValue)
+                console.log("IncomeRealValue=" + IncomeRealValue)
+
+                // Add into the table layout the saved % LifeExpect variation value
+                table_output += '<td><font style="font-size:12px;">'+ LifeExpectPercentage +'</font></td>' 
                   
-                      // Add into the table layout the saved % Income variation value
-                      table_output += '<td><font style="font-size:12px;">'+ IncomePercentage +'</font></td>' 
+                // Add into the table layout the saved % Income variation value
+                table_output += '<td><font style="font-size:12px;">'+ IncomePercentage +'</font></td>' 
                   
-                      // Close the row -> with /tr HTML statment
-                      table_output += '</tr>'
-                ////////} 
-                
-                ////////number_of_measures = number_of_measures + 1
-              
-                ////////if (number_of_measures>1) {
-                ////////  number_of_measures=0 // to be able to write the next row, still for the same country
-                ////////} 
+                // Close the row -> with /tr HTML statment
+                table_output += '</tr>'
             }
           } // if (cCountry !== "Totals")
           
@@ -375,6 +383,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled40', myNewBlendTableD40)
+  customElements.define('com-sap-sample-newtabled41', myNewBlendTableD41)
   
 })() // END of function --> (function () {
