@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD38 extends HTMLElement {
+  class myNewBlendTableD39 extends HTMLElement {
     constructor () {
       super()
 
@@ -332,23 +332,23 @@ var getScriptPromisify = (src) => {
                 console.log("cCountry=" + cCountry)
                 console.log("ctimeline=" + ctimeline)  
               
-                if (number_of_measures === 0) // Adding both variation %'s in one go
-                {
+                ////////if (number_of_measures === 0) // Adding both variation %'s in one go
+                ////////{
                       // Add into the table layout the saved % LifeExpect variation value
                       table_output += '<td><font style="font-size:12px;">'+ LifeExpectPercentage +'</font></td>' 
                   
                       // Add into the table layout the saved % Income variation value
                       table_output += '<td><font style="font-size:12px;">'+ IncomePercentage +'</font></td>' 
                   
-                      // Close the row with /tr HTML statment
+                      // Close the row -> with /tr HTML statment
                       table_output += '</tr>'
-                } 
+                ////////} 
                 
-                number_of_measures = number_of_measures + 1
+                ////////number_of_measures = number_of_measures + 1
               
-                if (number_of_measures>1) {
-                  number_of_measures=0 // to be able to write the next row, still for the same country
-                } 
+                ////////if (number_of_measures>1) {
+                ////////  number_of_measures=0 // to be able to write the next row, still for the same country
+                ////////} 
             }
           } // if (cCountry !== "Totals")
           
@@ -375,6 +375,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled38', myNewBlendTableD38)
+  customElements.define('com-sap-sample-newtabled39', myNewBlendTableD39)
   
 })() // END of function --> (function () {
