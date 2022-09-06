@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD30 extends HTMLElement {
+  class myNewBlendTableD31 extends HTMLElement {
     constructor () {
       super()
 
@@ -300,7 +300,9 @@ var getScriptPromisify = (src) => {
                       if (number_of_measures === 1) // LifeExpect Variation %
                       {
                         LifeExpectPercentage = formattedValue
-                      } else if (number_of_measures === 2) // Income Variation %
+                      } 
+                      
+                      if (number_of_measures === 2) // Income Variation %
                       {
                         IncomePercentage = formattedValue
                       }
@@ -329,7 +331,9 @@ var getScriptPromisify = (src) => {
                 {
                       // Add into the table layout the saved % LifeExpect variation value
                       table_output += '<td><font style="font-size:12px;">'+ LifeExpectPercentage +'</font></td>' 
-                } else if (number_of_measures === 2) // Income Variation %
+                } 
+                
+                if (number_of_measures === 2) // Income Variation %
                 {
                       // Add into the table layout the saved % Income variation value
                       table_output += '<td><font style="font-size:12px;">'+ IncomePercentage +'</font></td>' 
@@ -363,6 +367,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled30', myNewBlendTableD30)
+  customElements.define('com-sap-sample-newtabled31', myNewBlendTableD31)
   
 })() // END of function --> (function () {
