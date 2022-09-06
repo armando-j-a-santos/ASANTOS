@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD22 extends HTMLElement {
+  class myNewBlendTableD23 extends HTMLElement {
     constructor () {
       super()
 
@@ -281,7 +281,7 @@ var getScriptPromisify = (src) => {
 
                   var cCountry2 = dpB.Country.description
 
-                  console.log(cCountry2 + " / " + cCountry)
+                  //console.log(cCountry2 + " / " + cCountry)
 
                   if (cCountry2 === cCountry)
                   {
@@ -331,6 +331,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled22', myNewBlendTableD22)
+  customElements.define('com-sap-sample-newtabled23', myNewBlendTableD23)
   
 })() // END of function --> (function () {
