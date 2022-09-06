@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD25 extends HTMLElement {
+  class myNewBlendTableD26 extends HTMLElement {
     constructor () {
       super()
 
@@ -254,8 +254,6 @@ var getScriptPromisify = (src) => {
         // Reset the counter for each row
         if (counterCells>3) 
         {
-          // Close the row
-          table_output += '</tr>'
           // Moved into a different country
           // Reset the counter, to start a new row
           counterCells = 1
@@ -264,7 +262,6 @@ var getScriptPromisify = (src) => {
           if (firstRow) {
             firstRow = false
           }
-          
           
           // Exclude first row of totals
           if (cCountry !== "Totals")
@@ -313,6 +310,9 @@ var getScriptPromisify = (src) => {
             } // if (cCountry !== previousCountryResultSetB)
           } // if (cCountry !== "Totals")
           
+          // Close the row with /tr
+          table_output += '</tr>'
+          
         } // END of if (counterCells>3)
  
       }) // END of loop --> resultSet.forEach(dp => {
@@ -336,6 +336,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled25', myNewBlendTableD25)
+  customElements.define('com-sap-sample-newtabled26', myNewBlendTableD26)
   
 })() // END of function --> (function () {
