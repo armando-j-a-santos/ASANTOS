@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD31 extends HTMLElement {
+  class myNewBlendTableD32 extends HTMLElement {
     constructor () {
       super()
 
@@ -306,7 +306,11 @@ var getScriptPromisify = (src) => {
                       {
                         IncomePercentage = formattedValue
                       }
-
+                    
+                      console.log("number_of_measures=" + number_of_measures)  
+                      console.log("LifeExpectPercentage=" + LifeExpectPercentage)
+                      console.log("IncomePercentage=" + IncomePercentage)
+                      
                       number_of_measures = number_of_measures + 1
                   }
 
@@ -321,9 +325,9 @@ var getScriptPromisify = (src) => {
                 }) // END of loop --> resultSet.forEach(dpB => { 
               
             } else { // if (cCountry !== previousCountryResultSetB)
-                console.log("number_of_measures=" + number_of_measures)
-                console.log(LifeExpectPercentage)
-                console.log(IncomePercentage)
+                
+                console.log("LE=" + LifeExpectPercentage)
+                console.log("INC=" + IncomePercentage)
               
                 number_of_measures = number_of_measures + 1
               
@@ -367,6 +371,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled31', myNewBlendTableD31)
+  customElements.define('com-sap-sample-newtabled32', myNewBlendTableD32)
   
 })() // END of function --> (function () {
