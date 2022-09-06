@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD18 extends HTMLElement {
+  class myNewBlendTableD19 extends HTMLElement {
     constructor () {
       super()
 
@@ -131,6 +131,9 @@ var getScriptPromisify = (src) => {
       
       // initialize country duplicate control
       var previousCountry = ''
+      
+      // initialize country duplicate control
+      var previousCountryResultSetB = ''
       
       // Control first row only
       var firstRow = true      
@@ -260,29 +263,41 @@ var getScriptPromisify = (src) => {
             firstRow = false
           }
           
-          // Control the 2nd foreach loop
-          var done = false;
           
-          // Other table source
-          resultSetB.forEach(dpB => {
-            if(done) { return } // Break the resultSetB.forEach loop
-            
-            var cCountry2 = dpB.Country.description
-            
-            console.log(cCountry2 + " / " + cCountry)
+          // Exclude first row of totals
+          if (cCountry !== "Totals")
+          {
+            // Control the 2nd foreach loop
+            var out = false;
+            // Number of Measures that we need within ResultSetB
+            var number_of_measures = 0
 
-            if (cCountry2 === cCountry)
-            {
-                // Get the description & formattedValue from the measures (@MeasureDimension)
-                var { formattedValue, description } = dpB['@MeasureDimension']
-                console.log ('EQUAL -->' + cCountry2)
-                console.log(formattedValue)
-                console.log(description)
+            // Other table source
+            resultSetB.forEach(dpB => {
+              if(out) { return } // Break the resultSetB.forEach loop
 
-                done = true; // To break the resultSetB.forEach loop
-            }
+              var cCountry2 = dpB.Country.description
 
-          }) // END of loop --> resultSet.forEach(dpB => {               
+              console.log(cCountry2 + " / " + cCountry)
+
+              if (cCountry2 === cCountry)
+              {
+                  // Get the description & formattedValue from the measures (@MeasureDimension)
+                  var { formattedValue, description } = dpB['@MeasureDimension']
+                  console.log ('EQUAL -->' + cCountry2)
+                  console.log(formattedValue)
+                  console.log(description)
+
+                  number_of_measures = number_of_measures + 1
+              }
+
+              if (number_of_measures>2) // LifeExpect Variation %   and   Income Variation %
+              {
+                out = true; // To break the resultSetB.forEach loop
+              }
+
+            }) // END of loop --> resultSet.forEach(dpB => { 
+          }
           
         } // END of if (counterCells>3)
  
@@ -307,6 +322,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled18', myNewBlendTableD18)
+  customElements.define('com-sap-sample-newtabled19', myNewBlendTableD19)
   
 })() // END of function --> (function () {
