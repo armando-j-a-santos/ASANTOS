@@ -106,7 +106,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewTableE3 extends HTMLElement {
+  class myNewTableE4 extends HTMLElement {
     constructor () {
       super()
 
@@ -188,7 +188,7 @@ var getScriptPromisify = (src) => {
             if (cCountry === previousCountry)
             {
                 // Show a space char instead of the country to avoid duplicates
-                table_output += '<tr><td> </td>'
+                /////////////////table_output += '<tr><td> </td>'
             } else {
                 if (cControlBold === false)
                 {
@@ -296,14 +296,6 @@ var getScriptPromisify = (src) => {
             } 
           }
 
-
-        // Write into table all dimensions & measures at once (one go only)
-        table_output += '<td><font style="font-size:12px;">'+ cCountry +'</font></td>'
-        table_output += '<td><font style="font-size:12px;">'+ ctimeline +'</font></td>'
-        table_output += '<td><font style="font-size:12px;">'+ cValuePopulation +'</font></td>'
-        table_output += '<td><font style="font-size:12px;">'+ cValueLifeExpect +'</font></td>'
-        table_output += '<td><font style="font-size:12px;">'+ cValueIncome +'</font></td>'
-
         // Increment the cells counter
         counterCells = counterCells + 1
         
@@ -320,6 +312,14 @@ var getScriptPromisify = (src) => {
           if (firstRow) {
             firstRow = false
           }
+          
+          // Write into table all dimensions & measures at once (one go only)
+          table_output += '<td><font style="font-size:12px;">'+ cCountry +'</font></td>'
+          table_output += '<td><font style="font-size:12px;">'+ ctimeline +'</font></td>'
+          table_output += '<td><font style="font-size:12px;">'+ cValuePopulation +'</font></td>'
+          table_output += '<td><font style="font-size:12px;">'+ cValueLifeExpect +'</font></td>'
+          table_output += '<td><font style="font-size:12px;">'+ cValueIncome +'</font></td>'
+          
         }     
       }) // END of loop --> resultSet.forEach(dp => {
     
@@ -336,6 +336,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtablee3', myNewTableE3)
+  customElements.define('com-sap-sample-newtablee4', myNewTableE4)
   
 })() // END of function --> (function () {
