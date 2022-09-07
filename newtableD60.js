@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD59 extends HTMLElement {
+  class myNewBlendTableD60 extends HTMLElement {
     constructor () {
       super()
 
@@ -304,9 +304,9 @@ var getScriptPromisify = (src) => {
           // Exclude first row of totals
           if (cCountry !== "Totals")
           {     
-            // To avoid un-necessary loops through a country that we have already the information needed
-            if (cCountry !== previousCountryResultSetB)
-            {
+            /////////////////////////// To avoid un-necessary loops through a country that we have already the information needed
+            /////////////////////////if (cCountry !== previousCountryResultSetB)
+            /////////////////////////{
                 // Control the 2nd foreach loop
                 var out = false;
                 number_of_measures = 0
@@ -431,7 +431,7 @@ var getScriptPromisify = (src) => {
                 // Close the row -> with /tr HTML statment
                 table_output += '</tr>'
               
-            } // if (cCountry !== previousCountryResultSetB)
+            /////////////////////////} // if (cCountry !== previousCountryResultSetB)
             
           } // if (cCountry !== "Totals")
           
@@ -456,6 +456,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled59', myNewBlendTableD59)
+  customElements.define('com-sap-sample-newtabled60', myNewBlendTableD60)
   
 })() // END of function --> (function () {
