@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD43 extends HTMLElement {
+  class myNewBlendTableD44 extends HTMLElement {
     constructor () {
       super()
 
@@ -345,20 +345,48 @@ var getScriptPromisify = (src) => {
               
             } else { // if (cCountry !== previousCountryResultSetB)
                 
-                console.log("LE=" + LifeExpectPercentage)
-                console.log("INC=" + IncomePercentage)
+                //console.log("LE=" + LifeExpectPercentage)
+                //console.log("INC=" + IncomePercentage)
                 //console.log("number_of_measures=" + number_of_measures)  
-                console.log("cCountry=" + cCountry)
-                console.log("ctimeline=" + ctimeline)
-                console.log("LifeExpectRealValue=" + LifeExpectRealValue)
-                console.log("IncomeRealValue=" + IncomeRealValue)
+                //console.log("cCountry=" + cCountry)
+                //console.log("ctimeline=" + ctimeline)
+                //console.log("LifeExpectRealValue=" + LifeExpectRealValue)
+                //console.log("IncomeRealValue=" + IncomeRealValue)
+                
+                // Add % symbol into LifeExpectPercentage & IncomeRealValue
+                LifeExpectPercentage = LifeExpectPercentage + " %"
+                IncomeRealValue = IncomeRealValue + " %"
 
                 // Add into the table layout the saved % LifeExpect variation value
                 table_output += '<td><font style="font-size:12px;">'+ LifeExpectPercentage +'</font></td>' 
                   
                 // Add into the table layout the saved % Income variation value
                 table_output += '<td><font style="font-size:12px;">'+ IncomePercentage +'</font></td>' 
-                  
+                
+                // Comas handler (remove comas (,) from the existing number format -> IncomeRealValue)
+                var xIncomeRealValue = IncomeRealValue
+                
+                // Remove all comas (,) from the formattedValue
+                while(xIncomeRealValue.includes(",")){ xIncomeRealValue = xIncomeRealValue.replace(",", "") }
+                
+                var xValueA = Number(LifeExpectRealValue)
+                var xValueB = Number(LifeExpectPercentage)
+                var xValue = xValueA + ((xValueA * xValueB) / 100)
+                
+                var FormattedValue = xValue.toLocaleString('en-US');
+              
+                // Add into the table layout the LifeExpect TOTAL value
+                table_output += '<td><font style="font-size:12px;">'+ FormattedValue +'</font></td>'
+              
+                xValueA = Number(xIncomeRealValue)
+                xValueB = Number(IncomePercentage)
+                xValue = xValueA + ((xValueA * xValueB) / 100)              
+              
+                FormattedValue = xValue.toLocaleString('en-US');
+              
+                // Add into the table layout the Income TOTAL value
+                table_output += '<td><font style="font-size:12px;">'+ FormattedValue +'</font></td>'              
+              
                 // Close the row -> with /tr HTML statment
                 table_output += '</tr>'
             }
@@ -387,6 +415,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled43', myNewBlendTableD43)
+  customElements.define('com-sap-sample-newtabled44', myNewBlendTableD44)
   
 })() // END of function --> (function () {
