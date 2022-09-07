@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD49 extends HTMLElement {
+  class myNewBlendTableD50 extends HTMLElement {
     constructor () {
       super()
 
@@ -246,7 +246,8 @@ var getScriptPromisify = (src) => {
                 // Show - sign as NULL value comeing from backend
                 table_output += '<td><font style="font-size:14px;"> - </font></td>'
                 //console.log("missing LifeExpect") 
-                counterCells = counterCells + 1                
+                counterCells = counterCells + 1
+                LifeExpectRealValue = "0" 
               }
         } else if (counterCells === 3) {
               if (description !== "Income")
@@ -255,6 +256,7 @@ var getScriptPromisify = (src) => {
                 table_output += '<td><font style="font-size:14px;"> - </font></td>'
                 //console.log("missing Income") 
                 counterCells = counterCells + 1
+                IncomeRealValue = "0"
               }
          }
           
@@ -393,15 +395,15 @@ var getScriptPromisify = (src) => {
                 var xValueB = Number(savedLifeExpectPercentage)
                 var xValue = xValueA + ((xValueA * xValueB) / 100)
                 
-                /*
+                
                 console.log(">>> LifeExpect")
                 console.log("xValueA=" + xValueA)
                 console.log("xValueB=" + xValueB)
                 console.log("xValue=" + xValue)
-                */
+                
                 
                 var NewFormattedValue = xValue.toLocaleString('en-US');
-                //console.log("NewFormattedValue=" + NewFormattedValue)
+                console.log("NewFormattedValue=" + NewFormattedValue)
               
                 // Add into the table layout the LifeExpect TOTAL value
                 table_output += '<td><font style="font-size:12px;">'+ NewFormattedValue +'</font></td>'
@@ -410,15 +412,15 @@ var getScriptPromisify = (src) => {
                 xValueB = Number(savedIncomePercentage)
                 xValue = xValueA + ((xValueA * xValueB) / 100)
                 
-                /*
+                
                 console.log(">>> Income")
                 console.log("xValueA=" + xValueA)
                 console.log("xValueB=" + xValueB)
                 console.log("xValue=" + xValue)
-                */
+                
               
                 NewFormattedValue = xValue.toLocaleString('en-US');
-                //console.log("NewFormattedValue=" + NewFormattedValue)
+                console.log("NewFormattedValue=" + NewFormattedValue)
               
                 // Add into the table layout the Income TOTAL value
                 table_output += '<td><font style="font-size:12px;">'+ NewFormattedValue +'</font></td>'              
@@ -451,6 +453,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled49', myNewBlendTableD49)
+  customElements.define('com-sap-sample-newtabled50', myNewBlendTableD50)
   
 })() // END of function --> (function () {
