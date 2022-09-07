@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD45 extends HTMLElement {
+  class myNewBlendTableD46 extends HTMLElement {
     constructor () {
       super()
 
@@ -345,13 +345,13 @@ var getScriptPromisify = (src) => {
               
             } else { // if (cCountry !== previousCountryResultSetB)
                 
-                //console.log("LE=" + LifeExpectPercentage)
-                //console.log("INC=" + IncomePercentage)
+                console.log("LE=" + LifeExpectPercentage)
+                console.log("INC=" + IncomePercentage)
                 //console.log("number_of_measures=" + number_of_measures)  
-                //console.log("cCountry=" + cCountry)
-                //console.log("ctimeline=" + ctimeline)
-                //console.log("LifeExpectRealValue=" + LifeExpectRealValue)
-                //console.log("IncomeRealValue=" + IncomeRealValue)
+                console.log("cCountry=" + cCountry)
+                console.log("ctimeline=" + ctimeline)
+                console.log("LifeExpectRealValue=" + LifeExpectRealValue)
+                console.log("IncomeRealValue=" + IncomeRealValue)
                 
                 // Add % symbol into LifeExpectPercentage & IncomeRealValue
                 var savedLifeExpectPercentage = LifeExpectPercentage
@@ -375,16 +375,28 @@ var getScriptPromisify = (src) => {
                 var xValueB = Number(savedLifeExpectPercentage)
                 var xValue = xValueA + ((xValueA * xValueB) / 100)
                 
+                console.log(">>> LifeExpect")
+                console.log("xValueA=" + xValueA)
+                console.log("xValueB=" + xValueB)
+                console.log("xValue=" + xValue)
+                
                 var NewFormattedValue = xValue.toLocaleString('en-US');
+                console.log("NewFormattedValue=" + NewFormattedValue)
               
                 // Add into the table layout the LifeExpect TOTAL value
                 table_output += '<td><font style="font-size:12px;">'+ NewFormattedValue +'</font></td>'
               
                 xValueA = Number(xIncomeRealValue)
                 xValueB = Number(savedIncomePercentage)
-                xValue = xValueA + ((xValueA * xValueB) / 100)              
+                xValue = xValueA + ((xValueA * xValueB) / 100)
+              
+                console.log(">>> Income")
+                console.log("xValueA=" + xValueA)
+                console.log("xValueB=" + xValueB)
+                console.log("xValue=" + xValue)              
               
                 NewFormattedValue = xValue.toLocaleString('en-US');
+                console.log("NewFormattedValue=" + NewFormattedValue)
               
                 // Add into the table layout the Income TOTAL value
                 table_output += '<td><font style="font-size:12px;">'+ NewFormattedValue +'</font></td>'              
@@ -417,6 +429,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled45', myNewBlendTableD45)
+  customElements.define('com-sap-sample-newtabled46', myNewBlendTableD46)
   
 })() // END of function --> (function () {
