@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD55 extends HTMLElement {
+  class myNewBlendTableD56 extends HTMLElement {
     constructor () {
       super()
 
@@ -385,13 +385,13 @@ var getScriptPromisify = (src) => {
                 // Remove all comas (,) from the formattedValue
                 while(xIncomeRealValue.includes(",")){ xIncomeRealValue = xIncomeRealValue.replace(",", "") }
                 
+                // Remove all percentages (%) from the savedLifeExpectPercentage
+                while(savedLifeExpectPercentage.includes("%")){ savedLifeExpectPercentage = savedLifeExpectPercentage.replace("%", "") }
+              
                 var xValueA = Number(LifeExpectRealValue)
                 var xValueB = Number(savedLifeExpectPercentage)
                 var xValue = xValueA + ((xValueA * xValueB) / 100)
                 
-                // Remove all percentages (%) from the savedLifeExpectPercentage
-                while(savedLifeExpectPercentage.includes("%")){ savedLifeExpectPercentage = savedLifeExpectPercentage.replace("%", "") }
-              
                 console.log(">>> LifeExpect")
                 console.log(">>> LifeExpectRealValue =" + LifeExpectRealValue)
                 console.log(">>> LifeExpectPercentage =" + LifeExpectPercentage)
@@ -406,6 +406,9 @@ var getScriptPromisify = (src) => {
               
                 // Add into the table layout the LifeExpect TOTAL value
                 table_output += '<td><font style="font-size:12px;">'+ NewFormattedValue +'</font></td>'
+                
+              // Remove all percentages (%) from the savedIncomePercentage
+                while(savedIncomePercentage.includes("%")){ savedIncomePercentage = savedIncomePercentage.replace("%", "") }
               
                 xValueA = Number(xIncomeRealValue)
                 xValueB = Number(savedIncomePercentage)
@@ -452,6 +455,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled55', myNewBlendTableD55)
+  customElements.define('com-sap-sample-newtabled56', myNewBlendTableD56)
   
 })() // END of function --> (function () {
