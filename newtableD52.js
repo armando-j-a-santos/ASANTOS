@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD51 extends HTMLElement {
+  class myNewBlendTableD52 extends HTMLElement {
     constructor () {
       super()
 
@@ -172,10 +172,6 @@ var getScriptPromisify = (src) => {
           
         //Reset control bold for each row
         var cControlBold = false
-        
-        // To save LifeExpect & Income values coming from ResultSetA
-        var LifeExpectRealValue = "0"
-        var IncomeRealValue = "0"
           
         // Check if the year needs Totals
         if (ctimeline.length === 0) {
@@ -428,6 +424,10 @@ var getScriptPromisify = (src) => {
               
                 // Close the row -> with /tr HTML statment
                 table_output += '</tr>'
+              
+                ///////////////// To save LifeExpect & Income values coming from ResultSetA
+                ///////////////LifeExpectRealValue = "0"
+                ///////////////IncomeRealValue = "0"              
             }
           } // if (cCountry !== "Totals")
           
@@ -454,6 +454,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled51', myNewBlendTableD51)
+  customElements.define('com-sap-sample-newtabled52', myNewBlendTableD52)
   
 })() // END of function --> (function () {
