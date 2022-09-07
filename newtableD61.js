@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD60 extends HTMLElement {
+  class myNewBlendTableD61 extends HTMLElement {
     constructor () {
       super()
 
@@ -262,6 +262,18 @@ var getScriptPromisify = (src) => {
         if (firstRow)
         {
             table_output += '<td class="myLightBlue"><b>'+ formattedValue +'</b></td>'
+            
+            // Show null (' - ') for the next 4x cells
+            if (counterCells === 3) {
+                // Null ( - ) for LifeExpect Variation %
+                table_output += '<td class="myLightBlue"><b> - </b></td>'
+                // Null ( - ) for Income Variation %
+                table_output += '<td class="myLightBlue"><b> - </b></td>'
+                // Null ( - ) for LifeExpect (Total)
+                table_output += '<td class="myLightBlue"><b> - </b></td>'
+                // Null ( - ) for Income (Total)
+                table_output += '<td class="myLightBlue"><b> - </b></td>'
+            }
         } else {
             table_output += '<td><font style="font-size:12px;">'+ formattedValue +'</font></td>' 
         }
@@ -304,9 +316,6 @@ var getScriptPromisify = (src) => {
           // Exclude first row of totals
           if (cCountry !== "Totals")
           {     
-            /////////////////////////// To avoid un-necessary loops through a country that we have already the information needed
-            /////////////////////////if (cCountry !== previousCountryResultSetB)
-            /////////////////////////{
                 // Control the 2nd foreach loop
                 var out = false;
                 number_of_measures = 0
@@ -354,8 +363,6 @@ var getScriptPromisify = (src) => {
                   }
 
                 }) // END of loop --> resultSet.forEach(dpB => { 
-              
-            /////////////////////////} else { // if (cCountry !== previousCountryResultSetB)
                 
                 /*
                 console.log("LE=" + LifeExpectPercentage)
@@ -408,7 +415,7 @@ var getScriptPromisify = (src) => {
                 // Add into the table layout the LifeExpect TOTAL value
                 table_output += '<td><font style="font-size:12px;">'+ NewFormattedValue +'</font></td>'
                 
-              // Remove all percentages (%) from the savedIncomePercentage
+                // Remove all percentages (%) from the savedIncomePercentage
                 while(savedIncomePercentage.includes("%")){ savedIncomePercentage = savedIncomePercentage.replace("%", "") }
               
                 xValueA = Number(xIncomeRealValue)
@@ -430,8 +437,6 @@ var getScriptPromisify = (src) => {
               
                 // Close the row -> with /tr HTML statment
                 table_output += '</tr>'
-              
-            /////////////////////////} // if (cCountry !== previousCountryResultSetB)
             
           } // if (cCountry !== "Totals")
           
@@ -456,6 +461,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled60', myNewBlendTableD60)
+  customElements.define('com-sap-sample-newtabled61', myNewBlendTableD61)
   
 })() // END of function --> (function () {
