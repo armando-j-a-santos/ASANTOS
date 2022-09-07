@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD57 extends HTMLElement {
+  class myNewBlendTableD58 extends HTMLElement {
     constructor () {
       super()
 
@@ -355,7 +355,7 @@ var getScriptPromisify = (src) => {
 
                 }) // END of loop --> resultSet.forEach(dpB => { 
               
-            } else { // if (cCountry !== previousCountryResultSetB)
+            /////////////////////////} else { // if (cCountry !== previousCountryResultSetB)
                 
                 /*
                 console.log("LE=" + LifeExpectPercentage)
@@ -429,8 +429,10 @@ var getScriptPromisify = (src) => {
                 table_output += '<td><font style="font-size:12px;">'+ NewFormattedValue +'</font></td>'              
               
                 // Close the row -> with /tr HTML statment
-                table_output += '</tr>'         
-            }
+                table_output += '</tr>'
+              
+            } // if (cCountry !== previousCountryResultSetB)
+            
           } // if (cCountry !== "Totals")
           
         } // END of if (counterCells>3)
@@ -451,11 +453,9 @@ var getScriptPromisify = (src) => {
     }
   } // END of method --> render
   
-  
-  
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled57', myNewBlendTableD57)
+  customElements.define('com-sap-sample-newtabled58', myNewBlendTableD58)
   
 })() // END of function --> (function () {
