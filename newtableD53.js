@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD52 extends HTMLElement {
+  class myNewBlendTableD53 extends HTMLElement {
     constructor () {
       super()
 
@@ -255,8 +255,6 @@ var getScriptPromisify = (src) => {
                 IncomeRealValue = "0"
               }
          }
-          
-        console.lo
         
         // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
         // MEASURES VALUES BELOW vvvvvvvvvvvv
@@ -394,6 +392,8 @@ var getScriptPromisify = (src) => {
                 
                 console.log(">>> LifeExpect")
                 console.log(">>> LifeExpectRealValue =" + LifeExpectRealValue)
+                console.log(">>> LifeExpectPercentage =" + LifeExpectPercentage)
+                console.log(">>> savedLifeExpectPercentage =" + savedLifeExpectPercentage)
                 console.log("xValueA=" + xValueA)
                 console.log("xValueB=" + xValueB)
                 console.log("xValue=" + xValue)
@@ -423,11 +423,7 @@ var getScriptPromisify = (src) => {
                 table_output += '<td><font style="font-size:12px;">'+ NewFormattedValue +'</font></td>'              
               
                 // Close the row -> with /tr HTML statment
-                table_output += '</tr>'
-              
-                ///////////////// To save LifeExpect & Income values coming from ResultSetA
-                ///////////////LifeExpectRealValue = "0"
-                ///////////////IncomeRealValue = "0"              
+                table_output += '</tr>'         
             }
           } // if (cCountry !== "Totals")
           
@@ -454,6 +450,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled52', myNewBlendTableD52)
+  customElements.define('com-sap-sample-newtabled53', myNewBlendTableD53)
   
 })() // END of function --> (function () {
