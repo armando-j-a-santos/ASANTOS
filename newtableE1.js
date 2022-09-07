@@ -1,3 +1,5 @@
+ async render (resultSet, exportXLS, showDuplicates, OKValueLE, OKValueINC) {
+====================================================================================================
 var getScriptPromisify = (src) => {
   return new Promise(resolve => {
     $.getScript(src, resolve)
@@ -120,7 +122,7 @@ var getScriptPromisify = (src) => {
     // ------------------
     // Scripting methods
     // ------------------
-    async render (resultSet, exportXLS, showDuplicates, OKValueLE, OKValueINC) {
+    async render (resultSet) {
       
       this._placeholder = this._root.querySelector('#placeholder')
       if (this._placeholder) {
@@ -184,41 +186,27 @@ var getScriptPromisify = (src) => {
           if (counterCells === 1)
           {
             // Dimensions
-            if (showDuplicates === "Yes")
-                {
-                   if (cControlBold === false)
-                   {
-                     table_output += '<tr><td><font style="font-size:12px;">'+ cCountry +'</font></td>'
-                   }
-                   else {
-                     if (firstRow)
-                     {
-                        table_output += '<tr><td class="myLightBlue"><b>'+ cCountry +'</b></td>'
-                     } else {
-                        table_output += '<tr><td class="myGrey"><b>'+ cCountry +'</b></td>'
-                     }
+            if (cCountry === previousCountry)
+            {
+            	// Show a space char instead of the country to avoid duplicates
+                table_output += '<tr><td> </td>'
+            } else 
+	    {
+                  if (cControlBold === false)
+                  {
+                  	table_output += '<tr><td><font style="font-size:12px;">'+ cCountry +'</font></td>'
+                  } else {
+                  	if (firstRow)
+                        {
+                        	table_output += '<tr><td class="myLightBlue"><b>'+ cCountry +'</b></td>'
+                        } else {
+                                table_output += '<tr><td class="myGrey"><b>'+ cCountry +'</b></td>'
+                               }
+                        }
                   }
-                } else {
-                    if (cCountry === previousCountry)
-                    {
-                        // Show a space char instead of the country to avoid duplicates
-                        table_output += '<tr><td> </td>'
-                    } else {
-                           if (cControlBold === false)
-                           {
-                             table_output += '<tr><td><font style="font-size:12px;">'+ cCountry +'</font></td>'
-                           } else {
-                              if (firstRow)
-                                {
-                                  table_output += '<tr><td class="myLightBlue"><b>'+ cCountry +'</b></td>'
-                                } else {
-                                  table_output += '<tr><td class="myGrey"><b>'+ cCountry +'</b></td>'
-                              }
-                           }
-                      }
-                  // Update previous country duplicate control variable
-                  previousCountry = cCountry
-              }
+                 // Update previous country duplicate control variable
+                 previousCountry = cCountry
+            } 
           
             if (cControlBold === false)
             {
@@ -367,10 +355,10 @@ var getScriptPromisify = (src) => {
       this._shadowRoot.getElementById('my_data').innerHTML = table_output
       
       //Export HTML table into XLS file (locally) if parameter (exportXLS) is Yes
-      if (exportXLS === 'Yes')
-      {
-        window.open('data:application/vnd.ms-excel,' + encodeURIComponent(table_output))
-      }
+      //if (exportXLS === 'Yes')
+      //{
+      //  window.open('data:application/vnd.ms-excel,' + encodeURIComponent(table_output))
+      //}
     }
   } // END of method --> render
   
