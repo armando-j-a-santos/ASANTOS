@@ -120,7 +120,7 @@ var getScriptPromisify = (src) => {
     // ------------------
     // Scripting methods
     // ------------------
-    async render (resultSet, exportXLS, showDuplicates, OKValueLE, OKValueINC) {
+    async render (resultSet) {
       
       this._placeholder = this._root.querySelector('#placeholder')
       if (this._placeholder) {
