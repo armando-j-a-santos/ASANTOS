@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD47 extends HTMLElement {
+  class myNewBlendTableD48 extends HTMLElement {
     constructor () {
       super()
 
@@ -163,10 +163,12 @@ var getScriptPromisify = (src) => {
 
       resultSetA.forEach(dp => {
         //console.log(dp)
-        //console.log("(counterCells)-->" + counterCells)
+        console.log("(counterCells)-->" + counterCells)
          
         var cCountry = dp.Country.description
         var ctimeline = dp.timeline.description
+        console.log("(cCountry)-->" + cCountry)
+        console.log("(ctimeline)-->" + ctimeline)
           
         //Reset control bold for each row
         var cControlBold = false
@@ -185,6 +187,8 @@ var getScriptPromisify = (src) => {
           
         // Get the description & formattedValue from the measures (@MeasureDimension)
         var { formattedValue, description } = dp['@MeasureDimension']
+        console.log("(formattedValue)-->" + formattedValue)
+        console.log("(description)-->" + description)
           
         //console.log("(description)-->" + description)     
 
@@ -254,6 +258,8 @@ var getScriptPromisify = (src) => {
               }
          }
           
+        console.lo
+        
         // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
         // MEASURES VALUES BELOW vvvvvvvvvvvv
         // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
@@ -270,12 +276,16 @@ var getScriptPromisify = (src) => {
             if (ctimeline !== "Totals")  // With years within the dimension ctimeline
             {
               LifeExpectRealValue = formattedValue
+              console.log("inside LifeExpectRealValue")
+              console.log(LifeExpectRealValue)
             }
         } else if (counterCells === 3) // Income value
         {
             if (ctimeline !== "Totals")  // With years within the dimension ctimeline
             {
               IncomeRealValue = formattedValue
+              console.log("inside IncomeRealValue")
+              console.log(IncomeRealValue)              
             }
         }
         
@@ -351,6 +361,7 @@ var getScriptPromisify = (src) => {
               
             } else { // if (cCountry !== previousCountryResultSetB)
                 
+                /*
                 console.log("LE=" + LifeExpectPercentage)
                 console.log("INC=" + IncomePercentage)
                 //console.log("number_of_measures=" + number_of_measures)  
@@ -358,7 +369,8 @@ var getScriptPromisify = (src) => {
                 console.log("ctimeline=" + ctimeline)
                 console.log("LifeExpectRealValue=" + LifeExpectRealValue)
                 console.log("IncomeRealValue=" + IncomeRealValue)
-                
+                */
+              
                 // Add % symbol into LifeExpectPercentage & IncomeRealValue
                 var savedLifeExpectPercentage = LifeExpectPercentage
                 var savedIncomePercentage = IncomePercentage
@@ -381,13 +393,15 @@ var getScriptPromisify = (src) => {
                 var xValueB = Number(savedLifeExpectPercentage)
                 var xValue = xValueA + ((xValueA * xValueB) / 100)
                 
+                /*
                 console.log(">>> LifeExpect")
                 console.log("xValueA=" + xValueA)
                 console.log("xValueB=" + xValueB)
                 console.log("xValue=" + xValue)
+                */
                 
                 var NewFormattedValue = xValue.toLocaleString('en-US');
-                console.log("NewFormattedValue=" + NewFormattedValue)
+                //console.log("NewFormattedValue=" + NewFormattedValue)
               
                 // Add into the table layout the LifeExpect TOTAL value
                 table_output += '<td><font style="font-size:12px;">'+ NewFormattedValue +'</font></td>'
@@ -395,14 +409,16 @@ var getScriptPromisify = (src) => {
                 xValueA = Number(xIncomeRealValue)
                 xValueB = Number(savedIncomePercentage)
                 xValue = xValueA + ((xValueA * xValueB) / 100)
-              
+                
+                /*
                 console.log(">>> Income")
                 console.log("xValueA=" + xValueA)
                 console.log("xValueB=" + xValueB)
-                console.log("xValue=" + xValue)              
+                console.log("xValue=" + xValue)
+                */
               
                 NewFormattedValue = xValue.toLocaleString('en-US');
-                console.log("NewFormattedValue=" + NewFormattedValue)
+                //console.log("NewFormattedValue=" + NewFormattedValue)
               
                 // Add into the table layout the Income TOTAL value
                 table_output += '<td><font style="font-size:12px;">'+ NewFormattedValue +'</font></td>'              
@@ -435,6 +451,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled47', myNewBlendTableD47)
+  customElements.define('com-sap-sample-newtabled48', myNewBlendTableD48)
   
 })() // END of function --> (function () {
