@@ -98,7 +98,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewBlendTableD48 extends HTMLElement {
+  class myNewBlendTableD49 extends HTMLElement {
     constructor () {
       super()
 
@@ -273,7 +273,7 @@ var getScriptPromisify = (src) => {
         // Save actual values for LifeExpect and Income to be used later in the sequence (below) logic
         if (counterCells === 2) // LifeExpect value
         {
-            if (ctimeline !== "Totals")  // With years within the dimension ctimeline
+            if (ctimeline.length > 0)  // With years within the dimension ctimeline
             {
               LifeExpectRealValue = formattedValue
               console.log("inside LifeExpectRealValue")
@@ -281,7 +281,7 @@ var getScriptPromisify = (src) => {
             }
         } else if (counterCells === 3) // Income value
         {
-            if (ctimeline !== "Totals")  // With years within the dimension ctimeline
+            if (ctimeline.length > 0)  // With years within the dimension ctimeline
             {
               IncomeRealValue = formattedValue
               console.log("inside IncomeRealValue")
@@ -451,6 +451,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtabled48', myNewBlendTableD48)
+  customElements.define('com-sap-sample-newtabled49', myNewBlendTableD49)
   
 })() // END of function --> (function () {
