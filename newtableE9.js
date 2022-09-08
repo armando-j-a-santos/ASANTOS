@@ -106,7 +106,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewTableE8 extends HTMLElement {
+  class myNewTableE9 extends HTMLElement {
     constructor () {
       super()
 
@@ -231,40 +231,38 @@ var getScriptPromisify = (src) => {
         // Reset the counter for each row
         if (counterCells>3) 
         {
-          // Close the row
+          // Write into table all dimensions & measures at once (one go only)
+          if (firstRow)
+          {
+                  table_output += '<td class="myLightBlue"><b>'+ cCountry +'</b></td>'
+                  table_output += '<td class="myLightBlue"><b>'+ ctimeline +'</b></td>'
+                  table_output += '<td class="myLightBlue"><b>'+ cValuePopulation +'</b></td>'
+                  table_output += '<td class="myLightBlue"><b>'+ cValueLifeExpect +'</b></td>'
+                  table_output += '<td class="myLightBlue"><b>'+ cValueIncome +'</b></td>'                  
+          } else if (ctimeline === "Totals") {
+                  table_output += '<td class="myGrey"><b>'+ cCountry +'</b></td>'
+                  table_output += '<td class="myGrey"><b>'+ ctimeline +'</b></td>'
+                  table_output += '<td class="myGrey"><b>'+ cValuePopulation +'</b></td>'
+                  table_output += '<td class="myGrey"><b>'+ cValueLifeExpect +'</b></td>'
+                  table_output += '<td class="myGrey"><b>'+ cValueIncome +'</b></td>'                     
+          } else {
+                  table_output += '<td><font style="font-size:12px;">'+ cCountry +'</font></td>'
+                  table_output += '<td><font style="font-size:12px;">'+ ctimeline +'</font></td>'
+                  table_output += '<td><font style="font-size:12px;">'+ cValuePopulation +'</font></td>'
+                  table_output += '<td><font style="font-size:12px;">'+ cValueLifeExpect +'</font></td>'
+                  table_output += '<td><font style="font-size:12px;">'+ cValueIncome +'</font></td>'                
+          }
+          
+          // Close each row
           table_output += '</tr>'
-          // Moved into a different country
+          
+          // Moved into a different country and
           // Reset the counter, to start a new row
           counterCells = 1
           
           // Update first row handler
           if (firstRow) {
             firstRow = false
-          }
-          
-          // Write into table all dimensions & measures at once (one go only)
-          if (counterCells === 1)
-          {
-                if (firstRow)
-                {
-                  table_output += '<td class="myLightBlue"><b>'+ cCountry +'</b></td>'
-                  table_output += '<td class="myLightBlue"><b>'+ ctimeline +'</b></td>'
-                  table_output += '<td class="myLightBlue"><b>'+ cValuePopulation +'</b></td>'
-                  table_output += '<td class="myLightBlue"><b>'+ cValueLifeExpect +'</b></td>'
-                  table_output += '<td class="myLightBlue"><b>'+ cValueIncome +'</b></td>'                  
-                } else {
-                  table_output += '<td class="myGrey"><b>'+ cCountry +'</b></td>'
-                  table_output += '<td class="myGrey"><b>'+ ctimeline +'</b></td>'
-                  table_output += '<td class="myGrey"><b>'+ cValuePopulation +'</b></td>'
-                  table_output += '<td class="myGrey"><b>'+ cValueLifeExpect +'</b></td>'
-                  table_output += '<td class="myGrey"><b>'+ cValueIncome +'</b></td>'                     
-                }
-          } else {
-                table_output += '<td><font style="font-size:12px;">'+ cCountry +'</font></td>'
-                table_output += '<td><font style="font-size:12px;">'+ ctimeline +'</font></td>'
-                table_output += '<td><font style="font-size:12px;">'+ cValuePopulation +'</font></td>'
-                table_output += '<td><font style="font-size:12px;">'+ cValueLifeExpect +'</font></td>'
-                table_output += '<td><font style="font-size:12px;">'+ cValueIncome +'</font></td>'
           }
         }     
       }) // END of loop --> resultSet.forEach(dp => {
@@ -282,6 +280,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtablee8', myNewTableE8)
+  customElements.define('com-sap-sample-newtablee9', myNewTableE9)
   
 })() // END of function --> (function () {
