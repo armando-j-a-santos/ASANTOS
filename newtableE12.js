@@ -106,7 +106,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewTableE11 extends HTMLElement {
+  class myNewTableE12 extends HTMLElement {
     constructor () {
       super()
 
@@ -132,7 +132,7 @@ var getScriptPromisify = (src) => {
       var table_output = '<div id="table-wrapper"><div id="table-scroll">'
       
       // Table Headers & Body
-      table_output += '<table><thead><tr><th>Country</th><th>Year</th><th>Population</th><th>LifeExpect</th><th>Income</th></tr></thead><tbody>'
+      table_output += '<table><thead><tr><th>Country</th><th>Population</th><th>Year</th><th>LifeExpect</th><th>Income</th></tr></thead><tbody>'
       
       // initialize counter of cells
       var counterCells = 1
@@ -235,14 +235,14 @@ var getScriptPromisify = (src) => {
           if (firstRow)
           {
                   table_output += '<td class="myLightBlue"><b>'+ cCountry +'</b></td>'
-                  table_output += '<td class="myLightBlue"><b>'+ ctimeline +'</b></td>'
                   table_output += '<td class="myLightBlue"><b>'+ cValuePopulation +'</b></td>'
+                  table_output += '<td class="myLightBlue"><b>'+ ctimeline +'</b></td>'
                   table_output += '<td class="myLightBlue"><b>'+ cValueLifeExpect +'</b></td>'
                   table_output += '<td class="myLightBlue"><b>'+ cValueIncome +'</b></td>'                  
           } else if (ctimeline === "Totals") {
                   table_output += '<td class="myGrey"><b>'+ cCountry +'</b></td>'
-                  table_output += '<td class="myGrey"><b>'+ ctimeline +'</b></td>'
                   table_output += '<td class="myGrey"><b>'+ cValuePopulation +'</b></td>'
+                  table_output += '<td class="myGrey"><b>'+ ctimeline +'</b></td>'          
                   table_output += '<td class="myGrey"><b>'+ cValueLifeExpect +'</b></td>'
                   table_output += '<td class="myGrey"><b>'+ cValueIncome +'</b></td>'                     
           } else {
@@ -253,8 +253,8 @@ var getScriptPromisify = (src) => {
                   } else {
                       table_output += '<td><font style="font-size:12px;">'+ cCountry +'</font></td>'
                   }
-                  table_output += '<td><font style="font-size:12px;">'+ ctimeline +'</font></td>'
                   table_output += '<td><font style="font-size:12px;">'+ cValuePopulation +'</font></td>'
+                  table_output += '<td><font style="font-size:12px;">'+ ctimeline +'</font></td>'
                   table_output += '<td><font style="font-size:12px;">'+ cValueLifeExpect +'</font></td>'
                   table_output += '<td><font style="font-size:12px;">'+ cValueIncome +'</font></td>'                
           }
@@ -286,6 +286,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtablee11', myNewTableE11)
+  customElements.define('com-sap-sample-newtablee12', myNewTableE12)
   
 })() // END of function --> (function () {
