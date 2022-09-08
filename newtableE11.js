@@ -106,7 +106,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewTableE10 extends HTMLElement {
+  class myNewTableE11 extends HTMLElement {
     constructor () {
       super()
 
@@ -250,7 +250,7 @@ var getScriptPromisify = (src) => {
                   if (cCountry === previousCountry)
                   {
                       table_output += '<td><font style="font-size:12px;"> </font></td>' 
-                  } esle {
+                  } else {
                       table_output += '<td><font style="font-size:12px;">'+ cCountry +'</font></td>'
                   }
                   table_output += '<td><font style="font-size:12px;">'+ ctimeline +'</font></td>'
@@ -286,6 +286,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtablee10', myNewTableE10)
+  customElements.define('com-sap-sample-newtablee11', myNewTableE11)
   
 })() // END of function --> (function () {
