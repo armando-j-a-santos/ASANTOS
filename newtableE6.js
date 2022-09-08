@@ -106,7 +106,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewTableE5 extends HTMLElement {
+  class myNewTableE6 extends HTMLElement {
     constructor () {
       super()
 
@@ -154,10 +154,7 @@ var getScriptPromisify = (src) => {
       // Loop through the resultset delivered from the backend vvvvvvvvvvvv
       // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv      
 
-      resultSet.forEach(dp => {
-          //console.log(dp)
-          //console.log("(counterCells)-->" + counterCells)
-         
+      resultSet.forEach(dp => {         
           var cCountry = dp.Country.description
           var ctimeline = dp.timeline.description
           
@@ -173,130 +170,60 @@ var getScriptPromisify = (src) => {
           }
           
           // Get the description & formattedValue from the measures (@MeasureDimension)
-          var { formattedValue, description } = dp['@MeasureDimension']
-          
-          //console.log("(description)-->" + description)     
+          var { formattedValue, description } = dp['@MeasureDimension']   
 
           // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
           // DIMENSIONS BELOW vvvvvvvvvvvv
           // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
         
-          // Another country
+          // Country first cell
           if (counterCells === 1)
           {
-            // Dimensions
-            if (cCountry === previousCountry)
+            // Update previous country duplicate control variable
+            previousCountry = cCountry
+
+            // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+            // Control NULL values coming from backend within any measures vvvvvvvvvvvv
+            // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv            
+            if (description !== "Population")
             {
-                // Show a space char instead of the country to avoid duplicates
-                /////////////////table_output += '<tr><td> </td>'
-            } else {
-                if (cControlBold === false)
-                {
-                   /////////////////table_output += '<tr><td><font style="font-size:12px;">'+ cCountry +'</font></td>'
-                } else {
-                   if (firstRow)
-                   {
-                      /////////////////table_output += '<tr><td class="myLightBlue"><b>'+ cCountry +'</b></td>'
-                   } else {
-                      /////////////////table_output += '<tr><td class="myGrey"><b>'+ cCountry +'</b></td>'
-                   }
-                }
-              }
-          // Update previous country duplicate control variable
-          previousCountry = cCountry
-                  
-          if (cControlBold === false)
-          {
-              /////////////////table_output += '<td><font style="font-size:12px;">'+ ctimeline +'</font></td>'
-          } else {
-                if (firstRow)
-                {              
-                  /////////////////table_output += '<td class="myLightBlue"><b>'+ ctimeline +'</b></td>'
-                } else {
-                  /////////////////table_output += '<td class="myGrey"><b>'+ ctimeline +'</b></td>'
-                }
-          }
-
-            
-          // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-          // Control NULL values coming from backend within any measures vvvvvvvvvvvv
-          // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv            
-
-          if (counterCells === 1)
-          {
-              if (description !== "Population")
-              {
-                // Show - sign as NULL value comeing from backend
-                /////////////////table_output += '<td><font style="font-size:14px;"> - </font></td>'
-                //console.log("missing Population") 
-                counterCells = counterCells + 1
-                cValueLifeExpect = formattedValue
-                formattedValue = " - "
-              }
-          } 
-            
-            
-          // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-          // MEASURES BELOW vvvvvvvvvvvv
-          // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-              
-          if (cControlBold === false)
-          {
-                /////////////////table_output += '<td><font style="font-size:12px;">'+ formattedValue +'</font></td>'
-          } else {
-                  if (firstRow)
-                  {              
-                    /////////////////table_output += '<td class="myLightBlue"><b>'+ formattedValue +'</b></td>'
-                  } else {
-                    /////////////////table_output += '<td class="myGrey"><b>'+ formattedValue +'</b></td>'
-                  }
-          } 
-              
-          cValuePopulation = formattedValue
+                  // Show - sign as NULL value comeing from backend
+                  formattedValue = " - "
+                  cValueLifeExpect = formattedValue
+                  counterCells = counterCells + 1
+            }
+             
+            // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+            // MEASURES BELOW vvvvvvvvvvvv
+            // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv             
+            cValuePopulation = formattedValue
 
           } else { //////// >>>>>>>>>>> else of if (counterCells === 1)
         
-            // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-            // Control NULL values coming from backend within any measures vvvvvvvvvvvv
-            // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv                     
-            if (counterCells === 2)
-            {
-              cValueLifeExpect = formattedValue
-              if (description !== "LifeExpect")
+              // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+              // Control NULL values coming from backend within any measures vvvvvvvvvvvv
+              // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv                     
+              if (counterCells === 2)
               {
-                // Show - sign as NULL value comeing from backend
-                /////////////////table_output += '<td><font style="font-size:14px;"> - </font></td>'
-                //console.log("missing LifeExpect") 
-                counterCells = counterCells + 1
-                cValueIncome = formattedValue
-                cValueLifeExpect = " - "         
-              }
-            } else if (counterCells === 3)
-            {
-              cValueIncome = formattedValue
-              if (description !== "Income")
-              {
-                // Show - sign as NULL value comeing from backend
-                /////////////////table_output += '<td><font style="font-size:14px;"> - </font></td>'
-                //console.log("missing Income") 
-                counterCells = counterCells + 1
-                cValueIncome = " - " 
-              }
-            }
-        
-            // Only the measures values to display
-            if (cControlBold === false)
-            {
-                /////////////////table_output += '<td><font style="font-size:12px;">'+ formattedValue +'</font></td>'        
-            } else {
-                if (firstRow)
-                {              
-                  /////////////////table_output += '<td class="myLightBlue"><b>'+ formattedValue +'</b></td>'
-                } else {
-                  /////////////////table_output += '<td class="myGrey"><b>'+ formattedValue +'</b></td>'
+                cValueLifeExpect = formattedValue
+                if (description !== "LifeExpect")
+                {
+                  // Show - sign as NULL value comeing from backend
+                  cValueLifeExpect = " - "         
+                  counterCells = counterCells + 1
+                  cValueIncome = formattedValue
                 }
-            } 
-          }
+              } else if (counterCells === 3)
+              {
+                cValueIncome = formattedValue
+                if (description !== "Income")
+                {
+                  // Show - sign as NULL value comeing from backend
+                  cValueIncome = " - " 
+                  counterCells = counterCells + 1
+                }
+              }
+          } 
 
         // Increment the cells counter
         counterCells = counterCells + 1
@@ -338,6 +265,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtablee5', myNewTableE5)
+  customElements.define('com-sap-sample-newtablee6', myNewTableE6)
   
 })() // END of function --> (function () {
