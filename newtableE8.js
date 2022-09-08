@@ -106,7 +106,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewTableE7 extends HTMLElement {
+  class myNewTableE8 extends HTMLElement {
     constructor () {
       super()
 
@@ -240,6 +240,21 @@ var getScriptPromisify = (src) => {
           // Update first row handler
           if (firstRow) {
             firstRow = false
+          }
+          
+          // Write into table all dimensions & measures at once (one go only)
+          if (counterCells === 1)
+          {
+                if (firstRow)
+                {
+                  table_output += '<td class="myLightBlue"><b>'+ cCountry +'</b></td>'
+                  table_output += '<td class="myLightBlue"><b>'+ ctimeline +'</b></td>'
+                  table_output += '<td class="myLightBlue"><b>'+ cValuePopulation +'</b></td>'
+                  table_output += '<td class="myLightBlue"><b>'+ cValueLifeExpect +'</b></td>'
+                  table_output += '<td class="myLightBlue"><b>'+ cValueIncome +'</b></td>'                  
+                } else {
+                  
+                }
           }
           
           // Write into table all dimensions & measures at once (one go only)
