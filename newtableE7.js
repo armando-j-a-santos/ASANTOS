@@ -106,7 +106,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewTableE6 extends HTMLElement {
+  class myNewTableE7 extends HTMLElement {
     constructor () {
       super()
 
@@ -188,8 +188,8 @@ var getScriptPromisify = (src) => {
             if (description !== "Population")
             {
                   // Show - sign as NULL value comeing from backend
-                  formattedValue = " - "
                   cValueLifeExpect = formattedValue
+                  formattedValue = " - "
                   counterCells = counterCells + 1
             }
              
@@ -265,6 +265,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtablee6', myNewTableE6)
+  customElements.define('com-sap-sample-newtablee7', myNewTableE7)
   
 })() // END of function --> (function () {
