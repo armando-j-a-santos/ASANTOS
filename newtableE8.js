@@ -253,17 +253,19 @@ var getScriptPromisify = (src) => {
                   table_output += '<td class="myLightBlue"><b>'+ cValueLifeExpect +'</b></td>'
                   table_output += '<td class="myLightBlue"><b>'+ cValueIncome +'</b></td>'                  
                 } else {
-                  
+                  table_output += '<td class="myGrey"><b>'+ cCountry +'</b></td>'
+                  table_output += '<td class="myGrey"><b>'+ ctimeline +'</b></td>'
+                  table_output += '<td class="myGrey"><b>'+ cValuePopulation +'</b></td>'
+                  table_output += '<td class="myGrey"><b>'+ cValueLifeExpect +'</b></td>'
+                  table_output += '<td class="myGrey"><b>'+ cValueIncome +'</b></td>'                     
                 }
+          } else {
+                table_output += '<td><font style="font-size:12px;">'+ cCountry +'</font></td>'
+                table_output += '<td><font style="font-size:12px;">'+ ctimeline +'</font></td>'
+                table_output += '<td><font style="font-size:12px;">'+ cValuePopulation +'</font></td>'
+                table_output += '<td><font style="font-size:12px;">'+ cValueLifeExpect +'</font></td>'
+                table_output += '<td><font style="font-size:12px;">'+ cValueIncome +'</font></td>'
           }
-          
-          // Write into table all dimensions & measures at once (one go only)
-          table_output += '<td><font style="font-size:12px;">'+ cCountry +'</font></td>'
-          table_output += '<td><font style="font-size:12px;">'+ ctimeline +'</font></td>'
-          table_output += '<td><font style="font-size:12px;">'+ cValuePopulation +'</font></td>'
-          table_output += '<td><font style="font-size:12px;">'+ cValueLifeExpect +'</font></td>'
-          table_output += '<td><font style="font-size:12px;">'+ cValueIncome +'</font></td>'
-          
         }     
       }) // END of loop --> resultSet.forEach(dp => {
     
@@ -280,6 +282,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtablee7', myNewTableE7)
+  customElements.define('com-sap-sample-newtablee8', myNewTableE8)
   
 })() // END of function --> (function () {
