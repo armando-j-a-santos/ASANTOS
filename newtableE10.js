@@ -106,7 +106,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewTableE9 extends HTMLElement {
+  class myNewTableE10 extends HTMLElement {
     constructor () {
       super()
 
@@ -198,7 +198,7 @@ var getScriptPromisify = (src) => {
             // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv             
             cValuePopulation = formattedValue
 
-          } else { //////// >>>>>>>>>>> else of if (counterCells === 1)
+          } else { //////// >>>>>>>>>>> else of    if (counterCells === 1)
         
               // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
               // Control NULL values coming from backend within any measures vvvvvvvvvvvv
@@ -246,7 +246,13 @@ var getScriptPromisify = (src) => {
                   table_output += '<td class="myGrey"><b>'+ cValueLifeExpect +'</b></td>'
                   table_output += '<td class="myGrey"><b>'+ cValueIncome +'</b></td>'                     
           } else {
-                  table_output += '<td><font style="font-size:12px;">'+ cCountry +'</font></td>'
+                  // Avoid repited countries (duplicates)
+                  if (cCountry === previousCountry)
+                  {
+                      table_output += '<td><font style="font-size:12px;"> </font></td>' 
+                  } esle {
+                      table_output += '<td><font style="font-size:12px;">'+ cCountry +'</font></td>'
+                  }
                   table_output += '<td><font style="font-size:12px;">'+ ctimeline +'</font></td>'
                   table_output += '<td><font style="font-size:12px;">'+ cValuePopulation +'</font></td>'
                   table_output += '<td><font style="font-size:12px;">'+ cValueLifeExpect +'</font></td>'
@@ -280,6 +286,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtablee9', myNewTableE9)
+  customElements.define('com-sap-sample-newtablee10', myNewTableE10)
   
 })() // END of function --> (function () {
