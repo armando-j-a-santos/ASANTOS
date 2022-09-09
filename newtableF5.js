@@ -98,15 +98,14 @@ var getScriptPromisify = (src) => {
       
       </style>
       <div id="root" style="width: 100%; height: 100%;">
-        <div id="placeholder">myresultset data</div>
-        <div id="my_data">data...</div>
+        <div id="my_data">Your table is being prepared. Please wait a few seconds.</div>
       </div>
     `
   
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewTableF4 extends HTMLElement {
+  class myNewTableF5 extends HTMLElement {
     constructor () {
       super()
 
@@ -216,6 +215,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtablef4', myNewTableF4)
+  customElements.define('com-sap-sample-newtablef5', myNewTableF5)
   
 })() // END of function --> (function () {
