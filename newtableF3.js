@@ -155,7 +155,7 @@ var getScriptPromisify = (src) => {
       // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv      
 
       resultSet.forEach(dp => {
-          console.log(dp)  
+          //console.log(dp)  
         
           var cOrderDate = dp.Order_Date.description
           var cRegion = dp.Region.description
@@ -206,7 +206,6 @@ var getScriptPromisify = (src) => {
           counterCells = 1
         }
         
-        */
       }) // END of loop --> resultSet.forEach(dp => {
     
       //Close all used tags
@@ -222,6 +221,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtablef2', myNewTableF2)
+  customElements.define('com-sap-sample-newtablef3', myNewTableF3)
   
 })() // END of function --> (function () {
