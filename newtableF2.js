@@ -106,7 +106,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewTableF1 extends HTMLElement {
+  class myNewTableF2 extends HTMLElement {
     constructor () {
       super()
 
@@ -155,22 +155,15 @@ var getScriptPromisify = (src) => {
       // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv      
 
       resultSet.forEach(dp => {
-        console.log(dp)  
+          console.log(dp)  
         
-        /*
-          var cCountry = dp.Country.description
-          var ctimeline = dp.timeline.description
+          var cOrderDate = dp.Order_Date.description
+          var cRegion = dp.Region.description
+          var cLocation = dp.Location.description
+          var cSalesMan = dp.Sales_Manager.description
+          var cStore = dp.Store.description
+          var cProduct = dp.Product.description
           
-          //Reset control bold for each row
-          var cControlBold = false
-          
-          // Check if the year needs Totals
-          if (ctimeline.length === 0) {
-            ctimeline = "Totals"
-            
-            // A total row
-            cControlBold = true
-          }
           
           // Get the description & formattedValue from the measures (@MeasureDimension)
           var { formattedValue, description } = dp['@MeasureDimension']   
@@ -182,85 +175,28 @@ var getScriptPromisify = (src) => {
           // Country first cell
           if (counterCells === 1)
           {
-            // Update previous country duplicate control variable
-            previousCountry = cCountry
-
-            // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-            // Control NULL values coming from backend within any measures vvvvvvvvvvvv
-            // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv            
-            if (description !== "Population")
-            {
-                  // Show - sign as NULL value comeing from backend
-                  cValueLifeExpect = formattedValue
-                  formattedValue = " - "
-                  counterCells = counterCells + 1
-            }
-             
-            // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-            // MEASURES BELOW vvvvvvvvvvvv
-            // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv             
-            cValuePopulation = formattedValue
-
-          } else { //////// >>>>>>>>>>> else of    if (counterCells === 1)
-        
-              // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-              // Control NULL values coming from backend within any measures vvvvvvvvvvvv
-              // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv                     
-              if (counterCells === 2)
-              {
-                cValueLifeExpect = formattedValue
-                if (description !== "LifeExpect")
-                {
-                  // Show - sign as NULL value comeing from backend
-                  cValueLifeExpect = " - "         
-                  counterCells = counterCells + 1
-                  cValueIncome = formattedValue
-                }
-              } else if (counterCells === 3)
-              {
-                cValueIncome = formattedValue
-                if (description !== "Income")
-                {
-                  // Show - sign as NULL value comeing from backend
-                  cValueIncome = " - " 
-                  counterCells = counterCells + 1
-                }
-              }
-          } 
+              cValueGrossMargin = formattedValue
+          } else if (counterCells === 2)
+          {
+              cValueSalesRevenue = formattedValue
+          }
 
         // Increment the cells counter
         counterCells = counterCells + 1
         
         // Reset the counter for each row
-        if (counterCells>3) 
+        if (counterCells>2) 
         {
           // Write into table all dimensions & measures at once (one go only)
-          if (firstRow)
-          {
-                  table_output += '<td class="myLightBlue"><b>'+ cCountry +'</b></td>'
-                  table_output += '<td class="myLightBlue"><b>'+ cValuePopulation +'</b></td>'
-                  table_output += '<td class="myLightBlue"><b>'+ ctimeline +'</b></td>'
-                  table_output += '<td class="myLightBlue"><b>'+ cValueLifeExpect +'</b></td>'
-                  table_output += '<td class="myLightBlue"><b>'+ cValueIncome +'</b></td>'                  
-          } else if (ctimeline === "Totals") {
-                  table_output += '<td class="myGrey"><b>'+ cCountry +'</b></td>'
-                  table_output += '<td class="myGrey"><b>'+ cValuePopulation +'</b></td>'
-                  table_output += '<td class="myGrey"><b>'+ ctimeline +'</b></td>'          
-                  table_output += '<td class="myGrey"><b>'+ cValueLifeExpect +'</b></td>'
-                  table_output += '<td class="myGrey"><b>'+ cValueIncome +'</b></td>'                     
-          } else {
-                  // Avoid repited countries (duplicates)
-                  if (cCountry === previousCountry)
-                  {
-                      table_output += '<td><font style="font-size:12px;"> </font></td>' 
-                  } else {
-                      table_output += '<td><font style="font-size:12px;">'+ cCountry +'</font></td>'
-                  }
-                  table_output += '<td><font style="font-size:12px;">'+ cValuePopulation +'</font></td>'
-                  table_output += '<td><font style="font-size:12px;">'+ ctimeline +'</font></td>'
-                  table_output += '<td><font style="font-size:12px;">'+ cValueLifeExpect +'</font></td>'
-                  table_output += '<td><font style="font-size:12px;">'+ cValueIncome +'</font></td>'                
-          }
+          table_output += '<td><font style="font-size:12px;">'+ cOrderDate +'</font></td>'
+          table_output += '<td><font style="font-size:12px;">'+ cRegion +'</font></td>'
+          table_output += '<td><font style="font-size:12px;">'+ cLocation +'</font></td>'
+          table_output += '<td><font style="font-size:12px;">'+ cSalesMan +'</font></td>'
+          table_output += '<td><font style="font-size:12px;">'+ cStore +'</font></td>'
+          table_output += '<td><font style="font-size:12px;">'+ cProduct +'</font></td>'
+          
+          table_output += '<td><font style="font-size:12px;">'+ cValueGrossMargin +'</font></td>'
+          table_output += '<td><font style="font-size:12px;">'+ cValueSalesRevenue +'</font></td>'
           
           // Close each row
           table_output += '</tr>'
@@ -268,11 +204,6 @@ var getScriptPromisify = (src) => {
           // Moved into a different country and
           // Reset the counter, to start a new row
           counterCells = 1
-          
-          // Update first row handler
-          if (firstRow) {
-            firstRow = false
-          }
         }
         
         */
@@ -291,6 +222,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtablef1', myNewTableF1)
+  customElements.define('com-sap-sample-newtablef2', myNewTableF2)
   
 })() // END of function --> (function () {
