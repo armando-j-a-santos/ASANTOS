@@ -106,7 +106,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewTableF2 extends HTMLElement {
+  class myNewTableF4 extends HTMLElement {
     constructor () {
       super()
 
@@ -164,14 +164,9 @@ var getScriptPromisify = (src) => {
           var cStore = dp.Store.description
           var cProduct = dp.Product.description
           
-          
           // Get the description & formattedValue from the measures (@MeasureDimension)
           var { formattedValue, description } = dp['@MeasureDimension']   
 
-          // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-          // DIMENSIONS BELOW vvvvvvvvvvvv
-          // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-        
           // Country first cell
           if (counterCells === 1)
           {
@@ -181,30 +176,30 @@ var getScriptPromisify = (src) => {
               cValueSalesRevenue = formattedValue
           }
 
-        // Increment the cells counter
-        counterCells = counterCells + 1
-        
-        // Reset the counter for each row
-        if (counterCells>2) 
-        {
-          // Write into table all dimensions & measures at once (one go only)
-          table_output += '<td><font style="font-size:12px;">'+ cOrderDate +'</font></td>'
-          table_output += '<td><font style="font-size:12px;">'+ cRegion +'</font></td>'
-          table_output += '<td><font style="font-size:12px;">'+ cLocation +'</font></td>'
-          table_output += '<td><font style="font-size:12px;">'+ cSalesMan +'</font></td>'
-          table_output += '<td><font style="font-size:12px;">'+ cStore +'</font></td>'
-          table_output += '<td><font style="font-size:12px;">'+ cProduct +'</font></td>'
-          
-          table_output += '<td><font style="font-size:12px;">'+ cValueGrossMargin +'</font></td>'
-          table_output += '<td><font style="font-size:12px;">'+ cValueSalesRevenue +'</font></td>'
-          
-          // Close each row
-          table_output += '</tr>'
-          
-          // Moved into a different country and
-          // Reset the counter, to start a new row
-          counterCells = 1
-        }
+          // Increment the cells counter
+          counterCells = counterCells + 1
+
+          // Reset the counter for each row
+          if (counterCells>2) 
+          {
+            // Write into table all dimensions & measures at once (one go only)
+            table_output += '<td><font style="font-size:12px;">'+ cOrderDate +'</font></td>'
+            table_output += '<td><font style="font-size:12px;">'+ cRegion +'</font></td>'
+            table_output += '<td><font style="font-size:12px;">'+ cLocation +'</font></td>'
+            table_output += '<td><font style="font-size:12px;">'+ cSalesMan +'</font></td>'
+            table_output += '<td><font style="font-size:12px;">'+ cStore +'</font></td>'
+            table_output += '<td><font style="font-size:12px;">'+ cProduct +'</font></td>'
+
+            table_output += '<td><font style="font-size:12px;">'+ cValueGrossMargin +'</font></td>'
+            table_output += '<td><font style="font-size:12px;">'+ cValueSalesRevenue +'</font></td>'
+
+            // Close each row
+            table_output += '</tr>'
+
+            // Moved into a different country and
+            // Reset the counter, to start a new row
+            counterCells = 1
+          }
         
       }) // END of loop --> resultSet.forEach(dp => {
     
@@ -221,6 +216,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtablef3', myNewTableF3)
+  customElements.define('com-sap-sample-newtablef4', myNewTableF4)
   
 })() // END of function --> (function () {
