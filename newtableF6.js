@@ -105,7 +105,7 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // HTML extension with all necessary logic(s) wrtitten JS vvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv  
-  class myNewTableF5 extends HTMLElement {
+  class myNewTableF6 extends HTMLElement {
     constructor () {
       super()
 
@@ -205,8 +205,11 @@ var getScriptPromisify = (src) => {
       //Close all used tags
       table_output += '</tbody></table></div></div>'
     
-
+      // replace above element "my_data" with the HTML table output (final HTML table built above)
       this._shadowRoot.getElementById('my_data').innerHTML = table_output
+      
+      // to avoid memory issues, release from memory the huge HTML string (table_output)
+      table_output = ''
       
     } // END of method --> render 
   } // END of class myNewTable
@@ -215,6 +218,6 @@ var getScriptPromisify = (src) => {
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
   // Return the end result to SAC (SAP ANALYTICS CLOUD) application vvvvvvvvvvvvvvvvvvvvv
   // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-  customElements.define('com-sap-sample-newtablef5', myNewTableF5)
+  customElements.define('com-sap-sample-newtablef6', myNewTableF6)
   
 })() // END of function --> (function () {
