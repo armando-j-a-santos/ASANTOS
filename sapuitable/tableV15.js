@@ -13,7 +13,7 @@
       </style>      
     `;
 
-    class sapuitableV14 extends HTMLElement {
+    class sapuitableV15 extends HTMLElement {
 
         constructor() {
             super();
@@ -170,7 +170,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV14);
+    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV15);
 
     // UTILS
     function loadthis(that, changedProperties) {
@@ -281,7 +281,9 @@
 
                             var selModel = new sap.ui.model.json.JSONModel();
                             selModel.setData(selOrgJson);
-
+                            
+                            console.log("selOrgJson:");
+                            console.log(selOrgJson);
 
                             _oModel.setSizeLimit(1000000);
 
