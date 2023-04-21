@@ -13,7 +13,7 @@
       </style>      
     `;
 
-    class sapuitable extends HTMLElement {
+    class sapuitableV1 extends HTMLElement {
 
         constructor() {
             super();
@@ -170,7 +170,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable", sapuitable);
+    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV1);
 
     // UTILS
     function loadthis(that, changedProperties) {
