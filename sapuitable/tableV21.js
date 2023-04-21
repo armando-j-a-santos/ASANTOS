@@ -13,7 +13,7 @@
       </style>      
     `;
 
-    class sapuitableV20 extends HTMLElement {
+    class sapuitableV21 extends HTMLElement {
 
         constructor() {
             super();
@@ -91,7 +91,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV20);
+    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV21);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -336,7 +336,7 @@
         });
     } // end of: function loadthis(that, changedProperties) {
 
-    /*
+    
     function loadScript(src, shadowRoot) {
         return new Promise(function(resolve, reject) {
             let script = document.createElement('script');
@@ -351,5 +351,5 @@
             shadowRoot.appendChild(script)
         });
     }
-    */
+    
 })();
