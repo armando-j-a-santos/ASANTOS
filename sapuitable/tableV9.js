@@ -13,7 +13,7 @@
       </style>      
     `;
 
-    class sapuitableV8 extends HTMLElement {
+    class sapuitableV6 extends HTMLElement {
 
         constructor() {
             super();
@@ -170,7 +170,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV8);
+    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV56;
 
     // UTILS
     function loadthis(that, changedProperties) {
@@ -239,6 +239,8 @@
                 return Controller.extend("myView.Template", {
 
                     onInit: function() {
+
+                        console.log(">>>>>>>>>>>>>>>");
 
                         /////if (that._firstConnection === 0) {
                         /////    that._firstConnection = 1;
@@ -355,7 +357,7 @@
             var foundIndex = Ar.findIndex(x => x.id == widgetName);
             var divfinal = Ar[foundIndex].div;
             console.log(divfinal);
-
+            
             console.log("_oModel:");
             console.log(_oModel);
 
