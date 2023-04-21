@@ -13,7 +13,7 @@
       </style>      
     `;
 
-    class sapuitableV5 extends HTMLElement {
+    class sapuitableV6 extends HTMLElement {
 
         constructor() {
             super();
@@ -170,7 +170,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV5);
+    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV56;
 
     // UTILS
     function loadthis(that, changedProperties) {
@@ -355,6 +355,9 @@
             var foundIndex = Ar.findIndex(x => x.id == widgetName);
             var divfinal = Ar[foundIndex].div;
             console.log(divfinal);
+            
+            console.log("_oModel:");
+            console.log(_oModel);
 
             //### THE APP: place the XMLView somewhere into DOM ###
             var oView = sap.ui.xmlview({
