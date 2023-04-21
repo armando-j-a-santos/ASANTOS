@@ -13,7 +13,7 @@
       </style>      
     `;
 
-    class MultiInput extends HTMLElement {
+    class sapuitable extends HTMLElement {
 
         constructor() {
             super();
@@ -137,10 +137,6 @@
             loadthis(that, changedProperties);
         }
 
-        _renderExportButton() {
-            let components = this.metadata ? JSON.parse(this.metadata)["components"] : {};
-        }
-
         _firePropertiesChanged() {
             this.unit = "";
             this.dispatchEvent(new CustomEvent("propertiesChanged", {
@@ -150,43 +146,6 @@
                     }
                 }
             }));
-        }
-
-        // SETTINGS
-        get title() {
-            return this._export_settings.title;
-        }
-        set title(value) {
-            this._export_settings.title = value;
-        }
-
-        get subtitle() {
-            return this._export_settings.subtitle;
-        }
-        set subtitle(value) {
-            this._export_settings.subtitle = value;
-        }
-
-        get icon() {
-            return this._export_settings.icon;
-        }
-        set icon(value) {
-            this._export_settings.icon = value;
-        }
-
-        get unit() {
-            return this._export_settings.unit;
-        }
-        set unit(value) {
-            value = _score;
-            this._export_settings.unit = value;
-        }
-
-        get footer() {
-            return this._export_settings.footer;
-        }
-        set footer(value) {
-            this._export_settings.footer = value;
         }
 
         static get observedAttributes() {
@@ -207,7 +166,7 @@
         }
 
     }
-    customElements.define("com-fd-djaja-sap-sac-multiinput", MultiInput);
+    customElements.define("com-asantos-sap-sac-sapuitable", sapuitable);
 
     // UTILS
     function loadthis(that, changedProperties) {
@@ -251,24 +210,9 @@
 
             //### Controller ###
             sap.ui.define([
-                "jquery.sap.global",
                 "sap/ui/core/mvc/Controller",
-                "sap/ui/model/json/JSONModel",
-                "sap/m/MessageToast",
-                "sap/ui/core/library",
-                "sap/ui/core/Core",
-                'sap/ui/model/Filter',
-                'sap/m/library',
-                'sap/m/MessageBox',
-                'sap/ui/unified/DateRange',
-                'sap/ui/core/format/DateFormat',
-                'sap/ui/model/BindingMode',
-                'sap/ui/core/Fragment',
-                'sap/m/Token',
-                'sap/ui/model/FilterOperator',
-                'sap/ui/model/odata/ODataModel',
-                'sap/m/BusyDialog'
-            ], function(jQuery, Controller, JSONModel, MessageToast, coreLibrary, Core, Filter, mobileLibrary, MessageBox, DateRange, DateFormat, BindingMode, Fragment, Token, FilterOperator, ODataModel, BusyDialog) {
+                "sap/ui/model/json/JSONModel"
+            ], function(Controller, JSONModel) {
                 "use strict";
 
                 var busyDialog = (busyDialog) ? busyDialog : new BusyDialog({});
