@@ -13,7 +13,7 @@
       </style>      
     `;
 
-    class sapuitableV19 extends HTMLElement {
+    class sapuitableV20 extends HTMLElement {
 
         constructor() {
             super();
@@ -91,7 +91,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV19);
+    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV20);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -160,7 +160,7 @@
 
                     onInit: function() {
                         
-                        console.log('>>>>>>>>>>>>>>>++++');
+                        console.log('>>>>>>>>>>>>>>>OOOO');
 
                             var _oModel = new JSONModel("armando-j-a-santos.github.io/ASANTOS/sapuitable/Clothing.json");
 
@@ -320,7 +320,7 @@
                 });
             });
 
-            console.log("WidgetName Final:" + widgetName);
+            console.log("WidgetName Finaleee:" + widgetName);
             var foundIndex = Ar.findIndex(x => x.id == widgetName);
             var divfinal = Ar[foundIndex].div;
             console.log(divfinal);
@@ -334,7 +334,7 @@
             oView.placeAt(div);
             */
         });
-    }
+    } // end of: function loadthis(that, changedProperties) {
 
     /*
     function loadScript(src, shadowRoot) {
