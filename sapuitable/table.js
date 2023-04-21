@@ -207,7 +207,7 @@
             'divf': mapcanvas_fragment_divstr
         });
 
-        that_._renderExportButton();
+        //that_._renderExportButton();
 
         sap.ui.getCore().attachInit(function() {
             "use strict";
