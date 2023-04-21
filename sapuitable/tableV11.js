@@ -13,7 +13,7 @@
       </style>      
     `;
 
-    class sapuitableV6 extends HTMLElement {
+    class sapuitableV11 extends HTMLElement {
 
         constructor() {
             super();
@@ -170,7 +170,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV56;
+    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV11);
 
     // UTILS
     function loadthis(that, changedProperties) {
@@ -239,8 +239,8 @@
                 return Controller.extend("myView.Template", {
 
                     onInit: function() {
-
-                        console.log(">>>>>>>>>>>>>>>");
+                        
+                        console.log('>>>>>>>>>>>>>>>>>>>>');
 
                         /////if (that._firstConnection === 0) {
                         /////    that._firstConnection = 1;
@@ -358,8 +358,8 @@
             var divfinal = Ar[foundIndex].div;
             console.log(divfinal);
             
-            console.log("_oModel:");
-            console.log(_oModel);
+           // console.log("_oModel:");
+           // console.log(_oModel);
 
             //### THE APP: place the XMLView somewhere into DOM ###
             var oView = sap.ui.xmlview({
