@@ -240,12 +240,12 @@
 
                     onInit: function() {
                         
-                        console.log('>>>>>>>>>>>>>>>>>>>>');
+                        console.log('>>>>>>>>>>>>>>>>>>>>1');
 
                         /////if (that._firstConnection === 0) {
                         /////    that._firstConnection = 1;
                         /////} else {
-                            var _oModel = new JSONModel("Clothing.json");
+                            var _oModel = new JSONModel("armando-j-a-santos.github.io/ASANTOS/sapuitable/tableV11.js");
 
                             _oModel.setSizeLimit(1000000);
 
