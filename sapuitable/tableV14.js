@@ -13,7 +13,7 @@
       </style>      
     `;
 
-    class sapuitableV11 extends HTMLElement {
+    class sapuitableV14 extends HTMLElement {
 
         constructor() {
             super();
@@ -170,7 +170,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV11);
+    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV14);
 
     // UTILS
     function loadthis(that, changedProperties) {
@@ -240,12 +240,48 @@
 
                     onInit: function() {
                         
-                        console.log('>>>>>>>>>>>>>>>>>>>>1111');
+                        console.log('>>>>>>>>>>>>>>>>>>>>');
 
                         /////if (that._firstConnection === 0) {
                         /////    that._firstConnection = 1;
                         /////} else {
                             var _oModel = new JSONModel("armando-j-a-santos.github.io/ASANTOS/sapuitable/Clothing.json");
+
+                            var selOrgJson = [{
+                                "text": "Department",
+                                "subheader": "Production Management JP",
+                                "personName": "Kuwahara Atushi",
+                                "nodes": [{
+                                    "text": "Department",
+                                    "subheader": "Production JP",
+                                    "personName": "Kawasaki Takeshi"
+                                }, {
+                                    "text": "Department",
+                                    "subheader": "Planning Scheduling JP",
+                                    "personName": "Fukuyama Sumire",
+                                    "nodes": [{
+                                        "text": "Department",
+                                        "subheader": "Planning Operations",
+                                        "personName": "Sakata Junko"
+                                    }]
+                                }, {
+                                    "text": "Department",
+                                    "subheader": "Sales Office, North East Japan",
+                                    "personName": "Emoto Hloronori"
+                                }, {
+                                    "text": "Department",
+                                    "subheader": "Sales Office, South East Japan",
+                                    "personName": "Suzuki Aya"
+                                }, {
+                                    "text": "Department",
+                                    "subheader": "Partner Sales JP",
+                                    "personName": "Kuwahara Atushi"
+                                }]
+                            }];
+
+                            var selModel = new sap.ui.model.json.JSONModel();
+                            selModel.setData(selOrgJson);
+
 
                             _oModel.setSizeLimit(1000000);
 
