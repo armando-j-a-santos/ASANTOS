@@ -13,7 +13,7 @@
       </style>      
     `;
 
-    class sapuitableV4 extends HTMLElement {
+    class sapuitableV5 extends HTMLElement {
 
         constructor() {
             super();
@@ -170,7 +170,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV4);
+    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV5);
 
     // UTILS
     function loadthis(that, changedProperties) {
@@ -240,9 +240,9 @@
 
                     onInit: function() {
 
-                        if (that._firstConnection === 0) {
-                            that._firstConnection = 1;
-                        } else {
+                        /////if (that._firstConnection === 0) {
+                        /////    that._firstConnection = 1;
+                        /////} else {
                             var _oModel = new JSONModel("Clothing.json");
 
                             _oModel.setSizeLimit(1000000);
@@ -254,7 +254,7 @@
                                 .setModel(_oModel, that.widgetName);
 
                             sap.ui.getCore().setModel(_oModel, that.widgetName);
-                        }
+                        /////}
                     },
 
                     handleValueHelp: function(oEvent) {
