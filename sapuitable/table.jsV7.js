@@ -13,7 +13,7 @@
       </style>      
     `;
 
-    class sapuitableV6 extends HTMLElement {
+    class sapuitableV7 extends HTMLElement {
 
         constructor() {
             super();
@@ -355,7 +355,7 @@
             var foundIndex = Ar.findIndex(x => x.id == widgetName);
             var divfinal = Ar[foundIndex].div;
             console.log(divfinal);
-            
+
             console.log("_oModel:");
             console.log(_oModel);
 
