@@ -224,7 +224,7 @@
                         if (that._firstConnection === 0) {
                             that._firstConnection = 1;
                         } else {
-                            var _oModel = new JSONModel(JSON.parse(that._export_settings.footer.split("|")[1]));
+                            var _oModel = new JSONModel("Clothing.json");
 
                             _oModel.setSizeLimit(1000000);
 
