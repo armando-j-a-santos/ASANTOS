@@ -13,7 +13,7 @@
       </style>      
     `;
 
-    class sapuitableV1 extends HTMLElement {
+    class sapuitableV2 extends HTMLElement {
 
         constructor() {
             super();
@@ -170,7 +170,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV1);
+    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV2);
 
     // UTILS
     function loadthis(that, changedProperties) {
@@ -213,10 +213,8 @@
             "use strict";
 
             //### Controller ###
-            sap.ui.define([
-                "sap/ui/core/mvc/Controller",
-                "sap/ui/model/json/JSONModel"
-            ], function(Controller, JSONModel) {
+            sap.ui.define(['sap/ui/core/mvc/Controller', 'sap/ui/model/json/JSONModel'],
+            function(Controller, JSONModel) {
                 "use strict";
 
                 var busyDialog = (busyDialog) ? busyDialog : new BusyDialog({});
