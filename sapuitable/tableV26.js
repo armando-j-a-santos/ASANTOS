@@ -11,7 +11,7 @@
       </style>      
     `;
 
-    class sapuitableV25 extends HTMLElement {
+    class sapuitableV26 extends HTMLElement {
 
         constructor() {
             super();
@@ -89,7 +89,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV25);
+    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV26);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -104,8 +104,8 @@
 
         let div0 = document.createElement('div');
         //div0.innerHTML = '<?xml version="1.0"?><script id="oView_' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View height="100%" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" controllerName="myView.Template"><l:VerticalLayout class="sapUiContentPadding" width="100%"><l:content><MultiInput width="100%" id="multiInput" suggestionItems="{' + widgetName + '>/}" valueHelpRequest="handleValueHelp"><core:Item key="{' + widgetName + '>partner}" text="{' + widgetName + '>partner}" /></MultiInput></l:content><Button id="buttonId" class="sapUiSmallMarginBottom" text="Get Score" width="150px" press=".onButtonPress" /></l:VerticalLayout></mvc:View></script>';
-        div0.innerHTML = '<?xml version="1.0"?><script id="oView_' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"> <mvc:View controllerName="sap.ui.table.sample.TreeTable.JSONTreeBinding.Controller" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core" height="100%"> <m:Page showHeader="false" enableScrolling="false"> <m:content> <TreeTable id="TreeTableBasic" rows="{path:'/catalog/clothing', parameters: {arrayNames:['categories']}}" selectionMode="MultiToggle" enableSelectAll="false"  ariaLabelledBy="title"> <extension> <m:OverflowToolbar style="Clear"> <m:Title id="title" text="Clothing"/> <m:ToolbarSpacer/> <m:Button text="Collapse all" press="onCollapseAll"/> <m:Button text="Collapse selection" press="onCollapseSelection"/> <m:Button text="Expand first level" press="onExpandFirstLevel"/> <m:Button text="Expand selection" press="onExpandSelection"/> </m:OverflowToolbar> </extension> <columns><Column width="13rem"> <m:Label text="Categories"/> <template> <m:Text text="{name}" wrapping="false" /> </template> </Column> <Column width="9rem"> <m:Label text="Price"/> <template> <u:Currency value="{amount}" currency="{currency}"/> </template> </Column> <Column width="11rem"> <m:Label text="Size"/> <template> <m:Select items="{path: "/sizes", templateShareable: true}" selectedKey="{size}" visible="{= !!${size}}" forceSelection="false"> <core:Item key="{key}" text="{value}"/> </m:Select> </template> </Column> </columns> </TreeTable> </m:content> </m:Page> </mvc:View> </script>';
-       
+        div0.innerHTML = '<?xml version="1.0"?><script id="oView_' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"> <mvc:View controllerName="myView.Template" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core" height="100%"> <m:Page showHeader="false" enableScrolling="false"> <m:content> <TreeTable id="TreeTableBasic" rows="{path:'/catalog/clothing', parameters: {arrayNames:['categories']}}" selectionMode="MultiToggle" enableSelectAll="false"  ariaLabelledBy="title"> <extension> <m:OverflowToolbar style="Clear"> <m:Title id="title" text="Clothing"/> <m:ToolbarSpacer/> <m:Button text="Collapse all" press="onCollapseAll"/> <m:Button text="Collapse selection" press="onCollapseSelection"/> <m:Button text="Expand first level" press="onExpandFirstLevel"/> <m:Button text="Expand selection" press="onExpandSelection"/> </m:OverflowToolbar> </extension> <columns><Column width="13rem"> <m:Label text="Categories"/> <template> <m:Text text="{name}" wrapping="false" /> </template> </Column> <Column width="9rem"> <m:Label text="Price"/> <template> <u:Currency value="{amount}" currency="{currency}"/> </template> </Column> <Column width="11rem"> <m:Label text="Size"/> <template> <m:Select items="{path: "/sizes", templateShareable: true}" selectedKey="{size}" visible="{= !!${size}}" forceSelection="false"> <core:Item key="{key}" text="{value}"/> </m:Select> </template> </Column> </columns> </TreeTable> </m:content> </m:Page> </mvc:View> </script>';
+
         _shadowRoot.appendChild(div0);
 
         /*
