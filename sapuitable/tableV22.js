@@ -13,7 +13,7 @@
       </style>      
     `;
 
-    class sapuitableV21 extends HTMLElement {
+    class sapuitableV22 extends HTMLElement {
 
         constructor() {
             super();
@@ -91,7 +91,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV21);
+    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV22);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -325,14 +325,14 @@
             var divfinal = Ar[foundIndex].div;
             console.log(divfinal);
 
-            /*
+            
             //### THE APP: place the XMLView somewhere into DOM ###
             var oView = sap.ui.xmlview({
                 viewContent: jQuery(divfinal).html(),
             });
 
             oView.placeAt(div);
-            */
+            
         });
     } // end of: function loadthis(that, changedProperties) {
 
