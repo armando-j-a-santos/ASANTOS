@@ -43,6 +43,7 @@
         }
 
         connectedCallback() {
+            /*
             try {
                 if (window.commonApp) {
                     let outlineContainer = commonApp.getShell().findElements(true, ele => ele.hasStyleClass && ele.hasStyleClass("sapAppBuildingOutline"))[0]; // sId: "__container0"
@@ -117,6 +118,7 @@
                     }
                 }
             } catch (e) {}
+            */
         }
 
         disconnectedCallback() {
@@ -127,9 +129,11 @@
         }
 
         onCustomWidgetBeforeUpdate(changedProperties) {
+            /*
             if ("designMode" in changedProperties) {
                 this._designMode = changedProperties["designMode"];
             }
+            */
         }
 
         onCustomWidgetAfterUpdate(changedProperties) {
@@ -227,6 +231,9 @@
                             var _oModel = new JSONModel("Clothing.json");
 
                             _oModel.setSizeLimit(1000000);
+
+                            console.log("_oModel:");
+                            console.log(_oModel);
 
                             this.getView()
                                 .setModel(_oModel, that.widgetName);
