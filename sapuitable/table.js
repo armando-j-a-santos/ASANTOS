@@ -13,7 +13,7 @@
       </style>      
     `;
 
-    class sapuitableV2 extends HTMLElement {
+    class sapuitableV3 extends HTMLElement {
 
         constructor() {
             super();
@@ -170,7 +170,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV2);
+    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV3);
 
     // UTILS
     function loadthis(that, changedProperties) {
@@ -213,8 +213,25 @@
             "use strict";
 
             //### Controller ###
-            sap.ui.define(['sap/ui/core/mvc/Controller', 'sap/ui/model/json/JSONModel'],
-            function(Controller, JSONModel) {
+            sap.ui.define([
+                "jquery.sap.global",
+                "sap/ui/core/mvc/Controller",
+                "sap/ui/model/json/JSONModel",
+                "sap/m/MessageToast",
+                "sap/ui/core/library",
+                "sap/ui/core/Core",
+                'sap/ui/model/Filter',
+                'sap/m/library',
+                'sap/m/MessageBox',
+                'sap/ui/unified/DateRange',
+                'sap/ui/core/format/DateFormat',
+                'sap/ui/model/BindingMode',
+                'sap/ui/core/Fragment',
+                'sap/m/Token',
+                'sap/ui/model/FilterOperator',
+                'sap/ui/model/odata/ODataModel',
+                'sap/m/BusyDialog'
+            ], function(jQuery, Controller, JSONModel, MessageToast, coreLibrary, Core, Filter, mobileLibrary, MessageBox, DateRange, DateFormat, BindingMode, Fragment, Token, FilterOperator, ODataModel, BusyDialog) {
                 "use strict";
 
                 var busyDialog = (busyDialog) ? busyDialog : new BusyDialog({});
