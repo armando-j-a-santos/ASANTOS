@@ -20,8 +20,6 @@
   "properties": {},
   "methods": {},
   "events": {
-  	"onStart": {
-      "description": "Go."
-    }
+  	"onStart": {"description": "Go."}
   }
 }
