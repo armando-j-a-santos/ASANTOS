@@ -13,7 +13,7 @@
       </style>      
     `;
 
-    class sapuitableV18 extends HTMLElement {
+    class sapuitableV19 extends HTMLElement {
 
         constructor() {
             super();
@@ -45,82 +45,6 @@
         }
 
         connectedCallback() {
-            /*
-            try {
-                if (window.commonApp) {
-                    let outlineContainer = commonApp.getShell().findElements(true, ele => ele.hasStyleClass && ele.hasStyleClass("sapAppBuildingOutline"))[0]; // sId: "__container0"
-
-                    if (outlineContainer && outlineContainer.getReactProps) {
-                        let parseReactState = state => {
-                            let components = {};
-
-                            let globalState = state.globalState;
-                            let instances = globalState.instances;
-                            let app = instances.app["[{\"app\":\"MAIN_APPLICATION\"}]"];
-                            let names = app.names;
-
-                            for (let key in names) {
-                                let name = names[key];
-
-                                let obj = JSON.parse(key).pop();
-                                let type = Object.keys(obj)[0];
-                                let id = obj[type];
-
-                                components[id] = {
-                                    type: type,
-                                    name: name
-                                };
-                            }
-
-                            for (let componentId in components) {
-                                let component = components[componentId];
-                            }
-
-                            let metadata = JSON.stringify({
-                                components: components,
-                                vars: app.globalVars
-                            });
-
-                            if (metadata != this.metadata) {
-                                this.metadata = metadata;
-
-                                this.dispatchEvent(new CustomEvent("propertiesChanged", {
-                                    detail: {
-                                        properties: {
-                                            metadata: metadata
-                                        }
-                                    }
-                                }));
-                            }
-                        };
-
-                        let subscribeReactStore = store => {
-                            this._subscription = store.subscribe({
-                                effect: state => {
-                                    parseReactState(state);
-                                    return {
-                                        result: 1
-                                    };
-                                }
-                            });
-                        };
-
-                        let props = outlineContainer.getReactProps();
-                        if (props) {
-                            subscribeReactStore(props.store);
-                        } else {
-                            let oldRenderReactComponent = outlineContainer.renderReactComponent;
-                            outlineContainer.renderReactComponent = e => {
-                                let props = outlineContainer.getReactProps();
-                                subscribeReactStore(props.store);
-
-                                oldRenderReactComponent.call(outlineContainer, e);
-                            }
-                        }
-                    }
-                }
-            } catch (e) {}
-            */
         }
 
         disconnectedCallback() {
@@ -131,11 +55,6 @@
         }
 
         onCustomWidgetBeforeUpdate(changedProperties) {
-            /*
-            if ("designMode" in changedProperties) {
-                this._designMode = changedProperties["designMode"];
-            }
-            */
         }
 
         onCustomWidgetAfterUpdate(changedProperties) {
@@ -172,9 +91,8 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV18);
+    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV19);
 
-    // UTILS
     function loadthis(that, changedProperties) {
         var that_ = that;
 
@@ -210,8 +128,6 @@
             'div': mapcanvas_divstr,
             'divf': mapcanvas_fragment_divstr
         });
-
-        //that_._renderExportButton();
 
         sap.ui.getCore().attachInit(function() {
             "use strict";
@@ -404,37 +320,23 @@
                 });
             });
 
-            console.log("widgetName Final:" + widgetName);
+            console.log("WidgetName Final:" + widgetName);
             var foundIndex = Ar.findIndex(x => x.id == widgetName);
             var divfinal = Ar[foundIndex].div;
             console.log(divfinal);
-            
-           // console.log("_oModel:");
-           // console.log(_oModel);
 
+            /*
             //### THE APP: place the XMLView somewhere into DOM ###
             var oView = sap.ui.xmlview({
                 viewContent: jQuery(divfinal).html(),
             });
 
             oView.placeAt(div);
-            ////if (that_._designMode) {
-            ////    oView.byId("sapuitableV17").setEnabled(false);
-            ////    oView.byId("buttonId").setEnabled(false);
-            ////}
+            */
         });
     }
 
     /*
-    function createGuid() {
-        return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => {
-            let r = Math.random() * 16 | 0,
-                v = c === "x" ? r : (r & 0x3 | 0x8);
-            return v.toString(16);
-        });
-    }
-    */
-
     function loadScript(src, shadowRoot) {
         return new Promise(function(resolve, reject) {
             let script = document.createElement('script');
@@ -449,4 +351,5 @@
             shadowRoot.appendChild(script)
         });
     }
+    */
 })();
