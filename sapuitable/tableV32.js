@@ -11,7 +11,7 @@
       </style>      
     `;
 
-    class sapuitableV31 extends HTMLElement {
+    class sapuitableV32 extends HTMLElement {
 
         constructor() {
             super();
@@ -89,7 +89,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV31);
+    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV32);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -119,7 +119,10 @@
         
         div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m"><Tree class=""  id="Tree"  items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect" includeItemInSelection="true" updateFinished="onDefaultSelction"><headerToolbar><OverflowToolbar> ' + Selelect_List + ' <Input  width="' + WD + '" placeholder="Type to search" value="{search/query}" liveChange="onLiveChange" /></OverflowToolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>';
         _shadowRoot.appendChild(div2);
-        
+       
+        let div3 = document.createElement('div');
+        div3.innerHTML = '<div style="max-height: "' + that.max_height + that.unit_option + '"; border-radius: 15px; overflow-y: hidden;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><div style="max-height: ' + that.max_height + that.unit_option + '; border-radius: 15px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"> </slot></div></div>';
+         _shadowRoot.appendChild(div3);
 
         that_.appendChild(div);
         
