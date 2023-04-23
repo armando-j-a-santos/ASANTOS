@@ -11,7 +11,7 @@
       </style>      
     `;
 
-    class sapuitableV32 extends HTMLElement {
+    class sapuitableV33 extends HTMLElement {
 
         constructor() {
             super();
@@ -89,7 +89,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV32);
+    customElements.define("com-asantos-sap-sac-sapuitable", sapuitableV33);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -127,13 +127,15 @@
         that_.appendChild(div);
         
 
-        var mapcanvas_divstr = _shadowRoot.getElementById('oView_' + widgetName);
-        var mapcanvas_fragment_divstr = _shadowRoot.getElementById('myXMLFragment_' + widgetName);
+        //var mapcanvas_divstr = _shadowRoot.getElementById('oView_' + widgetName);
+        //var mapcanvas_fragment_divstr = _shadowRoot.getElementById('myXMLFragment_' + widgetName);
+        
+        var mapcanvas_divstr = _shadowRoot.getElementById('oView' + widgetName);
 
         Ar.push({
             'id': widgetName,
-            'div': mapcanvas_divstr,
-            'divf': mapcanvas_fragment_divstr
+            'div': mapcanvas_divstr
+            //'divf': mapcanvas_fragment_divstr
         });
 
         sap.ui.getCore().attachInit(function() {
