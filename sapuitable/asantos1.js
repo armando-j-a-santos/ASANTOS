@@ -120,6 +120,7 @@
         
         var Selelect_List = "";
         var WD = `93%`;
+        
             
         let div2 = document.createElement('div');
         div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m"><Tree class=""  id="Tree"  items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect" includeItemInSelection="true" updateFinished="onDefaultSelction"><headerToolbar><OverflowToolbar> ' + Selelect_List + ' <Input  width="' + WD + '" placeholder="Type to search" value="{search/query}" liveChange="onLiveChange" /></OverflowToolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>';
