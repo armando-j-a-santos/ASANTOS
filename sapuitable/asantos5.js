@@ -98,79 +98,6 @@
             widgetName = that._export_settings.title.split("|")[0];
         }
 
-        var mydata = {
-            root: {
-                name: "root",
-                description: "root description",
-                checked: false,
-                0: {
-                    name: "item1",
-                    description: "item1 description",
-                    checked: true,
-                    0: {
-                        name: "subitem1-1",
-                        description: "subitem1-1 description",
-                        checked: true,
-                        ddlValue: "0",
-                        ddlData: [{
-                            key: "0",
-                            val: "First"
-                        }, {
-                            key: "1",
-                            val: "Second"
-                        }]
-
-                    },
-                    1: {
-                        name: "subitem1-2",
-                        description: "subitem1-2 description",
-                        checked: true,
-                        ddlValue: "0",
-                        ddlData: [{
-                            key: "0",
-                            val: "First"
-                        }, {
-                            key: "1",
-                            val: "Second"
-                        }]
-                    }
-
-                },
-                1: {
-                    name: "item2",
-                    description: "item2 description",
-                    checked: true,
-                    0: {
-                        name: "subitem1-1",
-                        description: "subitem1-1 description",
-                        checked: true,
-                        ddlValue: "0",
-                        ddlData: [{
-                            key: "0",
-                            val: "First"
-                        }, {
-                            key: "1",
-                            val: "Second"
-                        }]
-                    },
-                    1: {
-                        name: "subitem1-2",
-                        description: "subitem1-2 description",
-                        checked: true,
-                        ddlValue: "1",
-                        ddlData: [{
-                            key: "0",
-                            val: "First"
-                        }, {
-                            key: "1",
-                            val: "Second"
-                        }]
-                    }
-                }
-
-            }
-        };
-
         /*
         var mydata = [
                 { 
@@ -247,16 +174,15 @@
             ];
         */
 
-        console.log("data is");
-        console.log(mydata);
-
         div = document.createElement('div');
         div.slot = "content_" + widgetName;
 
         //var data = [];
             
         let div2 = document.createElement('div');
-        ///div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.commons" xmlns:t="sap.ui.table"><t:TreeTable id="tbl" rows="{path:"/",parameters:{arrayNames:[data]}}" visibleRowCount="10"><t:columns><t:Column><t:label><Label text="name" ></t:label><t:template><TextView text="{name}" /></t:template></t:Column><t:Column><t:label><Label text="description" ></t:label><t:template><TextView text="{description}" /></t:template></t:Column><t:Column><t:label><Label text="" ></t:label><t:template><Button text="Add child node" press="addNode"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';        
+
+         div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m"><Tree class=""  id="Tree"  items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect" includeItemInSelection="true" updateFinished="onDefaultSelction"><headerToolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>';
+        /*
         div2.innerHTML = `
         <script id="oViewsapuitable2" name="oViewsapuitable2" type="sapui5/xmlview">
             <mvc:View
@@ -290,6 +216,7 @@
 		</mvc:View>
         </script>        
         `;
+        */
         _shadowRoot.appendChild(div2);
        
         let div3 = document.createElement('div');
