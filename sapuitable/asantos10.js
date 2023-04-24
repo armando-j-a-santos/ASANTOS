@@ -187,14 +187,14 @@
                             //////////var _oModel = new JSONModel(oData);
                             //////////_oModel.setSizeLimit(1000000);
 
-                            var oModel = new sap.ui.model.json.JSONModel();
-                            oModel.setSizeLimit(1000000);
-                            oModel.setData(oData);
-                            this.getView().setModel(oModel, that.widgetName);
-                            sap.ui.getCore().setModel(oModel, that.widgetName);
+                            var oModel1 = new sap.ui.model.json.JSONModel();
+                            oModel1.setSizeLimit(1000000);
+                            oModel1.setData(oData);
+                            this.getView().setModel(oModel1, that.widgetName);
+                            sap.ui.getCore().setModel(oModel1, that.widgetName);
 
-                            console.log("oModel:");
-                            console.log(oModel);
+                            console.log("oModel1:");
+                            console.log(oModel1);
                 
                             /*
                             // Link the model to the widget
