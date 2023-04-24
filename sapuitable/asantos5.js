@@ -104,9 +104,12 @@
 
         div = document.createElement('div');
         div.slot = "content_" + widgetName;
+
+        var data = [];
             
         let div2 = document.createElement('div');
-        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.commons" xmlns:t="sap.ui.table"><t:TreeTable id="tbl" rows="{path:'/',parameters:{arrayNames:['data']}}" visibleRowCount="10"><t:columns><t:Column><t:label><Label text="name" ></t:label><t:template><TextView text="{name}" /></t:template></t:Column><t:Column><t:label><Label text="description" ></t:label><t:template><TextView text="{description}" /></t:template></t:Column><t:Column><t:label><Label text="" ></t:label><t:template><Button text="Add child node" press="addNode"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';        _shadowRoot.appendChild(div2);
+        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.commons" xmlns:t="sap.ui.table"><t:TreeTable id="tbl" rows="{path:'/',parameters:{arrayNames:[data]}}" visibleRowCount="10"><t:columns><t:Column><t:label><Label text="name" ></t:label><t:template><TextView text="{name}" /></t:template></t:Column><t:Column><t:label><Label text="description" ></t:label><t:template><TextView text="{description}" /></t:template></t:Column><t:Column><t:label><Label text="" ></t:label><t:template><Button text="Add child node" press="addNode"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';        
+        _shadowRoot.appendChild(div2);
        
         let div3 = document.createElement('div');
         div3.innerHTML = '<div style="max-height: "' + that.max_height + that.unit_option + '"; border-radius: 15px; overflow-y: hidden;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><div style="max-height: ' + that.max_height + that.unit_option + '; border-radius: 15px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"> </slot></div></div>';
