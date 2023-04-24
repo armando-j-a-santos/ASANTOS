@@ -5,6 +5,88 @@
     let widgetName;
     var Ar = [];
 
+
+    var oModel = new sap.ui.model.json.JSONModel();
+    oModel.setSizeLimit(1000000);
+
+    oModel.setData({
+        data : [
+            { 
+                name  : "node1", 
+                description : "Lorem ipsum dolor sit amet",
+                data : [
+                    { 
+                        name : "node1.1", 
+                        description : "Cras pretium nisl ac ex congue posuere"
+                    },
+                    { 
+                        name : "node1.2", 
+                        description : "Consectetur adipiscing elit",
+                        data: [
+                            { 
+                                name : "node1.2.1",
+                                description : "Maecenas accumsan ipsum diam"
+                            }
+                       ]
+                    },
+                    { 
+                        name : "node1.3", 
+                        description : "Sed tristique diam non imperdiet commodo"
+                    },
+                    { 
+                        name : "node1.4", 
+                        description : "Consectetur adipiscing elit",
+                        data: [
+                            { 
+                                name : "node1.4.1",
+                                description : "Maecenas accumsan ipsum diam",
+                                data: [
+                                    { 
+                                        name : "node1.4.1.1",
+                                        description : "Maecenas accumsan ipsum diam",
+                                        data: [
+                                            { 
+                                                name : "node1.4.1.1.1",
+                                                description : "Maecenas accumsan ipsum diam",
+                                                data: [
+                                                    { 
+                                                        name : "node1.4.1.1.1.1",
+                                                        description : "Maecenas accumsan ipsum diam"
+                                                    }
+                                               ]
+                                            }
+                                       ]
+                                    }
+                               ]
+                            }
+                       ]
+                    },
+                    { 
+                        name : "node1.5", 
+                        description : "Sed tristique diam non imperdiet commodo"
+                    },
+                    { 
+                        name : "node1.6", 
+                        description : "Consectetur adipiscing elit",
+                        data: [
+                            { 
+                                name : "node1.6.1",
+                                description : "Maecenas accumsan ipsum diam"
+                            }
+                       ]
+                    },
+                    { 
+                        name : "node1.7", 
+                        description : "Sed tristique diam non imperdiet commodo"
+                    },
+
+                ]
+            },
+        ]
+    });
+
+
+
     let tmpl = document.createElement("template");
     tmpl.innerHTML = `
       <style>
@@ -105,10 +187,10 @@
         div = document.createElement('div');
         div.slot = "content_" + widgetName;
 
-        var data = [];
+        //var data = [];
             
         let div2 = document.createElement('div');
-        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.commons" xmlns:t="sap.ui.table"><t:TreeTable id="tbl" rows="{path:'/',parameters:{arrayNames:[data]}}" visibleRowCount="10"><t:columns><t:Column><t:label><Label text="name" ></t:label><t:template><TextView text="{name}" /></t:template></t:Column><t:Column><t:label><Label text="description" ></t:label><t:template><TextView text="{description}" /></t:template></t:Column><t:Column><t:label><Label text="" ></t:label><t:template><Button text="Add child node" press="addNode"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';        
+        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.commons" xmlns:t="sap.ui.table"><t:TreeTable id="tbl" rows="{path:"/",parameters:{arrayNames:[data]}}" visibleRowCount="10"><t:columns><t:Column><t:label><Label text="name" ></t:label><t:template><TextView text="{name}" /></t:template></t:Column><t:Column><t:label><Label text="description" ></t:label><t:template><TextView text="{description}" /></t:template></t:Column><t:Column><t:label><Label text="" ></t:label><t:template><Button text="Add child node" press="addNode"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';        
         _shadowRoot.appendChild(div2);
        
         let div3 = document.createElement('div');
@@ -231,85 +313,6 @@
                              // Create the model linked to the data (oData)
                             //////////var _oModel = new JSONModel(oData);
                             //////////_oModel.setSizeLimit(1000000);
-
-                            var oModel = new sap.ui.model.json.JSONModel();
-                            oModel.setSizeLimit(1000000);
-
-                            oModel.setData({
-                                data : [
-                                    { 
-                                        name  : "node1", 
-                                        description : "Lorem ipsum dolor sit amet",
-                                        data : [
-                                            { 
-                                                name : "node1.1", 
-                                                description : "Cras pretium nisl ac ex congue posuere"
-                                            },
-                                            { 
-                                                name : "node1.2", 
-                                                description : "Consectetur adipiscing elit",
-                                                data: [
-                                                    { 
-                                                        name : "node1.2.1",
-                                                        description : "Maecenas accumsan ipsum diam"
-                                                    }
-                                               ]
-                                            },
-                                            { 
-                                                name : "node1.3", 
-                                                description : "Sed tristique diam non imperdiet commodo"
-                                            },
-                                            { 
-                                                name : "node1.4", 
-                                                description : "Consectetur adipiscing elit",
-                                                data: [
-                                                    { 
-                                                        name : "node1.4.1",
-                                                        description : "Maecenas accumsan ipsum diam",
-                                                        data: [
-                                                            { 
-                                                                name : "node1.4.1.1",
-                                                                description : "Maecenas accumsan ipsum diam",
-                                                                data: [
-                                                                    { 
-                                                                        name : "node1.4.1.1.1",
-                                                                        description : "Maecenas accumsan ipsum diam",
-                                                                        data: [
-                                                                            { 
-                                                                                name : "node1.4.1.1.1.1",
-                                                                                description : "Maecenas accumsan ipsum diam"
-                                                                            }
-                                                                       ]
-                                                                    }
-                                                               ]
-                                                            }
-                                                       ]
-                                                    }
-                                               ]
-                                            },
-                                            { 
-                                                name : "node1.5", 
-                                                description : "Sed tristique diam non imperdiet commodo"
-                                            },
-                                            { 
-                                                name : "node1.6", 
-                                                description : "Consectetur adipiscing elit",
-                                                data: [
-                                                    { 
-                                                        name : "node1.6.1",
-                                                        description : "Maecenas accumsan ipsum diam"
-                                                    }
-                                               ]
-                                            },
-                                            { 
-                                                name : "node1.7", 
-                                                description : "Sed tristique diam non imperdiet commodo"
-                                            },
-                    
-                                        ]
-                                    },
-                                ]
-                            });
 
                             console.log("oModel:");
                             console.log(oModel);
