@@ -11,7 +11,7 @@
       </style>      
     `;
 
-    class ASANTOS4 extends HTMLElement {
+    class ASANTOS5 extends HTMLElement {
 
         constructor() {
             super();
@@ -88,7 +88,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOS4);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOS5);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -98,8 +98,81 @@
             widgetName = that._export_settings.title.split("|")[0];
         }
 
-    
-         var mydata = [
+        var mydata = {
+            root: {
+                name: "root",
+                description: "root description",
+                checked: false,
+                0: {
+                    name: "item1",
+                    description: "item1 description",
+                    checked: true,
+                    0: {
+                        name: "subitem1-1",
+                        description: "subitem1-1 description",
+                        checked: true,
+                        ddlValue: "0",
+                        ddlData: [{
+                            key: "0",
+                            val: "First"
+                        }, {
+                            key: "1",
+                            val: "Second"
+                        }]
+
+                    },
+                    1: {
+                        name: "subitem1-2",
+                        description: "subitem1-2 description",
+                        checked: true,
+                        ddlValue: "0",
+                        ddlData: [{
+                            key: "0",
+                            val: "First"
+                        }, {
+                            key: "1",
+                            val: "Second"
+                        }]
+                    }
+
+                },
+                1: {
+                    name: "item2",
+                    description: "item2 description",
+                    checked: true,
+                    0: {
+                        name: "subitem1-1",
+                        description: "subitem1-1 description",
+                        checked: true,
+                        ddlValue: "0",
+                        ddlData: [{
+                            key: "0",
+                            val: "First"
+                        }, {
+                            key: "1",
+                            val: "Second"
+                        }]
+                    },
+                    1: {
+                        name: "subitem1-2",
+                        description: "subitem1-2 description",
+                        checked: true,
+                        ddlValue: "1",
+                        ddlData: [{
+                            key: "0",
+                            val: "First"
+                        }, {
+                            key: "1",
+                            val: "Second"
+                        }]
+                    }
+                }
+
+            }
+        };
+
+        /*
+        var mydata = [
                 { 
                     name  : "node1", 
                     description : "Lorem ipsum dolor sit amet",
@@ -172,6 +245,7 @@
                     ]
                 }
             ];
+        */
 
         console.log("data is");
         console.log(mydata);
@@ -182,7 +256,40 @@
         //var data = [];
             
         let div2 = document.createElement('div');
-        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.commons" xmlns:t="sap.ui.table"><t:TreeTable id="tbl" rows="{path:"/",parameters:{arrayNames:[data]}}" visibleRowCount="10"><t:columns><t:Column><t:label><Label text="name" ></t:label><t:template><TextView text="{name}" /></t:template></t:Column><t:Column><t:label><Label text="description" ></t:label><t:template><TextView text="{description}" /></t:template></t:Column><t:Column><t:label><Label text="" ></t:label><t:template><Button text="Add child node" press="addNode"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';        
+        ///div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.commons" xmlns:t="sap.ui.table"><t:TreeTable id="tbl" rows="{path:"/",parameters:{arrayNames:[data]}}" visibleRowCount="10"><t:columns><t:Column><t:label><Label text="name" ></t:label><t:template><TextView text="{name}" /></t:template></t:Column><t:Column><t:label><Label text="description" ></t:label><t:template><TextView text="{description}" /></t:template></t:Column><t:Column><t:label><Label text="" ></t:label><t:template><Button text="Add child node" press="addNode"/></t:template></t:Column></t:columns></t:TreeTable></mvc:View></script>';        
+        div2.innerHTML = `
+        <script id="oViewsapuitable2" name="oViewsapuitable2" type="sapui5/xmlview">
+            <mvc:View
+			    controllerName="myView.Template"
+				xmlns="sap.ui.table"
+				xmlns:mvc="sap.ui.core.mvc"
+				xmlns:u="sap.ui.unified"
+				xmlns:c="sap.ui.core" 
+				xmlns:m="sap.m" 
+				height="100%">
+				<m:Page showHeader="false" enableScrolling="false" class="sapUiContentPadding">
+        				<m:content>
+            				<Table id="table2" visibleRowCount="5" rows="{ path: '/ProductCollection', sorter: {path: 'serialId', descending: false}}">
+                				<columns>
+                    				<Column width="50px">
+                        				<m:Text text="Employee ID"/>
+                        				<template>
+                            					<m:Text text="{employeeId}" wrapping="false"/>
+                        				</template>
+                    				</Column>
+                    				<Column width="200px">
+                        				<m:Text text="EmployeeName"/>
+                        				<template>
+                            					<m:Text text="{employeeName}" wrapping="false"/>
+                        				</template>
+                    				</Column>
+                				</columns>
+            				</Table>
+        				</m:content>
+    				</m:Page>
+		</mvc:View>
+        </script>        
+        `;
         _shadowRoot.appendChild(div2);
        
         let div3 = document.createElement('div');
@@ -301,6 +408,21 @@
                             */
 
 
+                            var oData = {
+                                ProductCollection: [{
+                                        employeeId: "1",
+                                        employeeName: "xyz"
+                                    }, {
+                                        employeeId: "1",
+                                        employeeName: "xyz"
+                                    }, {
+                                        employeeId: "1",
+                                        employeeName: "xyz"
+                                    }
+                
+                                ]
+                            };
+
 
                              // Create the model linked to the data (oData)
                             //////////var _oModel = new JSONModel(oData);
@@ -308,16 +430,19 @@
 
                             var oModel = new sap.ui.model.json.JSONModel();
                             oModel.setSizeLimit(1000000);
-                            oModel.setData(mydata);
+                            oModel.setData(oData);
+                            this.getView().setModel(oModel, that.widgetName);
+                            sap.ui.getCore().setModel(oModel, that.widgetName);
 
-                            console.log("oModeleee:");
+                            console.log("oModele:");
                             console.log(oModel);
                 
-
+                            /*
                             // Link the model to the widget
                             this.getView()
                                 .setModel(oModel, that.widgetName);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
+                            */
                     }
 
                 });
