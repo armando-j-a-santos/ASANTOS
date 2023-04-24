@@ -167,66 +167,41 @@
                             }];
                             */
 
-                            var oData = [
-                                {
-                                  "text": "Node1",
-                                  "ref": "sap-icon://attachment-audio",
-                                  "nodes":
-                                  [
-                                      {
-                                          "text": "Node1-1",
-                                          "ref": "sap-icon://attachment-e-pub",
-                                          "nodes":[
-                                              {
-                                                  "text": "Node1-1-1",
-                                                  "ref": "sap-icon://attachment-html"
-                                              },
-                                              {
-                                                  "text": "Node1-1-2",
-                                                  "ref": "sap-icon://attachment-photo",
-                                                  "nodes":[
-                                                      {
-                                                          "text": "Node1-1-2-1",
-                                                          "ref": "sap-icon://attachment-text-file",
-                                                          "nodes":[
-                                                              {
-                                                                  "text": "Node1-1-2-1-1",
-                                                                  "ref": "sap-icon://attachment-video"
-                                                              },
-                                                              {
-                                                                  "text": "Node1-1-2-1-2",
-                                                                  "ref": "sap-icon://attachment-zip-file"
-                                                              },
-                                                              {
-                                                                  "text": "Node1-1-2-1-3",
-                                                                  "ref": "sap-icon://course-program"
-                                                              }
-                                                          ]
-                                                      }
-                                                  ]
-                                              }
-                                          ]
-                                      },
-                                      {
-                                          "text": "Node1-2",
-                                          "ref": "sap-icon://create"
-                                      }
-                                  ]
-                              },
-                              {
-                                  "text": "Node2",
-                                  "ref": "sap-icon://customer-financial-fact-sheet"
-                              }
-                            ];
+                            var oData = {
+                                ProductCollection: [{
+                                        employeeId: "1",
+                                        employeeName: "xyz"
+                                    }, {
+                                        employeeId: "1",
+                                        employeeName: "xyz"
+                                    }, {
+                                        employeeId: "1",
+                                        employeeName: "xyz"
+                                    }
+                
+                                ]
+                            };
+
 
                              // Create the model linked to the data (oData)
-                            var _oModel = new JSONModel(oData);
-                            _oModel.setSizeLimit(1000000);
-                            
+                            //////////var _oModel = new JSONModel(oData);
+                            //////////_oModel.setSizeLimit(1000000);
+
+                            var oModel = new sap.ui.model.json.JSONModel();
+                            oModel.setSizeLimit(1000000);
+                            oModel.setData(oData);
+                            this.getView().setModel(oModel, that.widgetName);
+                            sap.ui.getCore().setModel(oModel, that.widgetName);
+
+                            console.log("oModele:");
+                            console.log(oModel);
+                
+                            /*
                             // Link the model to the widget
                             this.getView()
-                                .setModel(_oModel, that.widgetName);
-                            sap.ui.getCore().setModel(_oModel, that.widgetName);
+                                .setModel(oModel, that.widgetName);
+                            sap.ui.getCore().setModel(oModel, that.widgetName);
+                            */
                     }
 
                 });
