@@ -193,7 +193,7 @@
                             this.getView().setModel(oModel, that.widgetName);
                             sap.ui.getCore().setModel(oModel, that.widgetName);
 
-                            console.log("oModele:");
+                            console.log("oModel:");
                             console.log(oModel);
                 
                             /*
