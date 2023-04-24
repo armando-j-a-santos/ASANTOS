@@ -204,13 +204,13 @@
                             var oData = {
                                 ProductCollection: [{
                                         employeeId: "1",
-                                        employeeName: "xyz"
+                                        employeeName: "Armando"
                                     }, {
-                                        employeeId: "1",
-                                        employeeName: "xyz"
+                                        employeeId: "2",
+                                        employeeName: "Jorge"
                                     }, {
-                                        employeeId: "1",
-                                        employeeName: "xyz"
+                                        employeeId: "3",
+                                        employeeName: "Santos"
                                     }
                 
                                 ]
@@ -222,10 +222,10 @@
                             //////////_oModel.setSizeLimit(1000000);
 
                             var oModel1 = new sap.ui.model.json.JSONModel();
-                            oModel1.setSizeLimit(1000000);
+                            /////oModel1.setSizeLimit(1000000);
                             oModel1.setData(oData);
-                            this.getView().setModel(oModel1, that.widgetName);
-                            sap.ui.getCore().setModel(oModel1, that.widgetName);
+                            this.getView().setModel(oModel1);
+                            /////sap.ui.getCore().setModel(oModel1, that.widgetName);
 
                             console.log("oModel1:");
                             console.log(oModel1);
