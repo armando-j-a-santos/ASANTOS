@@ -11,7 +11,7 @@
       </style>      
     `;
 
-    class ASANTOS5 extends HTMLElement {
+    class ASANTOS10 extends HTMLElement {
 
         constructor() {
             super();
@@ -59,6 +59,7 @@
             loadthis(that, changedProperties);
         }
 
+        /*
         _firePropertiesChanged() {
             this.unit = "";
             this.dispatchEvent(new CustomEvent("propertiesChanged", {
@@ -69,7 +70,9 @@
                 }
             }));
         }
-        
+        */
+
+        /*
         static get observedAttributes() {
             return [
                 "title",
@@ -80,6 +83,7 @@
                 "link"
             ];
         }
+        */
 
         attributeChangedCallback(name, oldValue, newValue) {
             if (oldValue != newValue) {
@@ -88,7 +92,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOS5);
+    customElements.define("com-asantos-sap-sac-sapuitable", ASANTOS10);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -98,125 +102,12 @@
             widgetName = that._export_settings.title.split("|")[0];
         }
 
-        /*
-        var mydata = [
-                { 
-                    name  : "node1", 
-                    description : "Lorem ipsum dolor sit amet",
-                    data : [
-                        { 
-                            name : "node1.1", 
-                            description : "Cras pretium nisl ac ex congue posuere"
-                        },
-                        { 
-                            name : "node1.2", 
-                            description : "Consectetur adipiscing elit",
-                            data: [
-                                { 
-                                    name : "node1.2.1",
-                                    description : "Maecenas accumsan ipsum diam"
-                                }
-                           ]
-                        },
-                        { 
-                            name : "node1.3", 
-                            description : "Sed tristique diam non imperdiet commodo"
-                        },
-                        { 
-                            name : "node1.4", 
-                            description : "Consectetur adipiscing elit",
-                            data: [
-                                { 
-                                    name : "node1.4.1",
-                                    description : "Maecenas accumsan ipsum diam",
-                                    data: [
-                                        { 
-                                            name : "node1.4.1.1",
-                                            description : "Maecenas accumsan ipsum diam",
-                                            data: [
-                                                { 
-                                                    name : "node1.4.1.1.1",
-                                                    description : "Maecenas accumsan ipsum diam",
-                                                    data: [
-                                                        { 
-                                                            name : "node1.4.1.1.1.1",
-                                                            description : "Maecenas accumsan ipsum diam"
-                                                        }
-                                                   ]
-                                                }
-                                           ]
-                                        }
-                                   ]
-                                }
-                           ]
-                        },
-                        { 
-                            name : "node1.5", 
-                            description : "Sed tristique diam non imperdiet commodo"
-                        },
-                        { 
-                            name : "node1.6", 
-                            description : "Consectetur adipiscing elit",
-                            data: [
-                                { 
-                                    name : "node1.6.1",
-                                    description : "Maecenas accumsan ipsum diam"
-                                }
-                           ]
-                        },
-                        { 
-                            name : "node1.7", 
-                            description : "Sed tristique diam non imperdiet commodo"
-                        },
-    
-                    ]
-                }
-            ];
-        */
-
         div = document.createElement('div');
         div.slot = "content_" + widgetName;
 
-        //var data = [];
             
         let div2 = document.createElement('div');
-
-         div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m"><Tree class=""  id="Tree"  items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect" includeItemInSelection="true" updateFinished="onDefaultSelction"><headerToolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>';
-        /*
-        div2.innerHTML = `
-        <script id="oViewsapuitable2" name="oViewsapuitable2" type="sapui5/xmlview">
-            <mvc:View
-			    controllerName="myView.Template"
-				xmlns="sap.ui.table"
-				xmlns:mvc="sap.ui.core.mvc"
-				xmlns:u="sap.ui.unified"
-				xmlns:c="sap.ui.core" 
-				xmlns:m="sap.m" 
-				height="100%">
-				<m:Page showHeader="false" enableScrolling="false" class="sapUiContentPadding">
-        				<m:content>
-            				<Table id="table2" visibleRowCount="5" rows="{ path: '/ProductCollection', sorter: {path: 'serialId', descending: false}}">
-                				<columns>
-                    				<Column width="50px">
-                        				<m:Text text="Employee ID"/>
-                        				<template>
-                            					<m:Text text="{employeeId}" wrapping="false"/>
-                        				</template>
-                    				</Column>
-                    				<Column width="200px">
-                        				<m:Text text="EmployeeName"/>
-                        				<template>
-                            					<m:Text text="{employeeName}" wrapping="false"/>
-                        				</template>
-                    				</Column>
-                				</columns>
-            				</Table>
-        				</m:content>
-    				</m:Page>
-		</mvc:View>
-        </script>        
-        `;
-        */
+        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m"><Tree class=""  id="Tree"  items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect" includeItemInSelection="true" updateFinished="onDefaultSelction"><headerToolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>';
         _shadowRoot.appendChild(div2);
        
         let div3 = document.createElement('div');
@@ -279,61 +170,6 @@
                               }]
                             }];
                             */
-                            
-                            /*
-                            var oData = [
-                                {
-                                  "text": "Node1",
-                                  "ref": "sap-icon://attachment-audio",
-                                  "nodes":
-                                  [
-                                      {
-                                          "text": "Node1-1",
-                                          "ref": "sap-icon://attachment-e-pub",
-                                          "nodes":[
-                                              {
-                                                  "text": "Node1-1-1",
-                                                  "ref": "sap-icon://attachment-html"
-                                              },
-                                              {
-                                                  "text": "Node1-1-2",
-                                                  "ref": "sap-icon://attachment-photo",
-                                                  "nodes":[
-                                                      {
-                                                          "text": "Node1-1-2-1",
-                                                          "ref": "sap-icon://attachment-text-file",
-                                                          "nodes":[
-                                                              {
-                                                                  "text": "Node1-1-2-1-1",
-                                                                  "ref": "sap-icon://attachment-video"
-                                                              },
-                                                              {
-                                                                  "text": "Node1-1-2-1-2",
-                                                                  "ref": "sap-icon://attachment-zip-file"
-                                                              },
-                                                              {
-                                                                  "text": "Node1-1-2-1-3",
-                                                                  "ref": "sap-icon://course-program"
-                                                              }
-                                                          ]
-                                                      }
-                                                  ]
-                                              }
-                                          ]
-                                      },
-                                      {
-                                          "text": "Node1-2",
-                                          "ref": "sap-icon://create"
-                                      }
-                                  ]
-                              },
-                              {
-                                  "text": "Node2",
-                                  "ref": "sap-icon://customer-financial-fact-sheet"
-                              }
-                            ];
-                            */
-
 
                             var oData = {
                                 ProductCollection: [{
@@ -350,26 +186,17 @@
                                 ]
                             };
 
-
                              // Create the model linked to the data (oData)
-                            //////////var _oModel = new JSONModel(oData);
-                            //////////_oModel.setSizeLimit(1000000);
-
-                            var oModel = new sap.ui.model.json.JSONModel();
-                            oModel.setSizeLimit(1000000);
-                            oModel.setData(oData);
-                            this.getView().setModel(oModel, that.widgetName);
-                            sap.ui.getCore().setModel(oModel, that.widgetName);
-
-                            console.log("oModele:");
-                            console.log(oModel);
-                
-                            /*
+                             var oModel = new sap.ui.model.json.JSONModel();
+                             oModel.setSizeLimit(1000000);
+                             oModel.setData(oData);
+                             this.getView().setModel(oModel, that.widgetName);
+                             sap.ui.getCore().setModel(oModel, that.widgetName);
+                            
                             // Link the model to the widget
                             this.getView()
-                                .setModel(oModel, that.widgetName);
-                            sap.ui.getCore().setModel(oModel, that.widgetName);
-                            */
+                                .setModel(_oModel, that.widgetName);
+                            sap.ui.getCore().setModel(_oModel, that.widgetName);
                     }
 
                 });
