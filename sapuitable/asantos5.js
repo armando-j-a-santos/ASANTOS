@@ -103,7 +103,7 @@
         }
 
     
-            mydata : [
+         var mydata = [
                 { 
                     name  : "node1", 
                     description : "Lorem ipsum dolor sit amet",
@@ -174,7 +174,7 @@
                         },
     
                     ]
-                },
+                }
             ];
 
         console.log("data is");
