@@ -330,6 +330,9 @@
             var foundIndex = Ar.findIndex(x => x.id == widgetName);
             var divfinal = Ar[foundIndex].div;
             console.log(divfinal);
+            
+            console.log("oModel:");
+            console.log(oModel);
 
             
             //### THE APP: place the XMLView somewhere into DOM ###
