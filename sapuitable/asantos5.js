@@ -5,88 +5,6 @@
     let widgetName;
     var Ar = [];
 
-
-    var oModel = new sap.ui.model.json.JSONModel();
-    oModel.setSizeLimit(1000000);
-
-    oModel.setData({
-        data : [
-            { 
-                name  : "node1", 
-                description : "Lorem ipsum dolor sit amet",
-                data : [
-                    { 
-                        name : "node1.1", 
-                        description : "Cras pretium nisl ac ex congue posuere"
-                    },
-                    { 
-                        name : "node1.2", 
-                        description : "Consectetur adipiscing elit",
-                        data: [
-                            { 
-                                name : "node1.2.1",
-                                description : "Maecenas accumsan ipsum diam"
-                            }
-                       ]
-                    },
-                    { 
-                        name : "node1.3", 
-                        description : "Sed tristique diam non imperdiet commodo"
-                    },
-                    { 
-                        name : "node1.4", 
-                        description : "Consectetur adipiscing elit",
-                        data: [
-                            { 
-                                name : "node1.4.1",
-                                description : "Maecenas accumsan ipsum diam",
-                                data: [
-                                    { 
-                                        name : "node1.4.1.1",
-                                        description : "Maecenas accumsan ipsum diam",
-                                        data: [
-                                            { 
-                                                name : "node1.4.1.1.1",
-                                                description : "Maecenas accumsan ipsum diam",
-                                                data: [
-                                                    { 
-                                                        name : "node1.4.1.1.1.1",
-                                                        description : "Maecenas accumsan ipsum diam"
-                                                    }
-                                               ]
-                                            }
-                                       ]
-                                    }
-                               ]
-                            }
-                       ]
-                    },
-                    { 
-                        name : "node1.5", 
-                        description : "Sed tristique diam non imperdiet commodo"
-                    },
-                    { 
-                        name : "node1.6", 
-                        description : "Consectetur adipiscing elit",
-                        data: [
-                            { 
-                                name : "node1.6.1",
-                                description : "Maecenas accumsan ipsum diam"
-                            }
-                       ]
-                    },
-                    { 
-                        name : "node1.7", 
-                        description : "Sed tristique diam non imperdiet commodo"
-                    },
-
-                ]
-            },
-        ]
-    });
-
-
-
     let tmpl = document.createElement("template");
     tmpl.innerHTML = `
       <style>
@@ -183,6 +101,84 @@
         if (typeof widgetName === "undefined") {
             widgetName = that._export_settings.title.split("|")[0];
         }
+
+    
+            mydata : [
+                { 
+                    name  : "node1", 
+                    description : "Lorem ipsum dolor sit amet",
+                    data : [
+                        { 
+                            name : "node1.1", 
+                            description : "Cras pretium nisl ac ex congue posuere"
+                        },
+                        { 
+                            name : "node1.2", 
+                            description : "Consectetur adipiscing elit",
+                            data: [
+                                { 
+                                    name : "node1.2.1",
+                                    description : "Maecenas accumsan ipsum diam"
+                                }
+                           ]
+                        },
+                        { 
+                            name : "node1.3", 
+                            description : "Sed tristique diam non imperdiet commodo"
+                        },
+                        { 
+                            name : "node1.4", 
+                            description : "Consectetur adipiscing elit",
+                            data: [
+                                { 
+                                    name : "node1.4.1",
+                                    description : "Maecenas accumsan ipsum diam",
+                                    data: [
+                                        { 
+                                            name : "node1.4.1.1",
+                                            description : "Maecenas accumsan ipsum diam",
+                                            data: [
+                                                { 
+                                                    name : "node1.4.1.1.1",
+                                                    description : "Maecenas accumsan ipsum diam",
+                                                    data: [
+                                                        { 
+                                                            name : "node1.4.1.1.1.1",
+                                                            description : "Maecenas accumsan ipsum diam"
+                                                        }
+                                                   ]
+                                                }
+                                           ]
+                                        }
+                                   ]
+                                }
+                           ]
+                        },
+                        { 
+                            name : "node1.5", 
+                            description : "Sed tristique diam non imperdiet commodo"
+                        },
+                        { 
+                            name : "node1.6", 
+                            description : "Consectetur adipiscing elit",
+                            data: [
+                                { 
+                                    name : "node1.6.1",
+                                    description : "Maecenas accumsan ipsum diam"
+                                }
+                           ]
+                        },
+                        { 
+                            name : "node1.7", 
+                            description : "Sed tristique diam non imperdiet commodo"
+                        },
+    
+                    ]
+                },
+            ];
+
+        console.log("data is");
+        console.log(mydata);
 
         div = document.createElement('div');
         div.slot = "content_" + widgetName;
@@ -314,9 +310,10 @@
                             //////////var _oModel = new JSONModel(oData);
                             //////////_oModel.setSizeLimit(1000000);
 
-                            console.log("oModel:");
-                            console.log(oModel);
-                            
+                            var oModel = new sap.ui.model.json.JSONModel();
+                            oModel.setSizeLimit(1000000);
+                            oModel.setData(mydata);
+
                             // Link the model to the widget
                             this.getView()
                                 .setModel(oModel, that.widgetName);
@@ -330,7 +327,7 @@
             var foundIndex = Ar.findIndex(x => x.id == widgetName);
             var divfinal = Ar[foundIndex].div;
             console.log(divfinal);
-            
+
             console.log("oModel:");
             console.log(oModel);
 
