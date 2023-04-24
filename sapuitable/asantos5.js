@@ -310,6 +310,9 @@
                                     },
                                 ]
                             });
+
+                            console.log("oModel:");
+                            console.log(oModel);
                             
                             // Link the model to the widget
                             this.getView()
