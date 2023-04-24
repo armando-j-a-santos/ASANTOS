@@ -59,7 +59,7 @@
             loadthis(that, changedProperties);
         }
 
-        /*
+        
         _firePropertiesChanged() {
             this.unit = "";
             this.dispatchEvent(new CustomEvent("propertiesChanged", {
@@ -70,8 +70,8 @@
                 }
             }));
         }
-        */
-       
+        
+
         /*
         static get observedAttributes() {
             return [
