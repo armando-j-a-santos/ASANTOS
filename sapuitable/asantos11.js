@@ -103,7 +103,41 @@
 
             
         let div2 = document.createElement('div');
-        div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m"><Tree class=""  id="Tree"  items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect" includeItemInSelection="true" updateFinished="onDefaultSelction"><headerToolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>';
+        //div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m"><Tree class=""  id="Tree"  items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect" includeItemInSelection="true" updateFinished="onDefaultSelction"><headerToolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>';
+        div2.innerHTML = `
+        <script id="oViewsapuitable2" name="oViewsapuitable2" type="sapui5/xmlview">
+            <mvc:View
+			    controllerName="myView.Template"
+				xmlns="sap.ui.table"
+				xmlns:mvc="sap.ui.core.mvc"
+				xmlns:u="sap.ui.unified"
+				xmlns:c="sap.ui.core" 
+				xmlns:m="sap.m" 
+				height="100%">
+				<m:Page showHeader="false" enableScrolling="false" class="sapUiContentPadding">
+        				<m:content>
+            				<Table id="table2" visibleRowCount="5" rows="{ path: '/ProductCollection', sorter: {path: 'serialId', descending: false}}">
+                				<columns>
+                    				<Column width="50px">
+                        				<m:Text text="Employee ID"/>
+                        				<template>
+                            					<m:Text text="{employeeId}" wrapping="false"/>
+                        				</template>
+                    				</Column>
+                    				<Column width="200px">
+                        				<m:Text text="EmployeeName"/>
+                        				<template>
+                            					<m:Text text="{employeeName}" wrapping="false"/>
+                        				</template>
+                    				</Column>
+                				</columns>
+            				</Table>
+        				</m:content>
+    				</m:Page>
+		</mvc:View>
+        </script>        
+        `;
+        
         _shadowRoot.appendChild(div2);
        
         let div3 = document.createElement('div');
