@@ -11,7 +11,7 @@
       </style>      
     `;
 
-    class ASANTOSA4 extends HTMLElement {
+    class ASANTOSA5 extends HTMLElement {
 
         constructor() {
             super();
@@ -88,7 +88,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA4);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA5);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
