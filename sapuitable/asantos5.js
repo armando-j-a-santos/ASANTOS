@@ -92,7 +92,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable", ASANTOS);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOS);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -231,7 +231,7 @@
 
                             var oModel = new sap.ui.model.json.JSONModel();
                             oModel.setSizeLimit(1000000);
-                            
+
                             oModel.setData({
                                 data : [
                                     { 
