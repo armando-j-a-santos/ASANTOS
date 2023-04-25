@@ -6,12 +6,10 @@
     var Ar = [];
 
     let tmpl = document.createElement("template");
-    tmpl.innerHTML = `
-      	<style>
-      	</style>
-    `;
+    tmpl.innerHTML = `<div style="background-color: #fff; position: absolute; z-index: 1; top: 0px; height: 100%; width: 100%; border-radius: 10px;" 
+    id="root"></div> `;
 
-    class ASANTOSA17 extends HTMLElement {
+    class ASANTOSA18 extends HTMLElement {
 
         constructor() {
             super();
@@ -88,7 +86,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA17);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA18);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
