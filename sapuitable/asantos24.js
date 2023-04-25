@@ -14,7 +14,7 @@
     </div>
     `;
 
-    class ASANTOSA23 extends HTMLElement {
+    class ASANTOSA24 extends HTMLElement {
 
         constructor() {
             super();
@@ -91,7 +91,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA23);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA24);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -101,10 +101,10 @@
             widgetName = that._export_settings.title.split("|")[0];
         }
 
-        let div1 = document.createElement('div');
-        div1.slot = "content_" + widgetName;
-	div1.innerHTML = `<div id="chartdiv" style="width: 100%; height: 100%;"></div>`;
-	_shadowRoot.appendChild(div1);
+        let div = document.createElement('div');
+        div.slot = "content_" + widgetName;
+	div.innerHTML = `<div id="chartdiv" style="width: 100%; height: 100%;"></div>`;
+	
     
         let div2 = document.createElement('div');
         //div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m"><Tree class=""  id="Tree"  items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect" includeItemInSelection="true" updateFinished="onDefaultSelction"><headerToolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>';
