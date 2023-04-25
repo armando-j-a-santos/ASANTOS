@@ -14,7 +14,7 @@
     </div>
     `;
 
-    class ASANTOSA26 extends HTMLElement {
+    class ASANTOSA27 extends HTMLElement {
 
         constructor() {
             super();
@@ -91,7 +91,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA26);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA27);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -246,7 +246,51 @@
                             console.log("oModel1:");
                             console.log(oModel1);
                 
-                            
+                            this.getView().setModel(new JSONModel({
+				ProductCollection: [{
+				  serialId: 1,
+				  employeeName: "John",
+				  employeeId: 100,
+				  department: "Accounting",
+				  status: "Looking good!"
+				},{
+				  serialId: 2,
+				  employeeName: "Sam",
+				  employeeId: 101,
+				  department: "IT",
+				  status: "On sick leave"
+				},{
+					serialId: 3,
+				  employeeName: "Bob",
+				  employeeId: 102,
+				  department: "HR",
+				  status: "Something something..."
+				}]
+			      }), that.widgetName);
+		
+			     sap.ui.getCore().setModel(new JSONModel({
+				ProductCollection: [{
+				  serialId: 1,
+				  employeeName: "John",
+				  employeeId: 100,
+				  department: "Accounting",
+				  status: "Looking good!"
+				},{
+				  serialId: 2,
+				  employeeName: "Sam",
+				  employeeId: 101,
+				  department: "IT",
+				  status: "On sick leave"
+				},{
+					serialId: 3,
+				  employeeName: "Bob",
+				  employeeId: 102,
+				  department: "HR",
+				  status: "Something something..."
+				}]
+			      }), that.widgetName);
+			    
+			    /*
 			    var oModelX = new JSONModel(sap.ui.require.toUrl("sap/ui/demo/mock/products.json"));
 			    console.log("oModelXixi:");
                             console.log(oModelX);
@@ -255,7 +299,7 @@
                             this.getView()
                                 .setModel(oModelX, that.widgetName);
                             sap.ui.getCore().setModel(oModelX, that.widgetName);
-                            
+                            */
                     }
 
                 });
