@@ -14,7 +14,7 @@
     </div>
     `;
 
-    class ASANTOSA24 extends HTMLElement {
+    class ASANTOSA25 extends HTMLElement {
 
         constructor() {
             super();
@@ -91,7 +91,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA24);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA25);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -102,8 +102,8 @@
         }
 
         let div = document.createElement('div');
-        div.slot = "content_" + widgetName;
-	div.innerHTML = `<div id="chartdiv" style="width: 100%; height: 100%;"></div>`;
+        div.slot = "content_asantos";
+	
 	
     
         let div2 = document.createElement('div');
@@ -271,7 +271,7 @@
             var oView = sap.ui.xmlview({
                 viewContent: jQuery(divfinal).html(),
             });
-            oView.placeAt("chartdiv");
+            oView.placeAt("content_asantos");
             
         });
     } // end of: function loadthis(that, changedProperties) {
