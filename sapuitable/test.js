@@ -12,7 +12,7 @@
             <script id="oViewsapuitabletest_1" name="oViewsapuitabletest_1" type="sapui5/xmlview" src="" charset="" referrerpolicy="" event="" for="" integrity="" fetchpriority="auto"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m"><Tree class=""  id="Tree"  items="{sapuitable_1>/}" mode="MultiSelect"  selectionChange="onSelect" includeItemInSelection="true" updateFinished="onDefaultSelction"><headerToolbar></headerToolbar><StandardTreeItem title="{sapuitable_1>text}" selected="{selected}"/></Tree></mvc:View></script>
         `;
   
-    class ASANTOSTEST1 extends HTMLElement {
+    class ASANTOSTEST2 extends HTMLElement {
 
         constructor() {
             super();
@@ -93,7 +93,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitableTest", ASANTOSTEST1);
+    customElements.define("com-asantos-sap-sac-sapuitabletest", ASANTOSTEST2);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
