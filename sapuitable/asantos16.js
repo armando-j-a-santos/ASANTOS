@@ -11,7 +11,7 @@
       	</style>
     `;
 
-    class ASANTOSA10 extends HTMLElement {
+    class ASANTOSA11 extends HTMLElement {
 
         constructor() {
             super();
@@ -88,7 +88,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA10);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA11);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -238,6 +238,10 @@
                             console.log(oModel1);
                 
                             
+			    var oModelX = new JSONModel(sap.ui.require.toUrl("sap/ui/demo/mock/products.json"));
+			    console.log("oModelX:");
+                            console.log(oModelX);
+			    
                             // Link the model to the widget
                             this.getView()
                                 .setModel(oModel1, that.widgetName);
