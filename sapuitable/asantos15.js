@@ -11,7 +11,7 @@
       	</style>
     `;
 
-    class ASANTOSA9 extends HTMLElement {
+    class ASANTOSA10 extends HTMLElement {
 
         constructor() {
             super();
@@ -88,7 +88,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA9);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA10);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -154,7 +154,7 @@
             'div': mapcanvas_divstr
         });
 	    
-	console.log("mapcanvas_divstr(****)");
+	console.log("mapcanvas_divstr(>>>>>)");
 	console.log(mapcanvas_divstr);
 	    
 	console.log("Ar");
@@ -230,19 +230,19 @@
 
                             var oModel1 = new sap.ui.model.json.JSONModel();
                             /////oModel1.setSizeLimit(1000000);
-                            oModel1.setData(oData);
-                            this.getView().setModel(oModel1);
+                            /////oModel1.setData(oData);
+                            /////this.getView().setModel(oModel1);
                             /////sap.ui.getCore().setModel(oModel1, that.widgetName);
 
                             console.log("oModel1:");
                             console.log(oModel1);
                 
-                            /*
+                            
                             // Link the model to the widget
                             this.getView()
-                                .setModel(oModel, that.widgetName);
-                            sap.ui.getCore().setModel(oModel, that.widgetName);
-                            */
+                                .setModel(oModel1, that.widgetName);
+                            sap.ui.getCore().setModel(oModel1, that.widgetName);
+                            
                     }
 
                 });
