@@ -14,7 +14,7 @@
     </div>
     `;
 
-    class ASANTOSA19 extends HTMLElement {
+    class ASANTOSA20 extends HTMLElement {
 
         constructor() {
             super();
@@ -58,6 +58,10 @@
         }
 
         onCustomWidgetAfterUpdate(changedProperties) {
+	    const div = document.createElement("div");
+	    div.innerHTML = `<div id="chartdiv" style="width: 100%; height: 100%;"></div>`;
+	    this._shadowRoot.appendChild(div);
+		
             var that = this;
             loadthis(that, changedProperties);
         }
@@ -91,7 +95,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA19);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA20);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
