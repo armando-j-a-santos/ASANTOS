@@ -9,40 +9,9 @@
     tmpl.innerHTML = `
       	<style>
       	</style>
-	<script id="oViewsapuitable2_1" name="oViewsapuitable2_1" type="sapui5/xmlview">
-            <mvc:View
-			    controllerName="myView.Template"
-				xmlns="sap.ui.table"
-				xmlns:mvc="sap.ui.core.mvc"
-				xmlns:u="sap.ui.unified"
-				xmlns:c="sap.ui.core" 
-				xmlns:m="sap.m" 
-				height="100%">
-				<m:Page showHeader="false" enableScrolling="false" class="sapUiContentPadding">
-        				<m:content>
-            				<Table id="table2" visibleRowCount="5" rows="{ path: '/ProductCollection', sorter: {path: 'serialId', descending: false}}">
-                				<columns>
-                    				<Column width="50px">
-                        				<m:Text text="Employee ID"/>
-                        				<template>
-                            					<m:Text text="{employeeId}" wrapping="false"/>
-                        				</template>
-                    				</Column>
-                    				<Column width="200px">
-                        				<m:Text text="EmployeeName"/>
-                        				<template>
-                            					<m:Text text="{employeeName}" wrapping="false"/>
-                        				</template>
-                    				</Column>
-                				</columns>
-            				</Table>
-        				</m:content>
-    				</m:Page>
-		</mvc:View>
-        </script>      
     `;
 
-    class ASANTOSA8 extends HTMLElement {
+    class ASANTOSA9 extends HTMLElement {
 
         constructor() {
             super();
@@ -119,7 +88,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA8);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA9);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -135,7 +104,42 @@
             
         let div2 = document.createElement('div');
         //div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m"><Tree class=""  id="Tree"  items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect" includeItemInSelection="true" updateFinished="onDefaultSelction"><headerToolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>';
-        //_shadowRoot.appendChild(div2);
+        div2.innerHTML = `
+      	<style>
+      	</style>
+	<script id="oViewsapuitable2_1" name="oViewsapuitable2_1" type="sapui5/xmlview">
+            <mvc:View
+			    controllerName="myView.Template"
+				xmlns="sap.ui.table"
+				xmlns:mvc="sap.ui.core.mvc"
+				xmlns:u="sap.ui.unified"
+				xmlns:c="sap.ui.core" 
+				xmlns:m="sap.m" 
+				height="100%">
+				<m:Page showHeader="false" enableScrolling="false" class="sapUiContentPadding">
+        				<m:content>
+            				<Table id="table2" visibleRowCount="5" rows="{ path: '/ProductCollection', sorter: {path: 'serialId', descending: false}}">
+                				<columns>
+                    				<Column width="50px">
+                        				<m:Text text="Employee ID"/>
+                        				<template>
+                            					<m:Text text="{employeeId}" wrapping="false"/>
+                        				</template>
+                    				</Column>
+                    				<Column width="200px">
+                        				<m:Text text="EmployeeName"/>
+                        				<template>
+                            					<m:Text text="{employeeName}" wrapping="false"/>
+                        				</template>
+                    				</Column>
+                				</columns>
+            				</Table>
+        				</m:content>
+    				</m:Page>
+		</mvc:View>
+        </script>      
+    	`;
+	_shadowRoot.appendChild(div2);
        
         let div3 = document.createElement('div');
         div3.innerHTML = '<div style="max-height: "' + that.max_height + that.unit_option + '"; border-radius: 15px; overflow-y: hidden;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><div style="max-height: ' + that.max_height + that.unit_option + '; border-radius: 15px; overflow-y: auto;" id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"> </slot></div></div>';
@@ -150,7 +154,7 @@
             'div': mapcanvas_divstr
         });
 	    
-	console.log("mapcanvas_divstr");
+	console.log("mapcanvas_divstr(****)");
 	console.log(mapcanvas_divstr);
 	    
 	console.log("Ar");
