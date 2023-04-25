@@ -42,7 +42,7 @@
         </script>      
     `;
 
-    class ASANTOSA7 extends HTMLElement {
+    class ASANTOSA8 extends HTMLElement {
 
         constructor() {
             super();
@@ -119,7 +119,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOS7);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOS8);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
