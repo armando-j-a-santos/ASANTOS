@@ -119,7 +119,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOS8);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA8);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
