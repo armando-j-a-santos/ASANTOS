@@ -11,7 +11,7 @@
       	</style>
     `;
 
-    class ASANTOSA11 extends HTMLElement {
+    class ASANTOSA17 extends HTMLElement {
 
         constructor() {
             super();
@@ -88,7 +88,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA11);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA17);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -108,35 +108,40 @@
       	<style>
       	</style>
 	<script id="oViewsapuitable2_1" name="oViewsapuitable2_1" type="sapui5/xmlview">
-            <mvc:View
-			    controllerName="myView.Template"
-				xmlns="sap.ui.table"
-				xmlns:mvc="sap.ui.core.mvc"
-				xmlns:u="sap.ui.unified"
-				xmlns:c="sap.ui.core" 
-				xmlns:m="sap.m" 
-				height="100%">
-				<m:Page showHeader="false" enableScrolling="false" class="sapUiContentPadding">
-        				<m:content>
-            				<Table id="table2" visibleRowCount="5" rows="{ path: '/ProductCollection', sorter: {path: 'serialId', descending: false}}">
-                				<columns>
-                    				<Column width="50px">
-                        				<m:Text text="Employee ID"/>
-                        				<template>
-                            					<m:Text text="{employeeId}" wrapping="false"/>
-                        				</template>
-                    				</Column>
-                    				<Column width="200px">
-                        				<m:Text text="EmployeeName"/>
-                        				<template>
-                            					<m:Text text="{employeeName}" wrapping="false"/>
-                        				</template>
-                    				</Column>
-                				</columns>
-            				</Table>
-        				</m:content>
-    				</m:Page>
-		</mvc:View>
+		<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="myView.Template" displayBlock="true">
+		    <App>
+			<Page title="Hello">
+			    <Table id="table" width="auto" fixedLayout="false" items="{
+				path: '/ProductCollection',
+				sorter: {
+				    path: 'Name'
+				}
+			    }">
+				<columns>
+				    <Column>
+					<Text text="Name"  wrapping="true" maxLines="1"/>
+				    </Column>
+				    <Column>
+					<Text text="Description" wrapping="false"/>
+				    </Column>
+				</columns>
+
+				<items>
+				    <ColumnListItem type="Navigation" press=".onPress">
+					<cells>
+					    <Text text="{Name}" wrapping="false" />
+					    <Text text="{Description}" wrapping="true" maxLines="1" />
+					</cells>
+				    </ColumnListItem>
+				</items>
+			    </Table>
+
+			    <ScrollContainer width="40px">
+				<Text text="my text sf sdf sdf sdf sdf sdfsdf sd fsdf sdf sd f" wrapping="true" maxLines="1" />
+			    </ScrollContainer>
+		     </Page>
+		</App>
+	    </mvc:View>
         </script>      
     	`;
 	_shadowRoot.appendChild(div2);
@@ -239,13 +244,13 @@
                 
                             
 			    var oModelX = new JSONModel(sap.ui.require.toUrl("sap/ui/demo/mock/products.json"));
-			    console.log("oModelX:");
+			    console.log("oModelXixi:");
                             console.log(oModelX);
 			    
                             // Link the model to the widget
                             this.getView()
-                                .setModel(oModel1, that.widgetName);
-                            sap.ui.getCore().setModel(oModel1, that.widgetName);
+                                .setModel(oModelX, that.widgetName);
+                            sap.ui.getCore().setModel(oModelX, that.widgetName);
                             
                     }
 
