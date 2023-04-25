@@ -6,10 +6,15 @@
     var Ar = [];
 
     let tmpl = document.createElement("template");
-    tmpl.innerHTML = `<div style="background-color: #fff; position: absolute; z-index: 1; top: 0px; height: 100%; width: 100%; border-radius: 10px;" 
-    id="root"></div> `;
+    tmpl.innerHTML = `
+    <style>
+    </style>
+    <div id="root" style="width: 100%; height: 100%;">
+      <div id="chartdiv"></div>
+    </div>
+    `;
 
-    class ASANTOSA18 extends HTMLElement {
+    class ASANTOSA19 extends HTMLElement {
 
         constructor() {
             super();
@@ -86,7 +91,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA18);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA19);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -194,7 +199,7 @@
 
                     onInit: function() {
                         
-                        console.log('>>>>>>>>>>>>>>>inside onInit');
+                        console.log('inside onInit');
                         
                             // oData defintion (nodes, columns and rows)
                             /*
@@ -255,7 +260,7 @@
                 });
             });
 
-            console.log("WidgetName Final:" + widgetName);
+            console.log("WidgetName Finale:" + widgetName);
             var foundIndex = Ar.findIndex(x => x.id == widgetName);
             var divfinal = Ar[foundIndex].div;
             console.log(divfinal);
@@ -265,7 +270,7 @@
             var oView = sap.ui.xmlview({
                 viewContent: jQuery(divfinal).html(),
             });
-            oView.placeAt(div);
+            oView.placeAt("chartdiv");
             
         });
     } // end of: function loadthis(that, changedProperties) {
