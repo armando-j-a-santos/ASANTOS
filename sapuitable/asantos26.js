@@ -14,7 +14,7 @@
     </div>
     `;
 
-    class ASANTOSA25 extends HTMLElement {
+    class ASANTOSA26 extends HTMLElement {
 
         constructor() {
             super();
@@ -91,7 +91,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA25);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA26);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -271,7 +271,7 @@
             var oView = sap.ui.xmlview({
                 viewContent: jQuery(divfinal).html(),
             });
-            oView.placeAt("content_asantos");
+            oView.placeAt(div);
             
         });
     } // end of: function loadthis(that, changedProperties) {
