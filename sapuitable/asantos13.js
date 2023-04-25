@@ -42,7 +42,7 @@
         </script>      
     `;
 
-    class ASANTOSA6 extends HTMLElement {
+    class ASANTOSA7 extends HTMLElement {
 
         constructor() {
             super();
@@ -119,7 +119,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA6);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOS7);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -149,6 +149,9 @@
             'id': widgetName,
             'div': mapcanvas_divstr
         });
+	    
+	console.log("mapcanvas_divstr");
+	console.log(mapcanvas_divstr);
 	    
 	console.log("Ar");
 	console.log(Ar);
