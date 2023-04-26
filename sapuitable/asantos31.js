@@ -1,17 +1,12 @@
 (function() {
     let _shadowRoot;
-
     let div;
     let widgetName;
-    var Ar = [];
-
+    var Ar = []; // Array
     let tmpl = document.createElement("template");
     tmpl.innerHTML = `
     <style>
     </style>
-    <div id="root" style="width: 100%; height: 100%;">
-      <div id="chartdiv"></div>
-    </div>
     `;
 
     class ASANTOSA31 extends HTMLElement {
@@ -96,9 +91,7 @@
         div.slot = "content";
 	
         let div2 = document.createElement('div');
-         div2.innerHTML = `
-      	<style>
-      	</style>
+        div2.innerHTML = `
 	<script id="oViewsapuitable2_1" name="oViewsapuitable2_1" src='https://sapui5.hana.ondemand.com/resources/sap-ui-core.js' data-sap-ui-libs='sap.m,sap.ui.layout' data-sap-ui-theme="sap_fiori_3" data-sap-ui-compatversion="edge">
 		<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="myView.Template" displayBlock="true">
 		    <App>
@@ -156,36 +149,23 @@
 
             //### Controller ###
             sap.ui.define([
-                "jquery.sap.global",
-                "sap/ui/core/mvc/Controller",
-                "sap/ui/model/json/JSONModel",
-                "sap/m/MessageToast",
-                "sap/ui/core/library",
-                "sap/ui/core/Core",
-                'sap/ui/model/Filter',
-                'sap/m/library',
-                'sap/m/MessageBox',
-                'sap/ui/unified/DateRange',
-                'sap/ui/core/format/DateFormat',
-                'sap/ui/model/BindingMode',
-                'sap/ui/core/Fragment',
-                'sap/m/Token',
-                'sap/ui/model/FilterOperator',
-                'sap/ui/model/odata/ODataModel',
-                'sap/m/BusyDialog'
-            ], function(jQuery, Controller, JSONModel, MessageToast, coreLibrary, Core, Filter, mobileLibrary, MessageBox, DateRange, DateFormat, BindingMode, Fragment, Token, FilterOperator, ODataModel, BusyDialog) {
+                "jquery.sap.global", "sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap/m/MessageToast", "sap/ui/core/library",
+                "sap/ui/core/Core", 'sap/ui/model/Filter', 'sap/m/library', 'sap/m/MessageBox', 'sap/ui/unified/DateRange', 'sap/ui/core/format/DateFormat',
+                'sap/ui/model/BindingMode', 'sap/ui/core/Fragment', 'sap/m/Token', 'sap/ui/model/FilterOperator', 'sap/ui/model/odata/ODataModel', 'sap/m/BusyDialog'
+            ], function(jQuery, Controller, JSONModel, MessageToast, coreLibrary, Core, Filter, mobileLibrary, MessageBox, DateRange, DateFormat, BindingMode, 
+			 Fragment, Token, FilterOperator, ODataModel, BusyDialog) {
                 "use strict";
 
-                var busyDialog = (busyDialog) ? busyDialog : new BusyDialog({});
+            var busyDialog = (busyDialog) ? busyDialog : new BusyDialog({});
 
-                return Controller.extend("myView.Template", {
+            return Controller.extend("myView.Template", {
 
                     onInit: function() {
                         
                         console.log('inside onInit...');
                         
                             // oData defintion (nodes, columns and rows)
-                             // Create the model linked to the data (oData)
+                            // Create the model linked to the data (oData)
                             var oModel1 = new sap.ui.model.json.JSONModel();
                 
                             this.getView().setModel(new JSONModel({
@@ -219,7 +199,6 @@
             var divfinal = Ar[foundIndex].div;
             console.log(divfinal);
 
-            
             //### THE APP: place the XMLView somewhere into DOM ###
             var oView = sap.ui.xmlview({
                 viewContent: jQuery(divfinal).html(),
@@ -227,6 +206,6 @@
             oView.placeAt(div);
             
         });
-    } // end of: function loadthis(that, changedProperties) {
+    } // end of: function loadthis
 
 })();
