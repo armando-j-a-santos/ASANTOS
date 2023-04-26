@@ -9,7 +9,7 @@
     </style>
     `;
 
-    class ASANTOSA31 extends HTMLElement {
+    class SAPTABLE01 extends HTMLElement {
 
         constructor() {
             super();
@@ -77,7 +77,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA31);
+    customElements.define("com-asantos-sap-sac-sapuitable2", SAPTABLE01);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -162,13 +162,13 @@
 
                     onInit: function() {
                         
-                        console.log('inside onInit...');
+                    console.log('inside onInit...');
                         
-                            // oData defintion (nodes, columns and rows)
-                            // Create the model linked to the data (oData)
-                            var oModel1 = new sap.ui.model.json.JSONModel();
+                    // oData defintion (nodes, columns and rows)
+                    // Create the model linked to the data (oData)
+                    var oModel1 = new sap.ui.model.json.JSONModel();
                 
-                            this.getView().setModel(new JSONModel({
+                     this.getView().setModel(new JSONModel({
 				ProductCollection: [{
 				  serialId: 1,
 				  employeeName: "John",
@@ -188,9 +188,8 @@
 				  department: "HR",
 				  status: "Something something..."
 				}]
-			      }), that.widgetName);
-                    }
-
+			}), that.widgetName);
+                }
                 });
             });
 
