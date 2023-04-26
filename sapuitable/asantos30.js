@@ -14,7 +14,7 @@
     </div>
     `;
 
-    class ASANTOSA29 extends HTMLElement {
+    class ASANTOSA30 extends HTMLElement {
 
         constructor() {
             super();
@@ -24,17 +24,8 @@
             });
             _shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
-            /*
-            _id = createGuid();
-            _shadowRoot.querySelector("#oView").id = "oView";
-            */
-
-            this._export_settings = {};
-            this._export_settings.title = "";
-            this._export_settings.subtitle = "";
-            this._export_settings.icon = "";
-            this._export_settings.unit = "";
-            this._export_settings.footer = "";
+            this._export_settings = {}; this._export_settings.title = ""; this._export_settings.subtitle = ""; this._export_settings.icon = "";
+            this._export_settings.unit = ""; this._export_settings.footer = "";
 
             this.addEventListener("click", event => {
                 console.log('click');
@@ -91,7 +82,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA29);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA30);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -102,13 +93,10 @@
         }
 
         let div = document.createElement('div');
-        div.slot = "content_asantos";
+        div.slot = "content";
 	
-	
-    
         let div2 = document.createElement('div');
-        //div2.innerHTML = '<script id="oView' + widgetName + '" name="oView' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"  xmlns="sap.m"><Tree class=""  id="Tree"  items="{' + widgetName + '>/}" mode="MultiSelect"  selectionChange="onSelect" includeItemInSelection="true" updateFinished="onDefaultSelction"><headerToolbar></headerToolbar><StandardTreeItem title="{' + widgetName + '>text}" selected="{selected}"/></Tree></mvc:View></script>';
-        div2.innerHTML = `
+         div2.innerHTML = `
       	<style>
       	</style>
 	<script id="oViewsapuitable2_1" name="oViewsapuitable2_1" type="sapui5/xmlview" src='https://sapui5.hana.ondemand.com/resources/sap-ui-core.js' data-sap-ui-libs='sap.m,sap.ui.layout' data-sap-ui-theme="sap_fiori_3" data-sap-ui-compatversion="edge">
@@ -162,12 +150,6 @@
             'id': widgetName,
             'div': mapcanvas_divstr
         });
-	    
-	console.log("mapcanvas_divstr(>>>>>)");
-	console.log(mapcanvas_divstr);
-	    
-	console.log("Ar");
-	console.log(Ar);
 
         sap.ui.getCore().attachInit(function() {
             "use strict";
@@ -203,48 +185,8 @@
                         console.log('inside onInit');
                         
                             // oData defintion (nodes, columns and rows)
-                            /*
-                            var oData = [{
-                              text: "Node1",
-                              nodes: [{
-                                text: "Node1-1"
-                              }]
-                            }, {
-                              text: "Node2",
-                              nodes: [{
-                                text: "Node2-1"
-                              }]
-                            }];
-                            */
-
-                            var oData = {
-                                ProductCollection: [{
-                                        employeeId: "1",
-                                        employeeName: "Armando"
-                                    }, {
-                                        employeeId: "2",
-                                        employeeName: "Jorge"
-                                    }, {
-                                        employeeId: "3",
-                                        employeeName: "Santos"
-                                    }
-                
-                                ]
-                            };
-
-
                              // Create the model linked to the data (oData)
-                            //////////var _oModel = new JSONModel(oData);
-                            //////////_oModel.setSizeLimit(1000000);
-
                             var oModel1 = new sap.ui.model.json.JSONModel();
-                            /////oModel1.setSizeLimit(1000000);
-                            /////oModel1.setData(oData);
-                            /////this.getView().setModel(oModel1);
-                            /////sap.ui.getCore().setModel(oModel1, that.widgetName);
-
-                            console.log("oModel1:");
-                            console.log(oModel1);
                 
                             this.getView().setModel(new JSONModel({
 				ProductCollection: [{
@@ -260,46 +202,13 @@
 				  department: "IT",
 				  status: "On sick leave"
 				},{
-					serialId: 3,
+				  serialId: 3,
 				  employeeName: "Bob",
 				  employeeId: 102,
 				  department: "HR",
 				  status: "Something something..."
 				}]
 			      }), that.widgetName);
-		
-			     sap.ui.getCore().setModel(new JSONModel({
-				ProductCollection: [{
-				  serialId: 1,
-				  employeeName: "John",
-				  employeeId: 100,
-				  department: "Accounting",
-				  status: "Looking good!"
-				},{
-				  serialId: 2,
-				  employeeName: "Sam",
-				  employeeId: 101,
-				  department: "IT",
-				  status: "On sick leave"
-				},{
-					serialId: 3,
-				  employeeName: "Bob",
-				  employeeId: 102,
-				  department: "HR",
-				  status: "Something something..."
-				}]
-			      }), that.widgetName);
-			    
-			    /*
-			    var oModelX = new JSONModel(sap.ui.require.toUrl("sap/ui/demo/mock/products.json"));
-			    console.log("oModelXixi:");
-                            console.log(oModelX);
-			    
-                            // Link the model to the widget
-                            this.getView()
-                                .setModel(oModelX, that.widgetName);
-                            sap.ui.getCore().setModel(oModelX, that.widgetName);
-                            */
                     }
 
                 });
