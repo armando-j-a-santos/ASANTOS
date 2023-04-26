@@ -14,7 +14,7 @@
     </div>
     `;
 
-    class ASANTOSA27 extends HTMLElement {
+    class ASANTOSA28 extends HTMLElement {
 
         constructor() {
             super();
@@ -91,7 +91,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA27);
+    customElements.define("com-asantos-sap-sac-sapuitable2", ASANTOSA28);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -111,6 +111,7 @@
         div2.innerHTML = `
       	<style>
       	</style>
+	<script id='sap-ui-bootstrap' src='https://sapui5.hana.ondemand.com/resources/sap-ui-core.js' data-sap-ui-libs='sap.m,sap.ui.layout' data-sap-ui-theme="sap_fiori_3" data-sap-ui-compatversion="edge"></script>
 	<script id="oViewsapuitable2_1" name="oViewsapuitable2_1" type="sapui5/xmlview">
 		<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="myView.Template" displayBlock="true">
 		    <App>
