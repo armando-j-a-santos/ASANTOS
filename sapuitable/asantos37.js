@@ -9,7 +9,7 @@
     </style>
     `;
 
-    class SAPTABLE06 extends HTMLElement {
+    class SAPTABLE07 extends HTMLElement {
 
         constructor() {
             super();
@@ -77,7 +77,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", SAPTABLE06);
+    customElements.define("com-asantos-sap-sac-sapuitable2", SAPTABLE07);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -93,7 +93,7 @@
         let div2 = document.createElement('div');
         div2.innerHTML = `
 	<script id="oViewsapuitable2_1" name="oViewsapuitable2_1" src='https://sapui5.hana.ondemand.com/resources/sap-ui-core.js' data-sap-ui-libs='sap.m,sap.ui.layout' data-sap-ui-theme="sap_fiori_3" data-sap-ui-compatversion="edge">
-		<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns="sap.ui.table" xmlns:dnd="sap.ui.core.dnd" controllerName=""myView.Template">
+		<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns="sap.ui.table" xmlns:dnd="sap.ui.core.dnd" controllerName="myView.Template">
 			<Table id="table2" fixedColumnCount="1" visibleRowCount="5" rows="{path: '/ProductCollection', sorter: {path: 'serialId', descending: false} }">
 				<columns>
 					  <Column width="50px">
@@ -164,7 +164,7 @@
 
                     onInit: function() {
                         
-                    console.log('inside onInit>>>');
+                    console.log('inside onInit>>><<<<');
                         
                     // oData defintion (nodes, columns and rows)
                     // Create the model linked to the data (oData)
