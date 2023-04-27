@@ -9,7 +9,7 @@
     </style>
     `;
 
-    class SAPTABLE01 extends HTMLElement {
+    class SAPTABLE02 extends HTMLElement {
 
         constructor() {
             super();
@@ -77,7 +77,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", SAPTABLE01);
+    customElements.define("com-asantos-sap-sac-sapuitable2", SAPTABLE02);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
@@ -93,41 +93,43 @@
         let div2 = document.createElement('div');
         div2.innerHTML = `
 	<script id="oViewsapuitable2_1" name="oViewsapuitable2_1" src='https://sapui5.hana.ondemand.com/resources/sap-ui-core.js' data-sap-ui-libs='sap.m,sap.ui.layout' data-sap-ui-theme="sap_fiori_3" data-sap-ui-compatversion="edge">
-		<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="myView.Template" displayBlock="true">
-		    <App>
-			<Page title="Hello">
-			    <Table id="table" width="auto" fixedLayout="false" items="{
-				path: '/ProductCollection',
-				sorter: {
-				    path: 'Name'
-				}
-			    }">
+		<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns="sap.ui.table" xmlns:dnd="sap.ui.core.dnd" controllerName=""myView.Template">
+			<Table id="table2" fixedColumnCount="1" visibleRowCount="5" rows="{path: '/ProductCollection', sorter: {path: 'serialId', descending: false} }">
 				<columns>
-				    <Column>
-					<Text text="Name"  wrapping="true" maxLines="1"/>
-				    </Column>
-				    <Column>
-					<Text text="Description" wrapping="false"/>
-				    </Column>
+					  <Column width="50px">
+					    <m:Text text="S.No" />
+					    <template>
+					      <m:Text text="{serialId}" wrapping="false"  />
+					    </template>
+					  </Column>
+					  <Column width="200px">
+					    <m:Text text="EmployeeName" />
+					    <template>
+					      <m:Text text="{employeeName}" wrapping="false" />
+					    </template>
+					  </Column>
+					  <Column width="200px">
+					    <m:Text text="EmployeeId" />
+					    <template>
+					      <m:Text text="{employeeId}" wrapping="false" />
+					    </template>
+					  </Column>
+					  <Column width="200px">
+					    <m:Text text="Department" />
+					    <template>
+					      <m:Text text="{department}" wrapping="false" />
+					    </template>
+					  </Column>
+					  <Column width="600px">
+					    <m:Text text="Status" />
+					    <template>
+					      <m:Text text="{status}" wrapping="false" />
+					    </template>
+					  </Column>
 				</columns>
-
-				<items>
-				    <ColumnListItem type="Navigation" press=".onPress">
-					<cells>
-					    <Text text="{Name}" wrapping="false" />
-					    <Text text="{Description}" wrapping="true" maxLines="1" />
-					</cells>
-				    </ColumnListItem>
-				</items>
-			    </Table>
-
-			    <ScrollContainer width="40px">
-				<Text text="my text sf sdf sdf sdf sdf sdfsdf sd fsdf sdf sd f" wrapping="true" maxLines="1" />
-			    </ScrollContainer>
-		     </Page>
-		</App>
-	    </mvc:View>
-        </script>      
+		      </Table>
+    		</mvc:View>
+	</script>  
     	`;
 	_shadowRoot.appendChild(div2);
        
@@ -162,7 +164,7 @@
 
                     onInit: function() {
                         
-                    console.log('inside onInit...');
+                    console.log('inside onInit>>>');
                         
                     // oData defintion (nodes, columns and rows)
                     // Create the model linked to the data (oData)
