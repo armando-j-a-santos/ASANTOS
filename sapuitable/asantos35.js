@@ -9,7 +9,7 @@
     </style>
     `;
 
-    class SAPTABLE04 extends HTMLElement {
+    class SAPTABLE05 extends HTMLElement {
 
         constructor() {
             super();
@@ -77,7 +77,7 @@
         }
 
     }
-    customElements.define("com-asantos-sap-sac-sapuitable2", SAPTABLE04);
+    customElements.define("com-asantos-sap-sac-sapuitable2", SAPTABLE05);
 
     function loadthis(that, changedProperties) {
         var that_ = that;
